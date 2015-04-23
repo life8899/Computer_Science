@@ -1,0 +1,21 @@
+________________________________________________________________________________
+
+		FILE = C:\Users\Nick\Developer\Computer_Science\340\Assignments\RandNumGen\out.txt		ALPHA = 0.0100
+________________________________________________________________________________
+
+		BITSREAD = 512 0s = 239 1s = 273
+		BITSREAD = 512 0s = 241 1s = 271
+		BITSREAD = 512 0s = 247 1s = 265
+		BITSREAD = 512 0s = 242 1s = 270
+		BITSREAD = 512 0s = 268 1s = 244
+		BITSREAD = 512 0s = 254 1s = 258
+		BITSREAD = 512 0s = 246 1s = 266
+		BITSREAD = 512 0s = 248 1s = 264
+		BITSREAD = 512 0s = 237 1s = 275
+		BITSREAD = 512 0s = 245 1s = 267
+		BITSREAD = 512 0s = 260 1s = 252
+		BITSREAD = 512 0s = 249 1s = 263
+		BITSREAD = 512 0s = 267 1s = 245
+		BITSREAD = 512 0s = 260 1s = 252
+		BITSREAD = 512 0s = 258 1s = 254
+		BITSREAD = 512 0s = 257 1s = 255

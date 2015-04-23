@@ -1,0 +1,37 @@
+IMPORT JAVA.UTIL.SCANNER;
+IMPORT JAVA.IO.*;
+
+PUBLIC CLASS UPPERCASE 
+{
+    PUBLIC STATIC VOID MAIN(STRING[] ARGS) THROWS FILENOTFOUNDEXCEPTION, IOEXCEPTION
+    {
+        BOOLEAN DONE = FALSE;
+        SCANNER SCANNER = NEW SCANNER(SYSTEM.IN);
+        SYSTEM.OUT.PRINT("ENTER INPUT FILENAME: ");
+        STRING INFILE = SCANNER.NEXTLINE();
+        INPUTSTREAM INPUTSTREAM = NEW FILEINPUTSTREAM(INFILE);
+        SYSTEM.OUT.PRINT("ENTER OUTPUT FILENAME: ");
+        STRING OUTFILE = SCANNER.NEXTLINE();
+        OUTPUTSTREAM OUTPUTSTREAM = NEW FILEOUTPUTSTREAM(OUTFILE);
+        
+        WHILE (!DONE)
+        {
+            INT NEXTCHAR = INPUTSTREAM.READ();
+            IF (NEXTCHAR == -1)
+            {
+                DONE = TRUE;
+            }
+            ELSE
+            {
+                BYTE C = (BYTE)NEXTCHAR;
+                IF (C > 96 && C < 123)
+                    C = (BYTE)(C-32);
+                OUTPUTSTREAM.WRITE(C);
+            }
+        }
+        
+        INPUTSTREAM.CLOSE();
+        OUTPUTSTREAM.CLOSE();
+        SYSTEM.OUT.PRINTLN("GOODBYE!");
+    }
+}

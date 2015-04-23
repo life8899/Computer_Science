@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FE62C06F-9359-4F94-A8E0-BBF73AD11807</string>
+	<key>IDESourceControlProjectName</key>
+	<string>IntroToC</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6E7BCCCEF5CF639F980C73AF39A5478B2B03CAAE</key>
+		<string>https://github.com/nalexander50/Computer-Science.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>300/IntroToC/IntroToC.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6E7BCCCEF5CF639F980C73AF39A5478B2B03CAAE</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nalexander50/Computer-Science.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6E7BCCCEF5CF639F980C73AF39A5478B2B03CAAE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6E7BCCCEF5CF639F980C73AF39A5478B2B03CAAE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Computer-Science</string>
+		</dict>
+	</array>
+</dict>
+</plist>
