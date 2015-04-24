@@ -12,10 +12,6 @@ import com.aliasi.tokenizer.IndoEuropeanTokenizerFactory;
 import com.aliasi.tokenizer.TokenizerFactory;
 
 
-
-/**
- * Created by Nick on 4/9/15.
- */
 public class SentenceExtractor
 {
 	private static final TokenizerFactory tokenFact = IndoEuropeanTokenizerFactory.INSTANCE;
@@ -28,7 +24,7 @@ public class SentenceExtractor
 	public SentenceExtractor(String text)
 	{
 		this.text = text;
-		this.sentenceList = new ArrayList<String>();
+		this.sentenceList = new ArrayList<>();
 	}
 
 	public ArrayList<String> extract()
@@ -41,11 +37,6 @@ public class SentenceExtractor
 			int end = sentence.end();
 			sentenceList.add(slice.substring(start, end));
 		}
-		return this.sentenceList;
-	}
-
-	public ArrayList<String> getSentenceList()
-	{
 		return this.sentenceList;
 	}
 }

@@ -1,11 +1,16 @@
 package textsum;
 
+import util.FileHandler;
+import util.FileMode;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class CosineMatrix {
+
+    private final String matrixPath = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/matrix.txt";
 
     private ArrayList<String> words;
     private ArrayList<String> sentences;
@@ -51,20 +56,18 @@ public class CosineMatrix {
         }
     }
 
-    public void asString() throws IOException
+    public void writeToFile() throws IOException
     {
-    	File outFile = new File("C:\\Users\\Nick\\Developer\\Computer_Science\\Research\\TextSum\\sup\\matrix.txt");
+        FileHandler matrixFileHandler = new FileHandler(matrixPath, FileMode.WRITE);
+    	File outFile = new File(this.matrixPath);
     	FileWriter writer = new FileWriter(outFile);
         for (int wordIndex = 0; wordIndex < this.words.size(); wordIndex++) {
-        	//System.out.println("Word " + (wordIndex + 1) + " - " + this.words.get(wordIndex));
         	writer.write("Word " + (wordIndex + 1) + " - " + this.words.get(wordIndex) + "\n");
             for (int sentenceIndex = 0; sentenceIndex < this.sentences.size(); sentenceIndex++) {
             	if (this.cosineMatrix.get(wordIndex).get(sentenceIndex) == 1) {
-            		//System.out.println("\t" + this.cosineMatrix.get(wordIndex).get(sentenceIndex) + " - Sentence " + (sentenceIndex + 1));
             		writer.write("\t" + this.cosineMatrix.get(wordIndex).get(sentenceIndex) + " - Sentence " + (sentenceIndex + 1) + ": " + this.sentences.get(sentenceIndex) + "\n");
             	}
             }
-            //System.out.println();
             writer.write("\n");
         }
         writer.close();
