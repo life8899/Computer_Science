@@ -13,11 +13,13 @@ public class FileHandler {
 
     private File outFile;
     private FileMode mode;
+	private boolean initializedForWriting;
 
-    public FileHandler(File outFile, FileMode mode)
+    public FileHandler(File outFile, FileMode mode) throws IOException
     {
         this.outFile = outFile;
         this.mode = mode;
+	    this.initializedForWriting = false;
     }
 
     public FileHandler(String outFilePath, FileMode mode)
@@ -32,12 +34,26 @@ public class FileHandler {
         this.mode = mode;
     }
 
-    public boolean initFile() throws IOException
+    public boolean initFileForWriting() throws IOException
     {
-        if (this.outFile.exists()) {
-            this.outFile.delete();
+	    boolean initialized = false;
+	    if (this.mode != FileMode.READ) {
+		    if (this.mode == FileMode.DELETE_BEFORE_APPEND) {
+			    if (this.outFile.exists()) {
+				    if (this.outFile.delete()) {
+					    initialized = this.outFile.createNewFile();
+				    }
+			    } else {
+				    initialized = this.outFile.createNewFile();
+			    }
+		    } else if (this.mode == FileMode.APPEND) {
+			    initialized = this.outFile.exists() || this.outFile.createNewFile();
+		    }
+	    } else {
+		    throw new IOException("Cannot Write to a File with FileMode READ");
         }
-        return this.outFile.createNewFile();
+	    this.initializedForWriting = initialized;
+	    return initialized;
     }
 
     public List<Path> readPathsFromDirectory() throws IOException
@@ -62,29 +78,24 @@ public class FileHandler {
         return Files.readAllLines(this.outFile.toPath());
     }
 
-    public void writeStringToFile(String str) throws IOException
+    public void writeStringToFile(String str, boolean addNewLine) throws IOException
     {
-        if (this.mode != FileMode.READ) {
-            if (this.initFile()) {
-                FileWriter fileWriter;
-                if (this.mode == FileMode.APPEND)
-                    fileWriter = new FileWriter(outFile.getAbsolutePath(), true);
-                else
-                    fileWriter = new FileWriter(outFile.getAbsolutePath());
-                fileWriter.write(str);
-                fileWriter.close();
-            } else {
-                throw new IOException("IO Error: The file could not be initialized.");
-            }
-        } else {
-            throw new IOException("Cannot write to a file with the mode FileMode.READ");
-        }
+		if (this.initializedForWriting) {
+			FileWriter fileWriter;
+			fileWriter = new FileWriter(this.outFile, true);
+			fileWriter.write(str);
+			if (addNewLine)
+				fileWriter.write("\n");
+			fileWriter.close();
+		} else {
+			throw new IOException("The FileHandler is not initialized for writing");
+		}
     }
 
-    public void writeListToFile(List<String> strings, boolean separateByNewLine) throws IOException
+    public void writeListToFile(List<String> strings, boolean addNewLine) throws IOException
     {
-        for (String str : strings) {
-            this.writeStringToFile((separateByNewLine) ? (str + "\n\n") : str);
-        }
+	    for (String string : strings) {
+		    this.writeStringToFile(string, addNewLine);
+	    }
     }
 }

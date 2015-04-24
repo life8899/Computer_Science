@@ -4,6 +4,7 @@ import com.aliasi.tokenizer.IndoEuropeanTokenizerFactory;
 import com.aliasi.tokenizer.LowerCaseTokenizerFactory;
 import com.aliasi.tokenizer.PorterStemmerTokenizerFactory;
 import com.aliasi.tokenizer.StopTokenizerFactory;
+import util.StringHandler;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -35,14 +36,12 @@ public class FrequencyAnalyzer
 	{
 		HashMap<String, Integer> map = new HashMap<>();
 		for (String word : this.wordsAfterStemming) {
-			try {
-				Double.parseDouble(word);
-			} catch (NumberFormatException numFormatEx) {
-				if (map.containsKey(word)) {
+			StringHandler stringHandler = new StringHandler();
+			if (stringHandler.isAlphabetic(word)) {
+				if (map.containsKey(word))
 					map.put(word, map.get(word) + 1);
-				} else {
+				else
 					map.put(word, 1);
-				}
 			}
 		}
 		return map;

@@ -2,15 +2,12 @@ package textsum;
 
 import util.FileHandler;
 import util.FileMode;
+import util.FilePath;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class CosineMatrix {
-
-    private final String matrixPath = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/matrix.txt";
 
     private ArrayList<String> words;
     private ArrayList<String> sentences;
@@ -18,9 +15,9 @@ public class CosineMatrix {
 
     public CosineMatrix()
     {
-        this.words = new ArrayList<String>();
-        this.sentences = new ArrayList<String>();
-        this.cosineMatrix = new ArrayList<ArrayList<Integer>>();
+        this.words = new ArrayList<>();
+        this.sentences = new ArrayList<>();
+        this.cosineMatrix = new ArrayList<>();
     }
 
     public void addWord(String word)
@@ -39,37 +36,46 @@ public class CosineMatrix {
 
     public void buildMatrix()
     {
-        for (int i = 0; i < this.words.size(); i++) {
-            this.cosineMatrix.add(new ArrayList<Integer>());
-        }
-
-        for (int wordIndex = 0; wordIndex < this.words.size(); wordIndex++) {
-            for (int sentenceIndex = 0; sentenceIndex < this.sentences.size(); sentenceIndex++) {
-                String word = this.words.get(wordIndex);
-                String sentence = this.sentences.get(sentenceIndex);
-                if (sentence.contains(word)) {
-                    this.cosineMatrix.get(wordIndex).add(1);
-                } else {
-                    this.cosineMatrix.get(wordIndex).add(0);
-                }
-            }
-        }
+	    for (int i = 0; i < this.sentences.size(); i++) {
+		    this.cosineMatrix.add(new ArrayList<>());
+	    }
+	    for (int sentenceIndex = 0; sentenceIndex < this.sentences.size(); sentenceIndex++) {
+		    String sentence = this.sentences.get(sentenceIndex);
+		    for (String word : this.words) {
+			    if (sentence.contains(word))
+				    this.cosineMatrix.get(sentenceIndex).add(1);
+			    else
+				    this.cosineMatrix.get(sentenceIndex).add(0);
+		    }
+	    }
     }
+
+	public double calculateCosineSimilarity()
+	{
+
+		ArrayList<Double> sims = new ArrayList<>((int)Math.pow(this.cosineMatrix.size(), 2));
+		for (int firstSentenceIndex = 0; firstSentenceIndex < this.cosineMatrix.size(); firstSentenceIndex++) {
+			for (int secondSentenceIndex = 1; secondSentenceIndex < this.cosineMatrix.size(); secondSentenceIndex++) {
+				ArrayList<Integer> firstSentenceValues = this.cosineMatrix.get(firstSentenceIndex);
+				ArrayList<Integer> secondSentenceValues = this.cosineMatrix.get(secondSentenceIndex);
+			}
+		}
+
+		return 0;
+	}
 
     public void writeToFile() throws IOException
     {
-        FileHandler matrixFileHandler = new FileHandler(matrixPath, FileMode.WRITE);
-    	File outFile = new File(this.matrixPath);
-    	FileWriter writer = new FileWriter(outFile);
-        for (int wordIndex = 0; wordIndex < this.words.size(); wordIndex++) {
-        	writer.write("Word " + (wordIndex + 1) + " - " + this.words.get(wordIndex) + "\n");
-            for (int sentenceIndex = 0; sentenceIndex < this.sentences.size(); sentenceIndex++) {
-            	if (this.cosineMatrix.get(wordIndex).get(sentenceIndex) == 1) {
-            		writer.write("\t" + this.cosineMatrix.get(wordIndex).get(sentenceIndex) + " - Sentence " + (sentenceIndex + 1) + ": " + this.sentences.get(sentenceIndex) + "\n");
-            	}
-            }
-            writer.write("\n");
-        }
-        writer.close();
+        FileHandler matrixFileHandler = new FileHandler(FilePath.MATRIX, FileMode.DELETE_BEFORE_APPEND);
+	    matrixFileHandler.initFileForWriting();
+	    for (int wordIndex = 0; wordIndex < words.size(); wordIndex++) {
+		    matrixFileHandler.writeStringToFile("Word " + (wordIndex + 1) + ") " + this.words.get(wordIndex), true);
+		    for (int sentenceIndex = 0; sentenceIndex < this.sentences.size(); sentenceIndex++) {
+			    if (this.cosineMatrix.get(wordIndex).get(sentenceIndex) == 1) {
+				    matrixFileHandler.writeStringToFile("\t" + this.cosineMatrix.get(wordIndex).get(sentenceIndex) + " - Sentence " + (sentenceIndex + 1) + ") " + this.sentences.get(sentenceIndex), true);
+			    }
+		    }
+		    matrixFileHandler.writeStringToFile("\n", false);
+	    }
     }
 }
