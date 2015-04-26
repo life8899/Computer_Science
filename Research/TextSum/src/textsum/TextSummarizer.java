@@ -4,10 +4,12 @@ import com.aliasi.util.CollectionUtils;
 
 import util.*;
 
+import java.awt.*;
 import java.io.IOException;
-import java.nio.file.Path;
+import java.nio.file.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import com.aliasi.tokenizer.IndoEuropeanTokenizerFactory;
@@ -23,16 +25,13 @@ public class TextSummarizer
 	public static void main(String[] args) throws IOException
 	{
 		System.out.println("Starting at " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));
-		FileHandler documentsDirectoryFileHandler = new FileHandler(FilePath.DOCUMENTS_DIRECTORY, FileMode.READ);
-		List<Path> documentPaths = documentsDirectoryFileHandler.readPathsFromDirectory();
-		FileHandler stopListFileHandler = new FileHandler(FilePath.STOP_WORDS_LIST, FileMode.READ);
+		List<Path> documentPaths = FileHandler.getPathsInDirectory(Paths.get(FilePath.DOCUMENTS_DIRECTORY));
 		Set<String> stopSet = CollectionUtils.asSet("");
-		stopSet.addAll(stopListFileHandler.readFileAsList().stream().collect(Collectors.toList()));
+		stopSet.addAll(FileHandler.readFileAsList(Paths.get(FilePath.STOP_WORDS_LIST)));
 		FrequencyAnalyzer[] analyzers = new FrequencyAnalyzer[documentPaths.size()];
 		HashMap<String, Integer> aggregateFrequencyMap = new HashMap<>();
 		for (int i = 0; i < documentPaths.size(); i++) {
-			FileHandler documentFileHandler = new FileHandler(documentPaths.get(i), FileMode.READ);
-			String docString = documentFileHandler.readFileAsString();
+			String docString = FileHandler.readFileAsString(documentPaths.get(i));
 			analyzers[i] = new FrequencyAnalyzer(docString, stopSet);
 			HashMap<String, Integer> freqTok = analyzers[i].getFrequentTokens();
 			for (String key : freqTok.keySet()) {
@@ -74,9 +73,8 @@ public class TextSummarizer
 
 		ArrayList<String> interestingSentences = new ArrayList<>();
 		for (Path documentPath : documentPaths) {
-			String docString = new FileHandler(documentPath.toFile(), FileMode.READ).readFileAsString();
-			SentenceExtractor extractor = new SentenceExtractor(docString);
-			ArrayList<String> sentences = extractor.extract();
+			SentenceExtractor extractor = new SentenceExtractor(FileHandler.readFileAsString(documentPath));
+					ArrayList < String > sentences = extractor.extract();
 			for (String frequentTerm : frequentTerms) {
 				interestingSentences.addAll(sentences.stream().filter(sentence -> sentence.contains(frequentTerm)).collect(Collectors.toList()));
 			}
@@ -135,21 +133,37 @@ public class TextSummarizer
 
 		System.out.println("Built Cosine Matrix");
 
-		matrix.calculateCosineSimilarity();
+		System.out.println("Starting Calculation at " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));
+		TreeMap<SentencePoint, Double> similarities = matrix.calculateCosineSimilarities();
+		System.out.println("Finished Calculation at " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));
 
-		/**matrix.writeToFile();
+		System.out.println("Calculated All Cosine Similarities");
 
-		System.out.println("Wrote Matrix to File");
+		List<String> strings = new ArrayList<>();
+		similarities.keySet().stream().forEach(point -> {
+			strings.add("Sentence (" + point.getX() + ", " + point.getY() + ") = " + similarities.get(point));
+		});
 
-		FileHandler sentencesFileHandler = new FileHandler(FilePath.INTERESTING_SENTENCES, FileMode.DELETE_BEFORE_APPEND);
-		if (sentencesFileHandler.initFileForWriting())
-			sentencesFileHandler.writeListToFile(moreInterestingSentences, true);
-		System.out.println("Wrote Sentences to File");*/
+		FileHandler.writeList(Paths.get(FilePath.COSINE_SIMILARITIES), strings);
+
+		System.out.println("Wrote Cosine Similarities to File");
+
+		String matrixAsString = matrix.toString();
+
+		System.out.println("Built Matrix String");
+
+		FileHandler.writeString(Paths.get(FilePath.MATRIX), matrixAsString);
+
+		System.out.println("Wrote Matrix String to File");
+
+		FileHandler.writeList(Paths.get(FilePath.INTERESTING_SENTENCES), moreInterestingSentences);
+
+		System.out.println("Wrote Sentences to File");
 
 		System.out.println("All Done at " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));
 	}
 
-	private static void showBarGraphOfFrequencies(List<String> words, List<Integer> freqs)
+	private static void showBarGraphOfFrequencies(List<String> words, List<Integer> frequencies)
 	{
 		int maxLen = 0;
 		for (String word : words) {
@@ -163,7 +177,7 @@ public class TextSummarizer
 				word += " ";
 			}
 			System.out.print(word + " |");
-			int freq = freqs.get(i);
+			int freq = frequencies.get(i);
 			for (int k = 0; k < freq; k++) {
 				System.out.print("-");
 			}

@@ -1,52 +1,46 @@
 package textsum;
 
-import util.FileHandler;
-import util.FileMode;
-import util.FilePath;
 import util.MathHelper;
+import util.SentencePoint;
 
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.TreeMap;
 
 public class CosineMatrix {
 
-    private ArrayList<String> words;
-    private ArrayList<String> sentences;
+    private ArrayList<String> wordsList;
+    private ArrayList<String> sentencesList;
     private ArrayList<ArrayList<Integer>> cosineMatrix;
 
     public CosineMatrix()
     {
-        this.words = new ArrayList<>();
-        this.sentences = new ArrayList<>();
+        this.wordsList = new ArrayList<>();
+        this.sentencesList = new ArrayList<>();
         this.cosineMatrix = new ArrayList<>();
     }
 
     public void addWord(String word)
     {
-        if (!this.words.contains(word)) {
-            this.words.add(word);
+        if (!this.wordsList.contains(word)) {
+            this.wordsList.add(word);
         }
     }
 
     public void addSentence(String sentence)
     {
-        if (!this.sentences.contains(sentence)) {
-            this.sentences.add(sentence);
+        if (!this.sentencesList.contains(sentence)) {
+            this.sentencesList.add(sentence);
         }
     }
 
     public void buildMatrix()
     {
-	    for (int i = 0; i < this.sentences.size(); i++) {
+	    for (int i = 0; i < this.sentencesList.size(); i++) {
 		    this.cosineMatrix.add(new ArrayList<>());
 	    }
-	    for (int sentenceIndex = 0; sentenceIndex < this.sentences.size(); sentenceIndex++) {
-		    String sentence = this.sentences.get(sentenceIndex);
-		    for (String word : this.words) {
+	    for (int sentenceIndex = 0; sentenceIndex < this.sentencesList.size(); sentenceIndex++) {
+		    String sentence = this.sentencesList.get(sentenceIndex);
+		    for (String word : this.wordsList) {
 			    if (sentence.contains(word))
 				    this.cosineMatrix.get(sentenceIndex).add(1);
 			    else
@@ -55,41 +49,42 @@ public class CosineMatrix {
 	    }
     }
 
-	public double calculateCosineSimilarity()
+	public TreeMap<SentencePoint, Double> calculateCosineSimilarities()
 	{
-
-		//ArrayList<Double> sims = new ArrayList<>((int)Math.pow(this.cosineMatrix.size(), 2));
+		TreeMap<SentencePoint, Double> similarities = new TreeMap<>();
 		for (int firstSentenceIndex = 0; firstSentenceIndex < this.cosineMatrix.size(); firstSentenceIndex++) {
-			for (int secondSentenceIndex = 1; secondSentenceIndex < this.cosineMatrix.size(); secondSentenceIndex++) {
-				ArrayList<Integer> firstSentenceValues = new ArrayList<>();
-				this.cosineMatrix.get(firstSentenceIndex).stream().forEach(i -> firstSentenceValues.add(i));
+			if (firstSentenceIndex % 500 == 0 || firstSentenceIndex > (this.cosineMatrix.size() * 0.95))
+				System.out.println("First Sentence Index: " + firstSentenceIndex + " / " + this.cosineMatrix.size());
+			ArrayList<Integer> firstSentenceValues = new ArrayList<>();
+			this.cosineMatrix.get(firstSentenceIndex).stream().forEach(firstSentenceValues::add);
+			for (int secondSentenceIndex = firstSentenceIndex+1; secondSentenceIndex < this.cosineMatrix.size(); secondSentenceIndex++) {
+				if (similarities.containsKey(new SentencePoint(firstSentenceIndex, secondSentenceIndex)) || similarities.containsKey(new SentencePoint(secondSentenceIndex, firstSentenceIndex))) {
+					System.out.println("Skipping");
+					continue;
+				}
 				ArrayList<Integer> secondSentenceValues = new ArrayList<>();
-				this.cosineMatrix.get(secondSentenceIndex).stream().forEach(i -> secondSentenceValues.add(i));
-				//System.out.println(firstSentenceValues);
-				//System.out.println(secondSentenceValues);
+				this.cosineMatrix.get(secondSentenceIndex).stream().forEach(secondSentenceValues::add);
 				double sim = MathHelper.dotProduct(firstSentenceValues, secondSentenceValues) / (MathHelper.magnitude(firstSentenceValues) * MathHelper.magnitude(secondSentenceValues));
-				//sims.add();
+				SentencePoint sentences = new SentencePoint(firstSentenceIndex, secondSentenceIndex);
+				similarities.put(sentences, sim);
 			}
 		}
-		return 0;
+		return similarities;
 	}
 
     public String toString()
     {
 		String asString = "";
-
-        //FileHandler matrixFileHandler = new FileHandler(FilePath.MATRIX, FileMode.DELETE_BEFORE_APPEND);
-	    //matrixFileHandler.initFileForWriting();
-	    for (int wordIndex = 0; wordIndex < words.size(); wordIndex++) {
-		    //matrixFileHandler.writeStringToFile("Word " + (wordIndex + 1) + ") " + this.words.get(wordIndex), true);
-			asString += "Word " + (wordIndex + 1) + ") " + this.words.get(wordIndex) + "\n";
-		    for (int sentenceIndex = 0; sentenceIndex < this.sentences.size(); sentenceIndex++) {
+	    for (int wordIndex = 0; wordIndex < wordsList.size(); wordIndex++) {
+			if (wordIndex % 500 == 0 || wordIndex >= wordsList.size() * 0.95) {
+				System.out.println("Word Index: " + wordIndex + " / " + wordsList.size());
+			}
+			asString += "Word " + (wordIndex + 1) + ") " + this.wordsList.get(wordIndex) + "\n";
+		    for (int sentenceIndex = 0; sentenceIndex < this.sentencesList.size(); sentenceIndex++) {
 			    if (this.cosineMatrix.get(wordIndex).get(sentenceIndex) == 1) {
-				    //matrixFileHandler.writeStringToFile("\t" + this.cosineMatrix.get(wordIndex).get(sentenceIndex) + " - Sentence " + (sentenceIndex + 1) + ") " + this.sentences.get(sentenceIndex), true);
-					asString += "\t" + this.cosineMatrix.get(wordIndex).get(sentenceIndex) + " - Sentence " + (sentenceIndex + 1) + ") " + this.sentences.get(sentenceIndex);
+					asString += "\t" + this.cosineMatrix.get(wordIndex).get(sentenceIndex) + " - Sentence " + (sentenceIndex + 1) + ") " + this.sentencesList.get(sentenceIndex);
 			    }
 		    }
-		    //matrixFileHandler.writeStringToFile("\n", false);
 	    }
 		return asString;
     }

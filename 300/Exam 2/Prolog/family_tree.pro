@@ -35,12 +35,11 @@ wifeof(Wife, Husband) :-
 
 % sibling(child, child) %
 siblingof(Child1, Child2) :-
+    Child1 \= Child2,
     fatherof(Father, Child1),
-    fatherof(Father, Child2),
-    Child1 \= Child2;
+    fatherof(Father, Child2);
     motherof(Mother, Child1),
-    motherof(Mother, Child2),
-    Child1 \= Child2.
+    motherof(Mother, Child2).
 
 % grandparentof(grandparent, child) % 
 grandparentof(Grandparent, Child) :-
