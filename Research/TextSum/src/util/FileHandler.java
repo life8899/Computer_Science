@@ -26,11 +26,11 @@ public class FileHandler
 
     public static void writeString(Path filePath, String string) throws IOException
     {
-        Files.write(filePath, string.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+        Files.write(filePath, string.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
     }
 
     public static void writeList(Path filePath, List<String> list) throws IOException
     {
-        Files.write(filePath, list, StandardOpenOption.CREATE_NEW);
+        Files.write(filePath, list, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE);
     }
 }

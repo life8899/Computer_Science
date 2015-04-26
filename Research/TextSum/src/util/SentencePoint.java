@@ -13,6 +13,12 @@ public class SentencePoint implements Comparator<SentencePoint>, Comparable<Sent
         this.y = y;
     }
 
+    public SentencePoint reciprocal()
+    {
+        //noinspection SuspiciousNameCombination
+        return new SentencePoint(this.y, this.x);
+    }
+
     public int getX()
     {
         return this.x;
@@ -28,11 +34,13 @@ public class SentencePoint implements Comparator<SentencePoint>, Comparable<Sent
         return "(" + this.x + ", " + this.y + ")";
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public int compareTo(SentencePoint p2)
     {
-        int compare = 0;
+        int compare;
         int xCompVal = Integer.compare(this.x, p2.getX());
+        //noinspection SuspiciousNameCombination
         int yCompVal = Integer.compare(this.y, p2.getY());
         if (xCompVal == 0 && yCompVal == 0) {
             compare = 0;
@@ -47,7 +55,7 @@ public class SentencePoint implements Comparator<SentencePoint>, Comparable<Sent
     @Override
     public int compare(SentencePoint p1, SentencePoint p2)
     {
-        int compare = 0;
+        int compare;
         int xCompVal = Integer.compare(p1.getX(), p2.getX());
         int yCompVal = Integer.compare(p1.getY(), p2.getY());
         if (xCompVal == 0 && yCompVal == 0) {
@@ -62,10 +70,12 @@ public class SentencePoint implements Comparator<SentencePoint>, Comparable<Sent
 
     @Override
     public boolean equals(Object obj) {
-        SentencePoint p2 = (SentencePoint)obj;
-        if (this.x == p2.getX() && this.y == p2.getY())
-            return true;
-        else
+        if (obj == null)
             return false;
+        if (obj instanceof SentencePoint) {
+            SentencePoint p2 = (SentencePoint) obj;
+            return this.x == p2.getX() && this.y == p2.getY();
+        }
+        return false;
     }
 }
