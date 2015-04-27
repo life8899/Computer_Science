@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+% \usepackage[lucidasmallscale, nofontinfo]{lucimatx}
+%\usepackage{helvet}
+%\usepackage{palatino}
+
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{pifont}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage[margin=1.3in]{geometry}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+  \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\usepackage[colorlinks=true,linkcolor=webgreen,filecolor=webbrown,citecolor=webgreen]{hyperref}
+
+
+\title{CS-410: Database Engineering \\ Medium-stakes Assignment: Data Modeling and Relational Mapping}
+\author{Your name goes here}
+
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+
+\section{Relational Schema Design Quality Assessment} \label{sec:qualitative}
+
+
+\begin{dingautolist}{172}
+
+\item \textbf{Clear semantics}: 
+
+    Your answer goes here.
+
+\item \textbf{Redundant information and update anomalies}: 
+
+    Your answer goes here.
+
+\item \textbf{NULL values in tuples}: 
+
+    Your answer goes here.
+
+\item \textbf{Generation of spurious tuples}: 
+
+    Your answer goes here.
+
+\end{dingautolist}
+
+\section{Identifying Functional Dependencies} \label{sec:fds}
+
+    Your answer goes here.
+
+\section{Logical Database Design} \label{sec:logical}
+
+    Your answer goes here.
+
+\section{Physical Database Design} \label{sec:physical}
+
+    Your answer goes here.
+
+
+
+\begin{landscape}
+
+\section{Rubric} \label{sec:Rubric}
+
+Use the following rubric to evaluate your response to this assignment.
+
+\vspace*{0.15in}
+
+\begin{tabular}{p{1.2in}p{1.5in}p{1.5in}p{1.5in}p{1.5in}} \toprule
+\multicolumn{1}{r}{\emph{Perf Level}} & \multicolumn{1}{c}{\emph{Outstanding}} & \multicolumn{1}{c}{\emph{Good}} & \multicolumn{1}{c}{\emph{Fair}} & \multicolumn{1}{c}{\emph{Poor}} \\ 
+\multicolumn{1}{c}{\emph{Trait}} & & & & \\ \midrule
+
+
+\emph{Qualitative Assessment of Initial Relational Model} &
+The relational model is qualitatively evaluated along the following dimensions: clear semantics, redundant information and update anomalies, NULL values, and generation of spurious tuples. The evaluation is clearly and concisely documented using appropriate technical vocabulary. &
+The relational model is qualitatively evaluated using only a subset of the following dimensions: clear semantics, redundant information and update anomalies, NULL values, and generation of spurious tuples. The evaluation is clearly and concisely documented using appropriate technical vocabulary. &
+The relational model is qualitatively evaluated using only a subset of the following dimensions: clear semantics, redundant information and update anomalies, NULL values, and generation of spurious tuples. The evaluation is not clearly and concisely documented using appropriate technical vocabulary. &
+There is no evidence of systematic evaluation and its precise documentation. \\ \midrule
+
+\emph{Identification of Functional Dependencies (FDs)} &
+Clearly documented evidence is provided to assure that the identified FDs accurately reflect the true characteristics of the real-world data, and are not based on sample data. The FDs are documented using the standard notation. &
+There is no clearly documented evidence to assure that the identified FDs accurately reflect the true characteristics of the real-world data, and are not based on sample data. The FDs are documented using the standard notation. &
+There is no documented evidence to assure that the identified FDs accurately reflect the true characteristics of the real-world data, and are not based on sample data. However, the FDs are documented using the standard notation. &
+here is no documented evidence to assure that the identified FDs accurately reflect the true characteristics of the real-world data, and are not based on sample data. Also, the FDs are not documented using the standard notation. \\ \bottomrule
+
+\end{tabular}
+
+
+\newpage
+
+\begin{tabular}{p{1.2in}p{1.5in}p{1.5in}p{1.5in}p{1.5in}} \toprule
+\multicolumn{1}{r}{\emph{Perf Level}} & \multicolumn{1}{c}{\emph{Outstanding}} & \multicolumn{1}{c}{\emph{Good}} & \multicolumn{1}{c}{\emph{Fair}} & \multicolumn{1}{c}{\emph{Poor}} \\ 
+\multicolumn{1}{c}{\emph{Trait}} & & & & \\ \midrule
+
+\emph{Logical Database Design} &
+
+Documented evidence assures that the Database Design (DBD) tool is correctly used to decompose relations so that the resulting relations are all in 3NF or BCNF. Final schema documentation includes primary and foreign keys for each relation. &
+Documented evidence assures that the Database Design (DBD) tool is correctly used to decompose relations so that the resulting relations are all in 3NF or BCNF. However, the final schema documentation does not include primary and foreign keys for all the relations. &
+There is no documentation to assure that the Database Design (DBD) tool is correctly used to decompose relations so that the resulting relations are all in 3NF or BCNF. However, the final schema documentation includes primary and foreign keys for some relations. &
+The Database Design (DBD) tool is not used to decompose relations so that the resulting relations are all in 3NF or BCNF. It appears that the relations are decomposed using intuition or some other undocumented means. The final schema documentation includes primary and foreign keys for some relations. \\ \midrule
+
+\emph{Physical Database Design} & 
+All database queries and transactions including their peak frequencies and volumes are correctly identified and documented. Storage structures and access paths for each relation are identified and specified accurately. &
+Over 75\% of database queries and transactions including their peak frequencies and volumes are correctly identified and documented. Storage structures and access paths for most relations are identified and specified accurately. &
+Over 50\% of database queries and transactions including their peak frequencies and volumes are correctly identified and documented. Storage structures and access paths for some relations are identified and specified. &
+For only about 25\% of database queries and transactions including their peak frequencies and volumes are  identified and documented. Storage structures and access paths for some relations are identified and specified. \\ \bottomrule 
+
+\end{tabular}
+
+
+\end{landscape}
+
+\section{Self-assessment}
+
+Use the following table and the rubric of section~\ref{sec:Rubric} to score your solution. Circle the appropriate number in each row. For example, to circle 20, use the \LaTeX{} markup code \verb+\circled{20}+, which produces \circled{20}.
+
+\vspace*{0.2in}
+
+\begin{tabular}{lcccc} \\ \toprule
+\multicolumn{1}{r}{\emph{Perf Level}} & \emph{Outstanding} & \emph{Good} & \emph{Fair} & \emph{Poor} \\ 
+\emph{Trait} & & & & \\ \toprule
+
+
+\emph{Qualitative Assessment of Initial Relational Model} &  20 & 15 & 10 & 5 \\ \bottomrule
+
+
+\emph{Identification of Functional Dependencies (FDs)} &  20 & 15 & 10 & 5 \\ \midrule
+
+
+\emph{Logical Database Design} & 30  &  20  & 10  & 5 \\ \midrule
+
+
+\emph{Physical Database Design} & 30  &  20  & 10  & 5 \\ \midrule
+
+\end{tabular}
+
+
+
+\section{Submission}
+
+Use the \LaTeX{}\ template to generate your solution in PDF format. Upload the PDF file to the muOnline system.
+
+
+\end{document}
