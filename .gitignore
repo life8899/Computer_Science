@@ -5,3 +5,6 @@
 *.pyc
 *.synctex.gz
 *.aux
+*.toc
+*.out
+*.log

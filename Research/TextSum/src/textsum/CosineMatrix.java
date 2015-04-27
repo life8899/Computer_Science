@@ -4,7 +4,7 @@ import util.MathHelper;
 import util.SentencePoint;
 
 import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.HashMap;
 
 public class CosineMatrix {
 
@@ -49,11 +49,11 @@ public class CosineMatrix {
 	    }
     }
 
-	public TreeMap<SentencePoint, Double> calculateCosineSimilarities()
+	public HashMap<SentencePoint, Double> calculateCosineSimilarities()
 	{
-		TreeMap<SentencePoint, Double> similarities = new TreeMap<>();
+		HashMap<SentencePoint, Double> similarities = new HashMap<>();
 		for (int firstSentenceIndex = 0; firstSentenceIndex < this.cosineMatrix.size(); firstSentenceIndex++) {
-			if (firstSentenceIndex % 500 == 0 || firstSentenceIndex > (this.cosineMatrix.size() * 0.95))
+			if (firstSentenceIndex % 500 == 0)
 				System.out.println("First Sentence Index: " + firstSentenceIndex + " / " + this.cosineMatrix.size());
 			ArrayList<Integer> firstSentenceValues = new ArrayList<>();
 			this.cosineMatrix.get(firstSentenceIndex).stream().forEach(firstSentenceValues::add);
@@ -70,6 +70,14 @@ public class CosineMatrix {
 			}
 		}
 		return similarities;
+	}
+
+	public String[] getSentencesAtPoint(SentencePoint point)
+	{
+		String[] sentences = new String[2];
+		sentences[0] = this.sentencesList.get(point.getX());
+		sentences[1] = this.sentencesList.get(point.getY());
+		return sentences;
 	}
 
     public String toString()
