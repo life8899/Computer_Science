@@ -50,5 +50,20 @@ grandparentof(Grandparent, Child) :-
 
 % uncleof(uncle, child) %
 uncleof(Uncle, Child) :-
-    fatherof(Father, Child), siblingof(Father, Uncle), male(Uncle) ;
+    fatherof(Father, Child), siblingof(Father, Uncle), male(Uncle) ,
+    Father \= Uncle ;
     motherof(Mother, Child), siblingof(Mother, Uncle), male(Uncle) .
+
+% auntof(aunt, child) %
+auntof(Aunt, Child) :-
+    motherof(Mother, Child), siblingof(Mother, Aunt), female(Aunt) ,
+    Mother \= Aunt ;
+    fatherof(Father, Child), siblingof(Father, Aunt), female(Aunt) .
+
+nephewof(Nephew, Person) :-
+    uncleof(Person, Nephew), male(Nephew) ;
+    auntof(Person, Nephew), male(Nephew) .
+
+nieceof(Niece, Person) :-
+    uncleof(Person, Niece), female(Niece) ;
+    auntof(Person, Niece), female(Niece) .
