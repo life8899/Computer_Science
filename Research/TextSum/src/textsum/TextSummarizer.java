@@ -5,6 +5,7 @@ import com.aliasi.util.CollectionUtils;
 import util.*;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.file.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -160,12 +161,37 @@ public class TextSummarizer
 			counter++;
 		}
 
-		System.out.println("Created Summary");
+		System.out.println("Created Summary\n");
 
 		FileHandler.writeString(Paths.get(FilePath.SUMMARY), summary);
 
-		System.out.println("Wrote Summary to File");
+		System.out.println("Wrote Summary to File\n");
 
+		List<Path> modelSummariesPath = FileHandler.getPathsInDirectory(Paths.get(FilePath.MODEL_SUMMARIES));
+		List<String> modelSummaries = new ArrayList<String>(modelSummariesPath.size());
+		for (Path modelSummaryPath : modelSummariesPath) {
+			modelSummaries.add(FileHandler.readFileAsString(modelSummaryPath));
+		}
+
+		System.out.println("Read Model Summaries\n");
+
+		SummaryCompare[] compares = new SummaryCompare[modelSummaries.size()];
+		int[] summarySimilarities = new int[modelSummaries.size()];
+		for (int i = 0; i < modelSummaries.size(); i++) {
+			compares[i] = new SummaryCompare(summary, modelSummaries.get(i));
+			summarySimilarities[i] = compares[i].compare();
+		}
+
+		System.out.println("Calculate Summary Similarities\n");
+
+		ArrayList<String> strings = new ArrayList<>(modelSummaries.size());
+		for (int i = 0; i < modelSummaries.size(); i++) {
+			strings.add("Model Summary " + (i+1) + " Similarity = " + summarySimilarities[i] + " / " + compares[i].getModelSummaryWordCount() + " Words");
+		}
+
+		FileHandler.writeList(Paths.get(FilePath.SUMMARY_SIMILARITIES), strings);
+
+		System.out.println("Wrote Summary Similarities to File\n");
 
 		/**List<String> new_strings = new ArrayList<>();
 		for (int index = 0; index < sortedSentencePointsDesc.size(); index++) {
