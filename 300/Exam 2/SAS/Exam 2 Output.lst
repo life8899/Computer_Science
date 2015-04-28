@@ -1,0 +1,1252 @@
+                                           The SAS System           19:15 Monday, April 27, 2015  18
+
+                                       The CONTENTS Procedure
+
+            Data Set Name        WORK.DATA1                    Observations          25
+            Member Type          DATA                          Variables             7
+            Engine               V9                            Indexes               0
+            Created              04/27/2015 19:42:06           Observation Length    48
+            Last Modified        04/27/2015 19:42:06           Deleted Observations  0
+            Protection                                         Compressed            NO
+            Data Set Type                                      Sorted                NO
+            Label
+            Data Representation  WINDOWS_64
+            Encoding             wlatin1  Western (Windows)
+
+
+                                 Engine/Host Dependent Information
+
+Data Set Page Size          65536
+Number of Data Set Pages    1
+First Data Page             1
+Max Obs per Page            1361
+Obs in First Data Page      25
+Number of Data Set Repairs  0
+ExtendObsCounter            YES
+Filename                    C:\Users\ALEXAN~1\AppData\Local\Temp\SAS Temporary
+                            Files\_TD10184_GH206A-11_\data1.sas7bdat
+Release Created             9.0401M2
+Host Created                X64_8PRO
+
+
+                            Alphabetic List of Variables and Attributes
+
+                        #    Variable    Type    Len    Format     Informat
+
+                        4    GPA         Num       8    BEST12.    BEST32.
+                        1    ID          Num       8    BEST12.    BEST32.
+                        5    act         Num       8    BEST12.    BEST32.
+                        2    age         Num       8    BEST12.    BEST32.
+                        6    gender      Char      1    $1.        $1.
+                        3    iq          Num       8    BEST12.    BEST32.
+                        7    state       Char      2    $2.        $2.
+                                           The SAS System           19:15 Monday, April 27, 2015  19
+
+                                       The CONTENTS Procedure
+
+            Data Set Name        WORK.DATA2                    Observations          25
+            Member Type          DATA                          Variables             4
+            Engine               V9                            Indexes               0
+            Created              04/27/2015 19:42:16           Observation Length    24
+            Last Modified        04/27/2015 19:42:16           Deleted Observations  0
+            Protection                                         Compressed            NO
+            Data Set Type                                      Sorted                NO
+            Label
+            Data Representation  WINDOWS_64
+            Encoding             wlatin1  Western (Windows)
+
+
+                                 Engine/Host Dependent Information
+
+Data Set Page Size          65536
+Number of Data Set Pages    1
+First Data Page             1
+Max Obs per Page            2715
+Obs in First Data Page      25
+Number of Data Set Repairs  0
+ExtendObsCounter            YES
+Filename                    C:\Users\ALEXAN~1\AppData\Local\Temp\SAS Temporary
+                            Files\_TD10184_GH206A-11_\data2.sas7bdat
+Release Created             9.0401M2
+Host Created                X64_8PRO
+
+
+                            Alphabetic List of Variables and Attributes
+
+                        #    Variable    Type    Len    Format     Informat
+
+                        1    ID          Num       8    BEST12.    BEST32.
+                        4    Major       Char      6    $6.        $6.
+                        2    Party       Char      3    $3.        $3.
+                        3    Religion    Char      6    $6.        $6.
+                                           The SAS System           19:15 Monday, April 27, 2015  20
+
+                                       The CONTENTS Procedure
+
+            Data Set Name        WORK.DATA1                    Observations          25
+            Member Type          DATA                          Variables             9
+            Engine               V9                            Indexes               0
+            Created              04/27/2015 19:44:03           Observation Length    64
+            Last Modified        04/27/2015 19:44:03           Deleted Observations  0
+            Protection                                         Compressed            NO
+            Data Set Type                                      Sorted                NO
+            Label
+            Data Representation  WINDOWS_64
+            Encoding             wlatin1  Western (Windows)
+
+
+                                 Engine/Host Dependent Information
+
+Data Set Page Size          65536
+Number of Data Set Pages    1
+First Data Page             1
+Max Obs per Page            1021
+Obs in First Data Page      25
+Number of Data Set Repairs  0
+ExtendObsCounter            YES
+Filename                    C:\Users\ALEXAN~1\AppData\Local\Temp\SAS Temporary
+                            Files\_TD10184_GH206A-11_\data1.sas7bdat
+Release Created             9.0401M2
+Host Created                X64_8PRO
+
+
+                            Alphabetic List of Variables and Attributes
+
+                        #    Variable    Type    Len    Format     Informat
+
+                        4    GPA         Num       8    BEST12.    BEST32.
+                        1    ID          Num       8    BEST12.    BEST32.
+                        5    act         Num       8    BEST12.    BEST32.
+                        2    age         Num       8    BEST12.    BEST32.
+                        6    gender      Char      1    $1.        $1.
+                        8    genius      Num       8
+                        9    honors      Num       8
+                        3    iq          Num       8    BEST12.    BEST32.
+                        7    state       Char      2    $2.        $2.
+                                           The SAS System           19:15 Monday, April 27, 2015  21
+
+  Obs           ID          age           iq          GPA          act gender state genius honors
+
+    1            1           22          105  2.415007118           21   f     WV      0      0
+    2            2           24          114  2.348370049           18   f     OH      0      0
+    3            3           23           95  2.750502688           23   m     KY      0      0
+    4            4           24           98  3.987282589           27   m     WV      0      1
+    5            5           24          116  3.469919623           19   m     WV      0      0
+    6            6           23          107  2.293020194           31   m     WV      0      0
+    7            7           19          117  2.234535333           27   m     KY      0      0
+    8            8           21           98  2.144709749           19   f     KY      0      0
+    9            9           24          122  2.982326323           20   m     WV      1      0
+   10           10           21           95  3.336326624           19   f     WV      0      0
+   11           11           24          130  2.470935758           31   f     WV      1      0
+   12           12           22           99  3.064827328           26   m     WV      0      0
+   13           13           24          129  2.027874953           28   f     WV      1      0
+   14           14           22          118  3.943585022           18   f     OH      0      0
+   15           15           22          121  2.064324599           30   m     OH      1      0
+   16           16           23          101  2.728892082           19   f     KY      0      0
+   17           17           21           96  2.856397351           18   f     WV      0      0
+   18           18           19          113  2.419883692           27   f     KY      0      0
+   19           19           23           99  3.383656551           21   m     WV      0      0
+   20           20           22          130  2.160295756           20   m     WV      1      0
+   21           21           19           95  3.973352192           27   m     OH      0      1
+   22           22           22          114  3.315672726           25   f     WV      0      1
+   23           23           22           98  3.367390253           29   f     WV      0      1
+   24           24           23          129  2.751491361           31   f     OH      1      0
+   25           25           21          117  3.528967876           18   m     KY      0      0
+                                           The SAS System           19:15 Monday, April 27, 2015  22
+
+                                       The CONTENTS Procedure
+
+            Data Set Name        WORK.MERGED                   Observations          25
+            Member Type          DATA                          Variables             12
+            Engine               V9                            Indexes               0
+            Created              04/27/2015 19:46:26           Observation Length    80
+            Last Modified        04/27/2015 19:46:26           Deleted Observations  0
+            Protection                                         Compressed            NO
+            Data Set Type                                      Sorted                NO
+            Label
+            Data Representation  WINDOWS_64
+            Encoding             wlatin1  Western (Windows)
+
+
+                                 Engine/Host Dependent Information
+
+Data Set Page Size          65536
+Number of Data Set Pages    1
+First Data Page             1
+Max Obs per Page            817
+Obs in First Data Page      25
+Number of Data Set Repairs  0
+ExtendObsCounter            YES
+Filename                    C:\Users\ALEXAN~1\AppData\Local\Temp\SAS Temporary
+                            Files\_TD10184_GH206A-11_\merged.sas7bdat
+Release Created             9.0401M2
+Host Created                X64_8PRO
+
+
+                             Alphabetic List of Variables and Attributes
+
+                         #    Variable    Type    Len    Format     Informat
+
+                         4    GPA         Num       8    BEST12.    BEST32.
+                         1    ID          Num       8    BEST12.    BEST32.
+                        12    Major       Char      6    $6.        $6.
+                        10    Party       Char      3    $3.        $3.
+                        11    Religion    Char      6    $6.        $6.
+                         5    act         Num       8    BEST12.    BEST32.
+                         2    age         Num       8    BEST12.    BEST32.
+                         6    gender      Char      1    $1.        $1.
+                         8    genius      Num       8
+                         9    honors      Num       8
+                         3    iq          Num       8    BEST12.    BEST32.
+                         7    state       Char      2    $2.        $2.
+                                           The SAS System           19:15 Monday, April 27, 2015  23
+
+                                        The MEANS Procedure
+
+           Variable     N            Mean         Std Dev         Minimum         Maximum
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+           iq          25     110.2400000      12.3904533      95.0000000     130.0000000
+           GPA         25       2.8807819       0.6258845       2.0278750       3.9872826
+           age         25      22.1600000       1.5726835      19.0000000      24.0000000
+           act         25      23.6800000       4.8194052      18.0000000      31.0000000
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                           The SAS System           19:15 Monday, April 27, 2015  24
+
+--------------------------------------------- state=KY ---------------------------------------------
+
+                                        The MEANS Procedure
+
+           Variable     N            Mean         Std Dev         Minimum         Maximum
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+           iq           6     106.8333333       9.9682830      95.0000000     117.0000000
+           GPA          6       2.6345819       0.5036597       2.1447097       3.5289679
+           age          6      21.0000000       1.7888544      19.0000000      23.0000000
+           act          6      22.1666667       4.1190614      18.0000000      27.0000000
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=OH ---------------------------------------------
+
+           Variable     N            Mean         Std Dev         Minimum         Maximum
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+           iq           5     115.4000000      12.6609636      95.0000000     129.0000000
+           GPA          5       3.0162246       0.8941920       2.0643246       3.9733522
+           age          5      22.0000000       1.8708287      19.0000000      24.0000000
+           act          5      24.8000000       6.3796552      18.0000000      31.0000000
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=WV ---------------------------------------------
+
+           Variable     N            Mean         Std Dev         Minimum         Maximum
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+           iq          14     109.8571429      13.4213214      95.0000000     130.0000000
+           GPA         14       2.9379238       0.5840014       2.0278750       3.9872826
+           age         14      22.7142857       1.1387288      21.0000000      24.0000000
+           act         14      23.9285714       4.7143690      18.0000000      31.0000000
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                           The SAS System           19:15 Monday, April 27, 2015  25
+
+                                         The FREQ Procedure
+
+                                                       Cumulative    Cumulative
+                    gender    Frequency     Percent     Frequency      Percent
+                    ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                    f               13       52.00            13        52.00
+                    m               12       48.00            25       100.00
+
+
+                                                       Cumulative    Cumulative
+                     state    Frequency     Percent     Frequency      Percent
+                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                     KY              6       24.00             6        24.00
+                     OH              5       20.00            11        44.00
+                     WV             14       56.00            25       100.00
+
+
+                                                       Cumulative    Cumulative
+                     Party    Frequency     Percent     Frequency      Percent
+                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                     Dem             9       36.00             9        36.00
+                     Ind             3       12.00            12        48.00
+                     Rep            13       52.00            25       100.00
+
+
+                                                       Cumulative    Cumulative
+                    Major     Frequency     Percent     Frequency      Percent
+                    ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                    CS              11       44.00            11        44.00
+                    Eng             11       44.00            22        88.00
+                    Safety           3       12.00            25       100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  26
+
+                                         The FREQ Procedure
+
+                                                       Cumulative    Cumulative
+                     Party    Frequency     Percent     Frequency      Percent
+                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                     Dem             9       36.00             9        36.00
+                     Ind             3       12.00            12        48.00
+                     Rep            13       52.00            25       100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  27
+
+                                         The FREQ Procedure
+
+                                                       Cumulative    Cumulative
+                     state    Frequency     Percent     Frequency      Percent
+                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                     KY              6       24.00             6        24.00
+                     OH              5       20.00            11        44.00
+                     WV             14       56.00            25       100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  28
+
+                                         The FREQ Procedure
+
+                                     Table of gender by genius
+
+                                gender     genius
+
+                                Frequency‚
+                                Percent  ‚
+                                Row Pct  ‚
+                                Col Pct  ‚       0‚       1‚  Total
+                                ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                f        ‚     10 ‚      3 ‚     13
+                                         ‚  40.00 ‚  12.00 ‚  52.00
+                                         ‚  76.92 ‚  23.08 ‚
+                                         ‚  52.63 ‚  50.00 ‚
+                                ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                m        ‚      9 ‚      3 ‚     12
+                                         ‚  36.00 ‚  12.00 ‚  48.00
+                                         ‚  75.00 ‚  25.00 ‚
+                                         ‚  47.37 ‚  50.00 ‚
+                                ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                Total          19        6       25
+                                            76.00    24.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  29
+
+                                         The FREQ Procedure
+
+                                      Table of honors by state
+
+                            honors     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                   0 ‚      6 ‚      4 ‚     11 ‚     21
+                                     ‚  24.00 ‚  16.00 ‚  44.00 ‚  84.00
+                                     ‚  28.57 ‚  19.05 ‚  52.38 ‚
+                                     ‚ 100.00 ‚  80.00 ‚  78.57 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                   1 ‚      0 ‚      1 ‚      3 ‚      4
+                                     ‚   0.00 ‚   4.00 ‚  12.00 ‚  16.00
+                                     ‚   0.00 ‚  25.00 ‚  75.00 ‚
+                                     ‚   0.00 ‚  20.00 ‚  21.43 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  30
+
+                                         The FREQ Procedure
+
+                                      Table of Party by state
+
+                            Party     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Dem      ‚      2 ‚      2 ‚      5 ‚      9
+                                     ‚   8.00 ‚   8.00 ‚  20.00 ‚  36.00
+                                     ‚  22.22 ‚  22.22 ‚  55.56 ‚
+                                     ‚  33.33 ‚  40.00 ‚  35.71 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Ind      ‚      1 ‚      0 ‚      2 ‚      3
+                                     ‚   4.00 ‚   0.00 ‚   8.00 ‚  12.00
+                                     ‚  33.33 ‚   0.00 ‚  66.67 ‚
+                                     ‚  16.67 ‚   0.00 ‚  14.29 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Rep      ‚      3 ‚      3 ‚      7 ‚     13
+                                     ‚  12.00 ‚  12.00 ‚  28.00 ‚  52.00
+                                     ‚  23.08 ‚  23.08 ‚  53.85 ‚
+                                     ‚  50.00 ‚  60.00 ‚  50.00 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  31
+
+                                       The CONTENTS Procedure
+
+            Data Set Name        WORK.DATA1                    Observations          25
+            Member Type          DATA                          Variables             9
+            Engine               V9                            Indexes               0
+            Created              04/27/2015 19:49:44           Observation Length    64
+            Last Modified        04/27/2015 19:49:44           Deleted Observations  0
+            Protection                                         Compressed            NO
+            Data Set Type                                      Sorted                YES
+            Label
+            Data Representation  WINDOWS_64
+            Encoding             wlatin1  Western (Windows)
+
+
+                                 Engine/Host Dependent Information
+
+Data Set Page Size          65536
+Number of Data Set Pages    1
+First Data Page             1
+Max Obs per Page            1021
+Obs in First Data Page      25
+Number of Data Set Repairs  0
+ExtendObsCounter            YES
+Filename                    C:\Users\ALEXAN~1\AppData\Local\Temp\SAS Temporary
+                            Files\_TD10184_GH206A-11_\data1.sas7bdat
+Release Created             9.0401M2
+Host Created                X64_8PRO
+
+
+                            Alphabetic List of Variables and Attributes
+
+                        #    Variable    Type    Len    Format     Informat
+
+                        4    GPA         Num       8    BEST12.    BEST32.
+                        1    ID          Num       8    BEST12.    BEST32.
+                        5    act         Num       8    BEST12.    BEST32.
+                        2    age         Num       8    BEST12.    BEST32.
+                        6    gender      Char      1    $1.        $1.
+                        8    genius      Num       8
+                        9    honors      Num       8
+                        3    iq          Num       8    BEST12.    BEST32.
+                        7    state       Char      2    $2.        $2.
+
+
+                                          Sort Information
+
+                                        Sortedby       state
+                                        Validated      YES
+                                        Character Set  ANSI
+                                           The SAS System           19:15 Monday, April 27, 2015  32
+
+                                       The CONTENTS Procedure
+
+            Data Set Name        WORK.DATA2                    Observations          25
+            Member Type          DATA                          Variables             4
+            Engine               V9                            Indexes               0
+            Created              04/27/2015 19:46:26           Observation Length    24
+            Last Modified        04/27/2015 19:46:26           Deleted Observations  0
+            Protection                                         Compressed            NO
+            Data Set Type                                      Sorted                YES
+            Label
+            Data Representation  WINDOWS_64
+            Encoding             wlatin1  Western (Windows)
+
+
+                                 Engine/Host Dependent Information
+
+Data Set Page Size          65536
+Number of Data Set Pages    1
+First Data Page             1
+Max Obs per Page            2715
+Obs in First Data Page      25
+Number of Data Set Repairs  0
+ExtendObsCounter            YES
+Filename                    C:\Users\ALEXAN~1\AppData\Local\Temp\SAS Temporary
+                            Files\_TD10184_GH206A-11_\data2.sas7bdat
+Release Created             9.0401M2
+Host Created                X64_8PRO
+
+
+                            Alphabetic List of Variables and Attributes
+
+                        #    Variable    Type    Len    Format     Informat
+
+                        1    ID          Num       8    BEST12.    BEST32.
+                        4    Major       Char      6    $6.        $6.
+                        2    Party       Char      3    $3.        $3.
+                        3    Religion    Char      6    $6.        $6.
+
+
+                                         Sort Information
+
+                                        Sortedby       ID
+                                        Validated      YES
+                                        Character Set  ANSI
+                                           The SAS System           19:15 Monday, April 27, 2015  33
+
+                                       The CONTENTS Procedure
+
+            Data Set Name        WORK.DATA1                    Observations          25
+            Member Type          DATA                          Variables             9
+            Engine               V9                            Indexes               0
+            Created              04/27/2015 19:57:52           Observation Length    64
+            Last Modified        04/27/2015 19:57:52           Deleted Observations  0
+            Protection                                         Compressed            NO
+            Data Set Type                                      Sorted                NO
+            Label
+            Data Representation  WINDOWS_64
+            Encoding             wlatin1  Western (Windows)
+
+
+                                 Engine/Host Dependent Information
+
+Data Set Page Size          65536
+Number of Data Set Pages    1
+First Data Page             1
+Max Obs per Page            1021
+Obs in First Data Page      25
+Number of Data Set Repairs  0
+ExtendObsCounter            YES
+Filename                    C:\Users\ALEXAN~1\AppData\Local\Temp\SAS Temporary
+                            Files\_TD10184_GH206A-11_\data1.sas7bdat
+Release Created             9.0401M2
+Host Created                X64_8PRO
+
+
+                            Alphabetic List of Variables and Attributes
+
+                        #    Variable    Type    Len    Format     Informat
+
+                        4    GPA         Num       8    BEST12.    BEST32.
+                        1    ID          Num       8    BEST12.    BEST32.
+                        5    act         Num       8    BEST12.    BEST32.
+                        2    age         Num       8    BEST12.    BEST32.
+                        6    gender      Char      1    $1.        $1.
+                        8    genius      Num       8
+                        9    honors      Num       8
+                        3    iq          Num       8    BEST12.    BEST32.
+                        7    state       Char      2    $2.        $2.
+                                           The SAS System           19:15 Monday, April 27, 2015  34
+
+  Obs           ID          age           iq          GPA          act gender state genius honors
+
+    1            3           23           95  2.750502688           23   m     KY      0      0
+    2            7           19          117  2.234535333           27   m     KY      0      0
+    3            8           21           98  2.144709749           19   f     KY      0      0
+    4           16           23          101  2.728892082           19   f     KY      0      0
+    5           18           19          113  2.419883692           27   f     KY      0      0
+    6           25           21          117  3.528967876           18   m     KY      0      0
+    7            2           24          114  2.348370049           18   f     OH      0      0
+    8           14           22          118  3.943585022           18   f     OH      0      0
+    9           15           22          121  2.064324599           30   m     OH      1      0
+   10           21           19           95  3.973352192           27   m     OH      0      1
+   11           24           23          129  2.751491361           31   f     OH      1      0
+   12            1           22          105  2.415007118           21   f     WV      0      0
+   13            4           24           98  3.987282589           27   m     WV      0      1
+   14            5           24          116  3.469919623           19   m     WV      0      0
+   15            6           23          107  2.293020194           31   m     WV      0      0
+   16            9           24          122  2.982326323           20   m     WV      1      0
+   17           10           21           95  3.336326624           19   f     WV      0      0
+   18           11           24          130  2.470935758           31   f     WV      1      0
+   19           12           22           99  3.064827328           26   m     WV      0      0
+   20           13           24          129  2.027874953           28   f     WV      1      0
+   21           17           21           96  2.856397351           18   f     WV      0      0
+   22           19           23           99  3.383656551           21   m     WV      0      0
+   23           20           22          130  2.160295756           20   m     WV      1      0
+   24           22           22          114  3.315672726           25   f     WV      0      1
+   25           23           22           98  3.367390253           29   f     WV      0      1
+                                           The SAS System           19:15 Monday, April 27, 2015  35
+
+                                       The CONTENTS Procedure
+
+            Data Set Name        WORK.MERGED                   Observations          25
+            Member Type          DATA                          Variables             12
+            Engine               V9                            Indexes               0
+            Created              04/27/2015 19:57:52           Observation Length    80
+            Last Modified        04/27/2015 19:57:52           Deleted Observations  0
+            Protection                                         Compressed            NO
+            Data Set Type                                      Sorted                NO
+            Label
+            Data Representation  WINDOWS_64
+            Encoding             wlatin1  Western (Windows)
+
+
+                                 Engine/Host Dependent Information
+
+Data Set Page Size          65536
+Number of Data Set Pages    1
+First Data Page             1
+Max Obs per Page            817
+Obs in First Data Page      25
+Number of Data Set Repairs  0
+ExtendObsCounter            YES
+Filename                    C:\Users\ALEXAN~1\AppData\Local\Temp\SAS Temporary
+                            Files\_TD10184_GH206A-11_\merged.sas7bdat
+Release Created             9.0401M2
+Host Created                X64_8PRO
+
+
+                             Alphabetic List of Variables and Attributes
+
+                         #    Variable    Type    Len    Format     Informat
+
+                         4    GPA         Num       8    BEST12.    BEST32.
+                         1    ID          Num       8    BEST12.    BEST32.
+                        12    Major       Char      6    $6.        $6.
+                        10    Party       Char      3    $3.        $3.
+                        11    Religion    Char      6    $6.        $6.
+                         5    act         Num       8    BEST12.    BEST32.
+                         2    age         Num       8    BEST12.    BEST32.
+                         6    gender      Char      1    $1.        $1.
+                         8    genius      Num       8
+                         9    honors      Num       8
+                         3    iq          Num       8    BEST12.    BEST32.
+                         7    state       Char      2    $2.        $2.
+                                           The SAS System           19:15 Monday, April 27, 2015  36
+
+                                        The MEANS Procedure
+
+           Variable     N            Mean         Std Dev         Minimum         Maximum
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+           iq          25     110.2400000      12.3904533      95.0000000     130.0000000
+           GPA         25       2.8807819       0.6258845       2.0278750       3.9872826
+           age         25      22.1600000       1.5726835      19.0000000      24.0000000
+           act         25      23.6800000       4.8194052      18.0000000      31.0000000
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                           The SAS System           19:15 Monday, April 27, 2015  37
+
+--------------------------------------------- state=KY ---------------------------------------------
+
+                                        The MEANS Procedure
+
+           Variable     N            Mean         Std Dev         Minimum         Maximum
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+           iq           6     106.8333333       9.9682830      95.0000000     117.0000000
+           GPA          6       2.6345819       0.5036597       2.1447097       3.5289679
+           age          6      21.0000000       1.7888544      19.0000000      23.0000000
+           act          6      22.1666667       4.1190614      18.0000000      27.0000000
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=OH ---------------------------------------------
+
+           Variable     N            Mean         Std Dev         Minimum         Maximum
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+           iq           5     115.4000000      12.6609636      95.0000000     129.0000000
+           GPA          5       3.0162246       0.8941920       2.0643246       3.9733522
+           age          5      22.0000000       1.8708287      19.0000000      24.0000000
+           act          5      24.8000000       6.3796552      18.0000000      31.0000000
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=WV ---------------------------------------------
+
+           Variable     N            Mean         Std Dev         Minimum         Maximum
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+           iq          14     109.8571429      13.4213214      95.0000000     130.0000000
+           GPA         14       2.9379238       0.5840014       2.0278750       3.9872826
+           age         14      22.7142857       1.1387288      21.0000000      24.0000000
+           act         14      23.9285714       4.7143690      18.0000000      31.0000000
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                           The SAS System           19:15 Monday, April 27, 2015  38
+
+                                         The FREQ Procedure
+
+                                                       Cumulative    Cumulative
+                    gender    Frequency     Percent     Frequency      Percent
+                    ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                    f               13       52.00            13        52.00
+                    m               12       48.00            25       100.00
+
+
+                                                       Cumulative    Cumulative
+                     state    Frequency     Percent     Frequency      Percent
+                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                     KY              6       24.00             6        24.00
+                     OH              5       20.00            11        44.00
+                     WV             14       56.00            25       100.00
+
+
+                                                       Cumulative    Cumulative
+                     Party    Frequency     Percent     Frequency      Percent
+                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                     Dem             9       36.00             9        36.00
+                     Ind             3       12.00            12        48.00
+                     Rep            13       52.00            25       100.00
+
+
+                                                       Cumulative    Cumulative
+                    Major     Frequency     Percent     Frequency      Percent
+                    ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                    CS              11       44.00            11        44.00
+                    Eng             11       44.00            22        88.00
+                    Safety           3       12.00            25       100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  39
+
+                                         The FREQ Procedure
+
+                                                       Cumulative    Cumulative
+                     Party    Frequency     Percent     Frequency      Percent
+                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                     Dem             9       36.00             9        36.00
+                     Ind             3       12.00            12        48.00
+                     Rep            13       52.00            25       100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  40
+
+                                         The FREQ Procedure
+
+                                                       Cumulative    Cumulative
+                     state    Frequency     Percent     Frequency      Percent
+                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                     KY              6       24.00             6        24.00
+                     OH              5       20.00            11        44.00
+                     WV             14       56.00            25       100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  41
+
+                                         The FREQ Procedure
+
+                                     Table of gender by genius
+
+                                gender     genius
+
+                                Frequency‚
+                                Percent  ‚
+                                Row Pct  ‚
+                                Col Pct  ‚       0‚       1‚  Total
+                                ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                f        ‚     10 ‚      3 ‚     13
+                                         ‚  40.00 ‚  12.00 ‚  52.00
+                                         ‚  76.92 ‚  23.08 ‚
+                                         ‚  52.63 ‚  50.00 ‚
+                                ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                m        ‚      9 ‚      3 ‚     12
+                                         ‚  36.00 ‚  12.00 ‚  48.00
+                                         ‚  75.00 ‚  25.00 ‚
+                                         ‚  47.37 ‚  50.00 ‚
+                                ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                Total          19        6       25
+                                            76.00    24.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  42
+
+                                         The FREQ Procedure
+
+                                      Table of honors by state
+
+                            honors     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                   0 ‚      6 ‚      4 ‚     11 ‚     21
+                                     ‚  24.00 ‚  16.00 ‚  44.00 ‚  84.00
+                                     ‚  28.57 ‚  19.05 ‚  52.38 ‚
+                                     ‚ 100.00 ‚  80.00 ‚  78.57 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                   1 ‚      0 ‚      1 ‚      3 ‚      4
+                                     ‚   0.00 ‚   4.00 ‚  12.00 ‚  16.00
+                                     ‚   0.00 ‚  25.00 ‚  75.00 ‚
+                                     ‚   0.00 ‚  20.00 ‚  21.43 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  43
+
+                                         The FREQ Procedure
+
+                                      Table of Party by state
+
+                            Party     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Dem      ‚      2 ‚      2 ‚      5 ‚      9
+                                     ‚   8.00 ‚   8.00 ‚  20.00 ‚  36.00
+                                     ‚  22.22 ‚  22.22 ‚  55.56 ‚
+                                     ‚  33.33 ‚  40.00 ‚  35.71 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Ind      ‚      1 ‚      0 ‚      2 ‚      3
+                                     ‚   4.00 ‚   0.00 ‚   8.00 ‚  12.00
+                                     ‚  33.33 ‚   0.00 ‚  66.67 ‚
+                                     ‚  16.67 ‚   0.00 ‚  14.29 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Rep      ‚      3 ‚      3 ‚      7 ‚     13
+                                     ‚  12.00 ‚  12.00 ‚  28.00 ‚  52.00
+                                     ‚  23.08 ‚  23.08 ‚  53.85 ‚
+                                     ‚  50.00 ‚  60.00 ‚  50.00 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  44
+
+                                         The FREQ Procedure
+
+                                      Table of Party by state
+
+                            Party     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Dem      ‚      2 ‚      2 ‚      5 ‚      9
+                                     ‚   8.00 ‚   8.00 ‚  20.00 ‚  36.00
+                                     ‚  22.22 ‚  22.22 ‚  55.56 ‚
+                                     ‚  33.33 ‚  40.00 ‚  35.71 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Ind      ‚      1 ‚      0 ‚      2 ‚      3
+                                     ‚   4.00 ‚   0.00 ‚   8.00 ‚  12.00
+                                     ‚  33.33 ‚   0.00 ‚  66.67 ‚
+                                     ‚  16.67 ‚   0.00 ‚  14.29 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Rep      ‚      3 ‚      3 ‚      7 ‚     13
+                                     ‚  12.00 ‚  12.00 ‚  28.00 ‚  52.00
+                                     ‚  23.08 ‚  23.08 ‚  53.85 ‚
+                                     ‚  50.00 ‚  60.00 ‚  50.00 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  45
+
+                                         The FREQ Procedure
+
+                                      Table of Party by state
+
+                            Party     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Dem      ‚      2 ‚      2 ‚      5 ‚      9
+                                     ‚   8.00 ‚   8.00 ‚  20.00 ‚  36.00
+                                     ‚  22.22 ‚  22.22 ‚  55.56 ‚
+                                     ‚  33.33 ‚  40.00 ‚  35.71 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Ind      ‚      1 ‚      0 ‚      2 ‚      3
+                                     ‚   4.00 ‚   0.00 ‚   8.00 ‚  12.00
+                                     ‚  33.33 ‚   0.00 ‚  66.67 ‚
+                                     ‚  16.67 ‚   0.00 ‚  14.29 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Rep      ‚      3 ‚      3 ‚      7 ‚     13
+                                     ‚  12.00 ‚  12.00 ‚  28.00 ‚  52.00
+                                     ‚  23.08 ‚  23.08 ‚  53.85 ‚
+                                     ‚  50.00 ‚  60.00 ‚  50.00 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  46
+
+                                         The FREQ Procedure
+
+                                      Table of Party by state
+
+                            Party     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Dem      ‚      2 ‚      2 ‚      5 ‚      9
+                                     ‚   8.00 ‚   8.00 ‚  20.00 ‚  36.00
+                                     ‚  22.22 ‚  22.22 ‚  55.56 ‚
+                                     ‚  33.33 ‚  40.00 ‚  35.71 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Ind      ‚      1 ‚      0 ‚      2 ‚      3
+                                     ‚   4.00 ‚   0.00 ‚   8.00 ‚  12.00
+                                     ‚  33.33 ‚   0.00 ‚  66.67 ‚
+                                     ‚  16.67 ‚   0.00 ‚  14.29 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Rep      ‚      3 ‚      3 ‚      7 ‚     13
+                                     ‚  12.00 ‚  12.00 ‚  28.00 ‚  52.00
+                                     ‚  23.08 ‚  23.08 ‚  53.85 ‚
+                                     ‚  50.00 ‚  60.00 ‚  50.00 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  47
+
+                                         The FREQ Procedure
+
+                                      Table of Party by state
+
+                            Party     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Dem      ‚      2 ‚      2 ‚      5 ‚      9
+                                     ‚   8.00 ‚   8.00 ‚  20.00 ‚  36.00
+                                     ‚  22.22 ‚  22.22 ‚  55.56 ‚
+                                     ‚  33.33 ‚  40.00 ‚  35.71 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Ind      ‚      1 ‚      0 ‚      2 ‚      3
+                                     ‚   4.00 ‚   0.00 ‚   8.00 ‚  12.00
+                                     ‚  33.33 ‚   0.00 ‚  66.67 ‚
+                                     ‚  16.67 ‚   0.00 ‚  14.29 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Rep      ‚      3 ‚      3 ‚      7 ‚     13
+                                     ‚  12.00 ‚  12.00 ‚  28.00 ‚  52.00
+                                     ‚  23.08 ‚  23.08 ‚  53.85 ‚
+                                     ‚  50.00 ‚  60.00 ‚  50.00 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  48
+
+                                         The FREQ Procedure
+
+                                      Table of Party by state
+
+                            Party     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Dem      ‚      2 ‚      2 ‚      5 ‚      9
+                                     ‚   8.00 ‚   8.00 ‚  20.00 ‚  36.00
+                                     ‚  22.22 ‚  22.22 ‚  55.56 ‚
+                                     ‚  33.33 ‚  40.00 ‚  35.71 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Ind      ‚      1 ‚      0 ‚      2 ‚      3
+                                     ‚   4.00 ‚   0.00 ‚   8.00 ‚  12.00
+                                     ‚  33.33 ‚   0.00 ‚  66.67 ‚
+                                     ‚  16.67 ‚   0.00 ‚  14.29 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Rep      ‚      3 ‚      3 ‚      7 ‚     13
+                                     ‚  12.00 ‚  12.00 ‚  28.00 ‚  52.00
+                                     ‚  23.08 ‚  23.08 ‚  53.85 ‚
+                                     ‚  50.00 ‚  60.00 ‚  50.00 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  49
+
+                                         The FREQ Procedure
+
+                                     Table of gender by genius
+
+                                gender     genius
+
+                                Frequency‚
+                                Percent  ‚
+                                Row Pct  ‚
+                                Col Pct  ‚       0‚       1‚  Total
+                                ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                f        ‚     10 ‚      3 ‚     13
+                                         ‚  40.00 ‚  12.00 ‚  52.00
+                                         ‚  76.92 ‚  23.08 ‚
+                                         ‚  52.63 ‚  50.00 ‚
+                                ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                m        ‚      9 ‚      3 ‚     12
+                                         ‚  36.00 ‚  12.00 ‚  48.00
+                                         ‚  75.00 ‚  25.00 ‚
+                                         ‚  47.37 ‚  50.00 ‚
+                                ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                Total          19        6       25
+                                            76.00    24.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  50
+
+                                         The FREQ Procedure
+
+                                      Table of state by Party
+
+                            state     Party
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚Dem     ‚Ind     ‚Rep     ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            KY       ‚      2 ‚      1 ‚      3 ‚      6
+                                     ‚   8.00 ‚   4.00 ‚  12.00 ‚  24.00
+                                     ‚  33.33 ‚  16.67 ‚  50.00 ‚
+                                     ‚  22.22 ‚  33.33 ‚  23.08 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            OH       ‚      2 ‚      0 ‚      3 ‚      5
+                                     ‚   8.00 ‚   0.00 ‚  12.00 ‚  20.00
+                                     ‚  40.00 ‚   0.00 ‚  60.00 ‚
+                                     ‚  22.22 ‚   0.00 ‚  23.08 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            WV       ‚      5 ‚      2 ‚      7 ‚     14
+                                     ‚  20.00 ‚   8.00 ‚  28.00 ‚  56.00
+                                     ‚  35.71 ‚  14.29 ‚  50.00 ‚
+                                     ‚  55.56 ‚  66.67 ‚  53.85 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           9        3       13       25
+                                        36.00    12.00    52.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  51
+
+--------------------------------------------- state=KY ---------------------------------------------
+
+                                        The MEANS Procedure
+
+                                       Analysis Variable : iq
+
+                  N            Mean         Std Dev         Minimum         Maximum
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                  6     106.8333333       9.9682830      95.0000000     117.0000000
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=OH ---------------------------------------------
+
+                                       Analysis Variable : iq
+
+                  N            Mean         Std Dev         Minimum         Maximum
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                  5     115.4000000      12.6609636      95.0000000     129.0000000
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=WV ---------------------------------------------
+
+                                       Analysis Variable : iq
+
+                  N            Mean         Std Dev         Minimum         Maximum
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                 14     109.8571429      13.4213214      95.0000000     130.0000000
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                           The SAS System           19:15 Monday, April 27, 2015  52
+
+--------------------------------------------- state=KY ---------------------------------------------
+
+                                        The MEANS Procedure
+
+                                      Analysis Variable : age
+
+                  N            Mean         Std Dev         Minimum         Maximum
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                  6      21.0000000       1.7888544      19.0000000      23.0000000
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=OH ---------------------------------------------
+
+                                      Analysis Variable : age
+
+                  N            Mean         Std Dev         Minimum         Maximum
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                  5      22.0000000       1.8708287      19.0000000      24.0000000
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=WV ---------------------------------------------
+
+                                      Analysis Variable : age
+
+                  N            Mean         Std Dev         Minimum         Maximum
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                 14      22.7142857       1.1387288      21.0000000      24.0000000
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                           The SAS System           19:15 Monday, April 27, 2015  53
+
+--------------------------------------------- state=KY ---------------------------------------------
+
+                                        The MEANS Procedure
+
+                                      Analysis Variable : GPA
+
+                  N            Mean         Std Dev         Minimum         Maximum
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                  6       2.6345819       0.5036597       2.1447097       3.5289679
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=OH ---------------------------------------------
+
+                                      Analysis Variable : GPA
+
+                  N            Mean         Std Dev         Minimum         Maximum
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                  5       3.0162246       0.8941920       2.0643246       3.9733522
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+--------------------------------------------- state=WV ---------------------------------------------
+
+                                      Analysis Variable : GPA
+
+                  N            Mean         Std Dev         Minimum         Maximum
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                 14       2.9379238       0.5840014       2.0278750       3.9872826
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                           The SAS System           19:15 Monday, April 27, 2015  54
+
+                                         The FREQ Procedure
+
+                                                        Cumulative    Cumulative
+                   Religion    Frequency     Percent     Frequency      Percent
+                   ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                   Cath               7       28.00             7        28.00
+                   Jewish             3       12.00            10        40.00
+                   None               3       12.00            13        52.00
+                   Other              1        4.00            14        56.00
+                   Prot              11       44.00            25       100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  55
+
+                                         The FREQ Procedure
+
+                                     Table of Religion by state
+
+                            Religion     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Cath     ‚      1 ‚      2 ‚      4 ‚      7
+                                     ‚   4.00 ‚   8.00 ‚  16.00 ‚  28.00
+                                     ‚  14.29 ‚  28.57 ‚  57.14 ‚
+                                     ‚  16.67 ‚  40.00 ‚  28.57 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Jewish   ‚      1 ‚      1 ‚      1 ‚      3
+                                     ‚   4.00 ‚   4.00 ‚   4.00 ‚  12.00
+                                     ‚  33.33 ‚  33.33 ‚  33.33 ‚
+                                     ‚  16.67 ‚  20.00 ‚   7.14 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            None     ‚      2 ‚      0 ‚      1 ‚      3
+                                     ‚   8.00 ‚   0.00 ‚   4.00 ‚  12.00
+                                     ‚  66.67 ‚   0.00 ‚  33.33 ‚
+                                     ‚  33.33 ‚   0.00 ‚   7.14 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Other    ‚      0 ‚      0 ‚      1 ‚      1
+                                     ‚   0.00 ‚   0.00 ‚   4.00 ‚   4.00
+                                     ‚   0.00 ‚   0.00 ‚ 100.00 ‚
+                                     ‚   0.00 ‚   0.00 ‚   7.14 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Prot     ‚      2 ‚      2 ‚      7 ‚     11
+                                     ‚   8.00 ‚   8.00 ‚  28.00 ‚  44.00
+                                     ‚  18.18 ‚  18.18 ‚  63.64 ‚
+                                     ‚  33.33 ‚  40.00 ‚  50.00 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  56
+
+                                         The FREQ Procedure
+
+                                      Table of gender by Major
+
+                            gender     Major
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚CS      ‚Eng     ‚Safety  ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            f        ‚      5 ‚      6 ‚      2 ‚     13
+                                     ‚  20.00 ‚  24.00 ‚   8.00 ‚  52.00
+                                     ‚  38.46 ‚  46.15 ‚  15.38 ‚
+                                     ‚  45.45 ‚  54.55 ‚  66.67 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            m        ‚      6 ‚      5 ‚      1 ‚     12
+                                     ‚  24.00 ‚  20.00 ‚   4.00 ‚  48.00
+                                     ‚  50.00 ‚  41.67 ‚   8.33 ‚
+                                     ‚  54.55 ‚  45.45 ‚  33.33 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total          11       11        3       25
+                                        44.00    44.00    12.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  57
+
+                                         The FREQ Procedure
+
+                                       Table of honors by act
+
+              honors     act
+
+              Frequency‚
+              Percent  ‚
+              Row Pct  ‚
+              Col Pct  ‚      18‚      19‚      20‚      21‚      23‚      25‚  Total
+              ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                     0 ‚      4 ‚      4 ‚      2 ‚      2 ‚      1 ‚      0 ‚     21
+                       ‚  16.00 ‚  16.00 ‚   8.00 ‚   8.00 ‚   4.00 ‚   0.00 ‚  84.00
+                       ‚  19.05 ‚  19.05 ‚   9.52 ‚   9.52 ‚   4.76 ‚   0.00 ‚
+                       ‚ 100.00 ‚ 100.00 ‚ 100.00 ‚ 100.00 ‚ 100.00 ‚   0.00 ‚
+              ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                     1 ‚      0 ‚      0 ‚      0 ‚      0 ‚      0 ‚      1 ‚      4
+                       ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   4.00 ‚  16.00
+                       ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚  25.00 ‚
+                       ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚ 100.00 ‚
+              ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+              Total           4        4        2        2        1        1       25
+                          16.00    16.00     8.00     8.00     4.00     4.00   100.00
+              (Continued)
+
+                                       Table of honors by act
+
+              honors     act
+
+              Frequency‚
+              Percent  ‚
+              Row Pct  ‚
+              Col Pct  ‚      26‚      27‚      28‚      29‚      30‚      31‚  Total
+              ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                     0 ‚      1 ‚      2 ‚      1 ‚      0 ‚      1 ‚      3 ‚     21
+                       ‚   4.00 ‚   8.00 ‚   4.00 ‚   0.00 ‚   4.00 ‚  12.00 ‚  84.00
+                       ‚   4.76 ‚   9.52 ‚   4.76 ‚   0.00 ‚   4.76 ‚  14.29 ‚
+                       ‚ 100.00 ‚  50.00 ‚ 100.00 ‚   0.00 ‚ 100.00 ‚ 100.00 ‚
+              ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                     1 ‚      0 ‚      2 ‚      0 ‚      1 ‚      0 ‚      0 ‚      4
+                       ‚   0.00 ‚   8.00 ‚   0.00 ‚   4.00 ‚   0.00 ‚   0.00 ‚  16.00
+                       ‚   0.00 ‚  50.00 ‚   0.00 ‚  25.00 ‚   0.00 ‚   0.00 ‚
+                       ‚   0.00 ‚  50.00 ‚   0.00 ‚ 100.00 ‚   0.00 ‚   0.00 ‚
+              ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+              Total           1        4        1        1        1        3       25
+                           4.00    16.00     4.00     4.00     4.00    12.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  58
+
+                                         The FREQ Procedure
+
+                                      Table of honors by state
+
+                            honors     state
+
+                            Frequency‚
+                            Percent  ‚
+                            Row Pct  ‚
+                            Col Pct  ‚KY      ‚OH      ‚WV      ‚  Total
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                   0 ‚      6 ‚      4 ‚     11 ‚     21
+                                     ‚  24.00 ‚  16.00 ‚  44.00 ‚  84.00
+                                     ‚  28.57 ‚  19.05 ‚  52.38 ‚
+                                     ‚ 100.00 ‚  80.00 ‚  78.57 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                   1 ‚      0 ‚      1 ‚      3 ‚      4
+                                     ‚   0.00 ‚   4.00 ‚  12.00 ‚  16.00
+                                     ‚   0.00 ‚  25.00 ‚  75.00 ‚
+                                     ‚   0.00 ‚  20.00 ‚  21.43 ‚
+                            ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                            Total           6        5       14       25
+                                        24.00    20.00    56.00   100.00
+                                           The SAS System           19:15 Monday, April 27, 2015  59
+
+                                         The FREQ Procedure
+
+                                    Table of genius by Religion
+
+                   genius     Religion
+
+                   Frequency‚
+                   Percent  ‚
+                   Row Pct  ‚
+                   Col Pct  ‚Cath    ‚Jewish  ‚None    ‚Other   ‚Prot    ‚  Total
+                   ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                          0 ‚      3 ‚      3 ‚      3 ‚      1 ‚      9 ‚     19
+                            ‚  12.00 ‚  12.00 ‚  12.00 ‚   4.00 ‚  36.00 ‚  76.00
+                            ‚  15.79 ‚  15.79 ‚  15.79 ‚   5.26 ‚  47.37 ‚
+                            ‚  42.86 ‚ 100.00 ‚ 100.00 ‚ 100.00 ‚  81.82 ‚
+                   ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                          1 ‚      4 ‚      0 ‚      0 ‚      0 ‚      2 ‚      6
+                            ‚  16.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   8.00 ‚  24.00
+                            ‚  66.67 ‚   0.00 ‚   0.00 ‚   0.00 ‚  33.33 ‚
+                            ‚  57.14 ‚   0.00 ‚   0.00 ‚   0.00 ‚  18.18 ‚
+                   ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                   Total           7        3        3        1       11       25
+                               28.00    12.00    12.00     4.00    44.00   100.00

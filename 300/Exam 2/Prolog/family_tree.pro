@@ -41,6 +41,10 @@ siblingof(Child1, Child2) :-
     motherof(Mother, Child1),
     motherof(Mother, Child2).
 
+parentof(Parent, Child) :-
+    fatherof(Parent, Child) ;
+    motherof(Parent, Child) .
+
 % grandparentof(grandparent, child) % 
 grandparentof(Grandparent, Child) :-
     fatherof(Father, Child), fatherof(Grandparent, Father) ;
@@ -60,10 +64,45 @@ auntof(Aunt, Child) :-
     Mother \= Aunt ;
     fatherof(Father, Child), siblingof(Father, Aunt), female(Aunt) .
 
+% nephewof(nephew, person) %
 nephewof(Nephew, Person) :-
     uncleof(Person, Nephew), male(Nephew) ;
     auntof(Person, Nephew), male(Nephew) .
 
+% nieceof(niece, person) %
 nieceof(Niece, Person) :-
     uncleof(Person, Niece), female(Niece) ;
     auntof(Person, Niece), female(Niece) .
+
+% cousinon(person, person) %
+cousinof(PersonA, PersonB) :-
+    parentof(ParentA, PersonA) ,
+    parentof(ParentB, PersonB) ,
+    ParentA \= ParentB ,
+    siblingof(ParentA, ParentB) .
+
+% soninlawof(son, parent) %
+soninlawof(Son, Parent) :-
+    male(Son) ,
+    wifeof(Wife, Son),
+    parentof(Parent, Wife) .
+
+% daughterinlawof(daughter, parent) %
+daughterinlawof(Daughter, Parent) :-
+    female(Daughter) ,
+    husbandof(Husband, Daughter) ,
+    parentof(Parent, Husband) .
+
+% brotherinlawof(brother, sibling) %
+brotherinlawof(Brother, Sibling) :-
+    male(Brother) ,
+    wifeof(Wife, Brother) ,
+    siblingof(Wife, Sibling) ,
+    Sibling \= Wife .
+
+% sisterinlawof(sister, sibling) %
+sisterinlawof(Sister, Sibling) :-
+    female(Sister) ,
+    husbandof(Husband, Sister) ,
+    siblingof(Husband, Sibling) ,
+    Sibling \= Husband .
