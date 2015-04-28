@@ -24,7 +24,7 @@ public class TextSummarizer
 	public static void main(String[] args) throws IOException
 	{
 		System.out.println("Starting at " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));
-		System.out.println("Memory: " + StringHandler.addThousandsSeparator(Runtime.getRuntime().freeMemory()) + " / " + StringHandler.addThousandsSeparator(Runtime.getRuntime().totalMemory()) + "\n");
+
 		List<Path> documentPaths = FileHandler.getPathsInDirectory(Paths.get(FilePath.DOCUMENTS_DIRECTORY));
 		Set<String> stopSet = CollectionUtils.asSet("");
 		stopSet.addAll(FileHandler.readFileAsList(Paths.get(FilePath.STOP_WORDS_LIST)));
@@ -43,8 +43,7 @@ public class TextSummarizer
 				}
 			}
 		}
-		System.out.println("Build Aggregate Frequency Map");
-		System.out.println("Memory: " + StringHandler.addThousandsSeparator(Runtime.getRuntime().freeMemory()) + " / " + StringHandler.addThousandsSeparator(Runtime.getRuntime().totalMemory()) + "\n");
+		System.out.println("Build Aggregate Frequency Map\n");
 
 
 		Map<Integer, String> frequencyTree = new TreeMap<>(Collections.reverseOrder());
@@ -66,20 +65,18 @@ public class TextSummarizer
 			frequentTerms.add(word);
 		}
 
-		System.out.println("Found Frequent Terms");
-		System.out.println("Memory: " + StringHandler.addThousandsSeparator(Runtime.getRuntime().freeMemory()) + " / " + StringHandler.addThousandsSeparator(Runtime.getRuntime().totalMemory()) + "\n");
+		System.out.println("Found Frequent Terms\n");
 
 		ArrayList<String> interestingSentences = new ArrayList<>();
 		for (Path documentPath : documentPaths) {
-				SentenceExtractor extractor = new SentenceExtractor(FileHandler.readFileAsString(documentPath));
-				ArrayList <String> sentences = extractor.extract();
-				for (String frequentTerm : frequentTerms) {
-					interestingSentences.addAll(sentences.stream().filter(sentence -> sentence.contains(frequentTerm)).collect(Collectors.toList()));
+			SentenceExtractor extractor = new SentenceExtractor(FileHandler.readFileAsString(documentPath));
+			ArrayList <String> sentences = extractor.extract();
+			for (String frequentTerm : frequentTerms) {
+				interestingSentences.addAll(sentences.stream().filter(sentence -> sentence.contains(frequentTerm)).collect(Collectors.toList()));
 			}
 		}
 
-		System.out.println("Found Interesting Sentences");
-		System.out.println("Memory: " + StringHandler.addThousandsSeparator(Runtime.getRuntime().freeMemory()) + " / " + StringHandler.addThousandsSeparator(Runtime.getRuntime().totalMemory()) + "\n");
+		System.out.println("Found Interesting Sentences\n");
 
 		int sum = 0;
 		int maxContainsCount = 0;
@@ -97,13 +94,10 @@ public class TextSummarizer
 		}
 		int avgContainsCount = (int)Math.round((double)sum / (double)interestingSentences.size());
 
-		System.out.println("Calculated Average Contains Count");
-		System.out.println("Memory: " + StringHandler.addThousandsSeparator(Runtime.getRuntime().freeMemory()) + " / " + StringHandler.addThousandsSeparator(Runtime.getRuntime().totalMemory()) + "\n");
+		System.out.println("Calculated Average Contains Count\n");
 
 		ArrayList<String> moreInterestingSentences = new ArrayList<>();
-		int count = 0;
 		for (String interestingSentence : interestingSentences) {
-			count++;
 			int containsCount = 0;
 			for (String frequentTerm : frequentTerms) {
 				if (interestingSentence.contains(frequentTerm)) {
@@ -111,12 +105,11 @@ public class TextSummarizer
 				}
 			}
 			if (containsCount >= avgContainsCount) {
-				moreInterestingSentences.add(String.valueOf(count) + ") " + interestingSentence);
+				moreInterestingSentences.add(interestingSentence);
 			}
 		}
 
-		System.out.println("Found More Interesting Sentences");
-		System.out.println("Memory: " + StringHandler.addThousandsSeparator(Runtime.getRuntime().freeMemory()) + " / " + StringHandler.addThousandsSeparator(Runtime.getRuntime().totalMemory()) + "\n");
+		System.out.println("Found More Interesting Sentences\n");
 
 
 		CosineMatrix matrix = new CosineMatrix();
@@ -128,25 +121,15 @@ public class TextSummarizer
 			}
 		}
 
-		System.out.println("Added All Word to Cosine Matrix");
-		System.out.println("Memory: " + StringHandler.addThousandsSeparator(Runtime.getRuntime().freeMemory()) + " / " + StringHandler.addThousandsSeparator(Runtime.getRuntime().totalMemory()) + "\n");
+		System.out.println("Added All Word to Cosine Matrix\n");
 
 		matrix.buildMatrix();
 
-		System.out.println("Built Cosine Matrix");
-		System.out.println("Memory: " + StringHandler.addThousandsSeparator(Runtime.getRuntime().freeMemory()) + " / " + StringHandler.addThousandsSeparator(Runtime.getRuntime().totalMemory()) + "\n");
+		System.out.println("Built Cosine Matrix\n");
 
 		HashMap<SentencePoint, Double> similarities = matrix.calculateCosineSimilarities();
 
-		System.out.println("Calculated All Cosine Similarities");
-		System.out.println("Memory: " + StringHandler.addThousandsSeparator(Runtime.getRuntime().freeMemory()) + " / " + StringHandler.addThousandsSeparator(Runtime.getRuntime().totalMemory()) + "\n");
-
-		/**List<String> strings = new ArrayList<>();
-		similarities.keySet().stream().forEach(point -> strings.add(String.format("Sentence %12s = %.5f", point.toString(), similarities.get(point))));
-
-		FileHandler.writeList(Paths.get(FilePath.COSINE_SIMILARITIES), strings);
-
-		System.out.println("Wrote Similarities to File");*/
+		System.out.println("Calculated All Cosine Similarities\n");
 
 		LinkedHashMap<SentencePoint, Double> sortedSimilarities = new LinkedHashMap<>(similarities.size());
 		similarities.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(entry -> sortedSimilarities.put(entry.getKey(), entry.getValue()));
@@ -155,24 +138,42 @@ public class TextSummarizer
 		ArrayList<Double> sortedSimsDesc = new ArrayList<>(sortedSimilarities.values());
 		Collections.reverse(sortedSimsDesc);
 
-		System.out.println("Sorted Similarities");
+		System.out.println("Sorted Similarities\n");
 
-		SentencePoint p = sortedSentencePointsDesc.get(0);
-		System.out.println(p.getX());
-		System.out.println(p.getY());
-		System.out.println(sortedSimsDesc.get(0));
+		String summary = "";
+		int wordCount = 0;
+		int counter = 0;
+		while (wordCount < 250) {
+			SentencePoint point = sortedSentencePointsDesc.get(counter);
+			String[] sentences = matrix.getSentencesAtPoint(point);
+			String sentence1 = sentences[0];
+			String sentence2 = sentences[1];
+			int sent1WordCount = sentence1.split(" ").length;
+			int sent2WordCount = sentence2.split(" ").length;
+			if (sent1WordCount < sent2WordCount) {
+				wordCount += sent1WordCount;
+				summary += sentence1;
+			} else {
+				wordCount += sent2WordCount;
+				summary += sentence2;
+			}
+			counter++;
+		}
 
-		String[] sentences = matrix.getSentencesAtPoint(sortedSentencePointsDesc.get(0));
-		System.out.println(sentences[0]);
-		System.out.println(sentences[1]);
+		System.out.println("Created Summary");
+
+		FileHandler.writeString(Paths.get(FilePath.SUMMARY), summary);
+
+		System.out.println("Wrote Summary to File");
 
 
 		/**List<String> new_strings = new ArrayList<>();
-		//sortedSimilarities.keySet().stream().forEach(point -> new_strings.add(String.format("Sentence %12s = %.5f", point.toString(), sortedSimilarities.get(point))));
-
+		for (int index = 0; index < sortedSentencePointsDesc.size(); index++) {
+			new_strings.add(String.format("Sentence %12s = %.5f", sortedSentencePointsDesc.get(index), sortedSimsDesc.get(index)));
+		}
 		FileHandler.writeList(Paths.get(FilePath.SORTED_SIMILARITIES), new_strings);
 
-		System.out.println("Wrote Sorted Similarities to File");*/
+		System.out.println("Wrote Sorted Similarities to File\n");*/
 
 		System.out.println("All Done at " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));
 	}

@@ -36,8 +36,7 @@ public class FrequencyAnalyzer
 	{
 		HashMap<String, Integer> map = new HashMap<>();
 		for (String word : this.wordsAfterStemming) {
-			StringHandler stringHandler = new StringHandler();
-			if (stringHandler.isAlphabetic(word)) {
+			if (StringHandler.isAlphabetic(word)) {
 				if (map.containsKey(word))
 					map.put(word, map.get(word) + 1);
 				else

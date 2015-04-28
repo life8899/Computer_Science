@@ -34,7 +34,6 @@ public class SentencePoint implements Comparator<SentencePoint>, Comparable<Sent
         return "(" + this.x + ", " + this.y + ")";
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
     public int compareTo(SentencePoint p2)
     {
