@@ -20,11 +20,11 @@ public class FilePath
 	public static final String SUMMARIES_DIRECTORY_4 = DATA_DIRECTORY_4 + "/sum";
 	public static final String SUMMARIES_DIRECTORY_5 = DATA_DIRECTORY_5 + "/sum";
 
-	public static final String OUT_DIRECTORY_1 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_1/";
-	public static final String OUT_DIRECTORY_2 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_2/";
-	public static final String OUT_DIRECTORY_3 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_3/";
-	public static final String OUT_DIRECTORY_4 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_4/";
-	public static final String OUT_DIRECTORY_5 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_5/";
+	public static final String OUT_DIRECTORY_1 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/output/train_1/";
+	public static final String OUT_DIRECTORY_2 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/output/train_2/";
+	public static final String OUT_DIRECTORY_3 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/output/train_3/";
+	public static final String OUT_DIRECTORY_4 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/output/train_4/";
+	public static final String OUT_DIRECTORY_5 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/output/train_5/";
 
 	public static final String STOP_WORDS_LIST = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/stopList.txt";
 }

@@ -35,14 +35,12 @@ public class FrequencyAnalyzer
 	private HashMap<String, Integer> buildFrequencyMap()
 	{
 		HashMap<String, Integer> map = new HashMap<>();
-		for (String word : this.wordsAfterStemming) {
-			if (StringHandler.isAlphabetic(word)) {
-				if (map.containsKey(word))
-					map.put(word, map.get(word) + 1);
-				else
-					map.put(word, 1);
-			}
-		}
+		this.wordsAfterStemming.stream().filter(StringHandler::isAlphabetic).forEach(word -> {
+			if (map.containsKey(word))
+				map.put(word, map.get(word) + 1);
+			else
+				map.put(word, 1);
+		});
 		return map;
 	}
 

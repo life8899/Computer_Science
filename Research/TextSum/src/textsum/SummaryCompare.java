@@ -36,9 +36,9 @@ public class SummaryCompare
 			summaryBTokens.add(summaryBTokenizer.nextToken());
 		}
 		if (summaryBTokens.size() < summaryATokens.size()) {
-			this.similarWordCount = summaryBTokens.stream().filter(token -> summaryATokens.contains(token)).collect(Collectors.toList()).size();
+			this.similarWordCount = summaryBTokens.stream().filter(summaryATokens::contains).collect(Collectors.toList()).size();
 		} else {
-			this.similarWordCount = summaryATokens.stream().filter(token -> summaryATokens.contains(token)).collect(Collectors.toList()).size();
+			this.similarWordCount = summaryATokens.stream().filter(summaryATokens::contains).collect(Collectors.toList()).size();
 		}
 		return this.similarWordCount;
 	}

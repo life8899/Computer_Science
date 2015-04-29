@@ -5,7 +5,6 @@ import com.aliasi.util.CollectionUtils;
 import util.*;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.file.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -26,8 +25,8 @@ public class TextSummarizer
 	{
 		System.out.println("Starting at " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));
 
-		FileHandler.createDirectory(Paths.get(FilePath.OUT_DIRECTORY_4));
-		List<Path> documentPaths = FileHandler.getPathsInDirectory(Paths.get(FilePath.DOCUMENTS_DIRECTORY_4));
+		FileHandler.createDirectory(Paths.get(FilePath.OUT_DIRECTORY_1));
+		List<Path> documentPaths = FileHandler.getPathsInDirectory(Paths.get(FilePath.DOCUMENTS_DIRECTORY_1));
 		Set<String> stopSet = CollectionUtils.asSet("");
 		stopSet.addAll(FileHandler.readFileAsList(Paths.get(FilePath.STOP_WORDS_LIST)));
 		FrequencyAnalyzer[] analyzers = new FrequencyAnalyzer[documentPaths.size()];
@@ -164,12 +163,12 @@ public class TextSummarizer
 
 		System.out.println("Created Summary\n");
 
-		FileHandler.writeString(Paths.get(FilePath.OUT_DIRECTORY_4 + "summary.txt"), summary);
+		FileHandler.writeString(Paths.get(FilePath.OUT_DIRECTORY_1 + "summary.txt"), summary);
 
 		System.out.println("Wrote Summary to File\n");
 
-		List<Path> modelSummariesPath = FileHandler.getPathsInDirectory(Paths.get(FilePath.SUMMARIES_DIRECTORY_4));
-		List<String> modelSummaries = new ArrayList<String>(modelSummariesPath.size());
+		List<Path> modelSummariesPath = FileHandler.getPathsInDirectory(Paths.get(FilePath.SUMMARIES_DIRECTORY_1));
+		List<String> modelSummaries = new ArrayList<>(modelSummariesPath.size());
 		for (Path modelSummaryPath : modelSummariesPath) {
 			modelSummaries.add(FileHandler.readFileAsString(modelSummaryPath));
 		}
@@ -190,7 +189,7 @@ public class TextSummarizer
 			strings.add("Model Summary " + (i+1) + " Similarity = " + summarySimilarities[i] + " / " + compares[i].getModelSummaryWordCount() + " Words");
 		}
 
-		FileHandler.writeList(Paths.get(FilePath.OUT_DIRECTORY_4 + "summarySimilarities.txt"), strings);
+		FileHandler.writeList(Paths.get(FilePath.OUT_DIRECTORY_1 + "summarySimilarities.txt"), strings);
 
 		System.out.println("Wrote Summary Similarities to File\n");
 
