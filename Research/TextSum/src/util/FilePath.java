@@ -2,13 +2,29 @@ package util;
 
 public class FilePath
 {
-	public static final String DOCUMENTS_DIRECTORY = "/Users/Nick/Developer/Computer_Science/Research/TextSum/data/train/train_1/doc";
+	public static final String DATA_DIRECTORY_1 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/data/train/train_1";
+	public static final String DATA_DIRECTORY_2 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/data/train/train_2";
+	public static final String DATA_DIRECTORY_3 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/data/train/train_3";
+	public static final String DATA_DIRECTORY_4 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/data/train/train_4";
+	public static final String DATA_DIRECTORY_5 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/data/train/train_5";
+
+	public static final String DOCUMENTS_DIRECTORY_1 = DATA_DIRECTORY_1 + "/doc";
+	public static final String DOCUMENTS_DIRECTORY_2 = DATA_DIRECTORY_2 + "/doc";
+	public static final String DOCUMENTS_DIRECTORY_3 = DATA_DIRECTORY_3 + "/doc";
+	public static final String DOCUMENTS_DIRECTORY_4 = DATA_DIRECTORY_4 + "/doc";
+	public static final String DOCUMENTS_DIRECTORY_5 = DATA_DIRECTORY_5 + "/doc";
+
+	public static final String SUMMARIES_DIRECTORY_1 = DATA_DIRECTORY_1 + "/sum";
+	public static final String SUMMARIES_DIRECTORY_2 = DATA_DIRECTORY_2 + "/sum";
+	public static final String SUMMARIES_DIRECTORY_3 = DATA_DIRECTORY_3 + "/sum";
+	public static final String SUMMARIES_DIRECTORY_4 = DATA_DIRECTORY_4 + "/sum";
+	public static final String SUMMARIES_DIRECTORY_5 = DATA_DIRECTORY_5 + "/sum";
+
+	public static final String OUT_DIRECTORY_1 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_1/";
+	public static final String OUT_DIRECTORY_2 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_2/";
+	public static final String OUT_DIRECTORY_3 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_3/";
+	public static final String OUT_DIRECTORY_4 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_4/";
+	public static final String OUT_DIRECTORY_5 = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/train_5/";
+
 	public static final String STOP_WORDS_LIST = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/stopList.txt";
-	public static final String INTERESTING_SENTENCES = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/sentences.txt";
-	public static final String COSINE_SIMILARITIES = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/similarities.txt";
-	public static final String SORTED_SIMILARITIES = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/sortedSimilarities.txt";
-	public static final String MATRIX = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/matrix.txt";
-	public static final String SUMMARY = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/summary.txt";
-	public static final String MODEL_SUMMARIES = "/Users/Nick/Developer/Computer_Science/Research/TextSum/data/train/train_1/sum";
-	public static final String SUMMARY_SIMILARITIES = "/Users/Nick/Developer/Computer_Science/Research/TextSum/sup/sumSims.txt";
 }

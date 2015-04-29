@@ -1,5 +1,6 @@
 package util;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,6 +23,14 @@ public class FileHandler
     public static String readFileAsString(Path filePath) throws IOException
     {
         return Files.readAllLines(filePath).stream().collect(Collectors.joining());
+    }
+
+    public static void createDirectory(Path directoryPath)
+    {
+        File directoryFile = directoryPath.toFile();
+        if (!directoryFile.exists()) {
+            directoryFile.mkdir();
+        }
     }
 
     public static void writeString(Path filePath, String string) throws IOException

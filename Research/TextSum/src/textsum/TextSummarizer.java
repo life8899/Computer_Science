@@ -26,7 +26,8 @@ public class TextSummarizer
 	{
 		System.out.println("Starting at " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));
 
-		List<Path> documentPaths = FileHandler.getPathsInDirectory(Paths.get(FilePath.DOCUMENTS_DIRECTORY));
+		FileHandler.createDirectory(Paths.get(FilePath.OUT_DIRECTORY_4));
+		List<Path> documentPaths = FileHandler.getPathsInDirectory(Paths.get(FilePath.DOCUMENTS_DIRECTORY_4));
 		Set<String> stopSet = CollectionUtils.asSet("");
 		stopSet.addAll(FileHandler.readFileAsList(Paths.get(FilePath.STOP_WORDS_LIST)));
 		FrequencyAnalyzer[] analyzers = new FrequencyAnalyzer[documentPaths.size()];
@@ -163,11 +164,11 @@ public class TextSummarizer
 
 		System.out.println("Created Summary\n");
 
-		FileHandler.writeString(Paths.get(FilePath.SUMMARY), summary);
+		FileHandler.writeString(Paths.get(FilePath.OUT_DIRECTORY_4 + "summary.txt"), summary);
 
 		System.out.println("Wrote Summary to File\n");
 
-		List<Path> modelSummariesPath = FileHandler.getPathsInDirectory(Paths.get(FilePath.MODEL_SUMMARIES));
+		List<Path> modelSummariesPath = FileHandler.getPathsInDirectory(Paths.get(FilePath.SUMMARIES_DIRECTORY_4));
 		List<String> modelSummaries = new ArrayList<String>(modelSummariesPath.size());
 		for (Path modelSummaryPath : modelSummariesPath) {
 			modelSummaries.add(FileHandler.readFileAsString(modelSummaryPath));
@@ -189,17 +190,9 @@ public class TextSummarizer
 			strings.add("Model Summary " + (i+1) + " Similarity = " + summarySimilarities[i] + " / " + compares[i].getModelSummaryWordCount() + " Words");
 		}
 
-		FileHandler.writeList(Paths.get(FilePath.SUMMARY_SIMILARITIES), strings);
+		FileHandler.writeList(Paths.get(FilePath.OUT_DIRECTORY_4 + "summarySimilarities.txt"), strings);
 
 		System.out.println("Wrote Summary Similarities to File\n");
-
-		/**List<String> new_strings = new ArrayList<>();
-		for (int index = 0; index < sortedSentencePointsDesc.size(); index++) {
-			new_strings.add(String.format("Sentence %12s = %.5f", sortedSentencePointsDesc.get(index), sortedSimsDesc.get(index)));
-		}
-		FileHandler.writeList(Paths.get(FilePath.SORTED_SIMILARITIES), new_strings);
-
-		System.out.println("Wrote Sorted Similarities to File\n");*/
 
 		System.out.println("All Done at " + new SimpleDateFormat("hh:mm:ss a").format(new Date()));
 	}
