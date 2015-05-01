@@ -18,7 +18,7 @@ CREATE TABLE movie (
 
 CREATE TABLE actor (
     actor_id            SERIAL PRIMARY KEY,
-    name                VARCHAR(255),
+    name                VARCHAR(255) NOT NULL,
     gender              GENDER,
     movie_id            INT REFERENCES movie(movie_id),
     character_name      VARCHAR(255)
@@ -26,20 +26,19 @@ CREATE TABLE actor (
 
 CREATE TABLE producer (
     producer_id     SERIAL PRIMARY KEY,
-    name            VARCHAR(255),
-    movie_id        INT REFERENCES movie(movie_id),
+    name            VARCHAR(255) NOT NULL,
+    movie_id        INT REFERENCES movie(movie_id)
 );
 
 CREATE TABLE director (
     director_id     SERIAL PRIMARY KEY,
-    name            VARCHAR(255),
+    name            VARCHAR(255) NOT NULL,
     movie_id        INT REFERENCES movie(movie_id)
 );
 
 CREATE TABLE theatre (
     theatre_id      SERIAL PRIMARY KEY,
-    theatre_name    VARCHAR(255),
-    num_showrooms   INT,
+    theatre_name    VARCHAR(255) NOT NULL,
     city            VARCHAR(255),
     state           CHAR(2),
     zipcode         CHAR(5)
@@ -48,7 +47,8 @@ CREATE TABLE theatre (
 CREATE TABLE showroom (
     showroom_id     SERIAL,
     theatre_id      INT REFERENCES theatre(theatre_id),
-    projector_type  PROJECTOR
+    projector_type  PROJECTOR,
+    capacity        INT,
     PRIMARY KEY     (showroom_id, theatre_id)
 );
 
@@ -63,7 +63,9 @@ CREATE TABLE showtime (
 
 CREATE TABLE ticket (
     ticket_number   SERIAL,
-    showtime        INT REFERENCES showtime(showtime_id),
-    price           NUMERIC(1000, 2),
+    showtime_id     INT REFERENCES showtime(showtime_id),
+    price           NUMERIC(1000, 2) NOT NULL,
+    time_bought     TIME,
+    date_bought     DATE,
     PRIMARY KEY     (ticket_number, showtime)
 );
