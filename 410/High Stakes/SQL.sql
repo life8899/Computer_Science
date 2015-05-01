@@ -5,6 +5,11 @@ CREATE DOMAIN GENDER CHAR(1)
         'M', 'F'
     ));
 
+CREATE DOMAIN PROJECTOR VARCHAR(9)
+    CHECK (value IN (
+        'FILM ROLL', 'DIGITAL', 'LASER', 'IMAX'
+    ));
+
 CREATE TABLE movie (
     movie_id    SERIAL PRIMARY KEY,
     title       VARCHAR(255) NOT NULL,
@@ -34,10 +39,17 @@ CREATE TABLE director (
 CREATE TABLE theatre (
     theatre_id      SERIAL PRIMARY KEY,
     theatre_name    VARCHAR(255),
-    showrooms       INT,
+    num_showrooms   INT,
     city            VARCHAR(255),
     state           CHAR(2),
     zipcode         CHAR(5)
+);
+
+CREATE TABLE showroom (
+    showroom_id     SERIAL,
+    theatre_id      INT REFERENCES theatre(theatre_id),
+    projector_type  PROJECTOR
+    PRIMARY KEY     (showroom_id, theatre_id)
 );
 
 CREATE TABLE showtime (
@@ -50,5 +62,8 @@ CREATE TABLE showtime (
 );
 
 CREATE TABLE ticket (
-
+    ticket_number   SERIAL,
+    showtime        INT REFERENCES showtime(showtime_id),
+    price           NUMERIC(1000, 2),
+    PRIMARY KEY     (ticket_number, showtime)
 );
