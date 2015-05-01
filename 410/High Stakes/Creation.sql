@@ -1,5 +1,3 @@
-CREATE DATABASE THEATRE;
-
 CREATE DOMAIN GENDER CHAR(1)
     CHECK (value IN (
         'M', 'F'
@@ -60,7 +58,7 @@ CREATE TABLE showroom (
 );
 
 CREATE TABLE showtime (
-    showtime_id     SERIAL UNIQUE PRIMARY KEY,
+    showtime_id     SERIAL PRIMARY KEY,
     theatre_id      INT REFERENCES theatre(theatre_id),
     showroom_id     INT REFERENCES showroom(showroom_id),
     movie_id        INT REFERENCES movie(movie_id),
