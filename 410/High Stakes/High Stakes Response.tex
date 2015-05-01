@@ -1,0 +1,391 @@
+
+\documentclass[11pt]{article}
+% \usepackage[lucidasmallscale, nofontinfo]{lucimatx}
+%\usepackage{helvet}
+%\usepackage{palatino}
+\usepackage{lscape}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{booktabs}
+
+\usepackage{url}
+\usepackage{xcolor}
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\usepackage[colorlinks=true,linkcolor=webgreen,filecolor=webbrown,citecolor=webgreen]{hyperref}
+
+\usepackage{multicol}
+\usepackage{pifont}
+%\usepackage[unitcntnoreset]{bibtopic}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage[titletoc]{appendix}
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+  \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+
+\title{CS-410/CS-510: High-stakes Writing Assignment \\ Data-intensive Application Development}
+\author{Your name goes here}
+\date{ }
+
+\begin{document}
+\maketitle
+\vspace*{-0.25in}
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+
+
+\section{Data-intensive Application Selection} \label{sec:dia}
+
+%A data-intensive application is characterized by: lots of data; relatively little processing; large number of insertions, deletions, updates, and queries. Data is viewed as a corporate resource and is often used for tasks varying from marketing campaigns, new product strategies, inventory management and distribution logistics, to improving customer loyalty.
+
+%Ideally, the application should have: well-understood or well-designed business processes; sufficient documentation about the business processes; tasks are known; application boundary is well-demarcated; allows developing one organization-wide database schema from multiple department-wide database views.
+
+%You should either possess sufficient domain knowledge of the application area, or have access to a domain expert. Otherwise, it is extremely difficult to develop a successful data-intensive application.
+
+Describe the data-intensive application you have selected. What are its characteristics? What makes it data-intensive? Who is the sponsor of this project? Who are the end-users? How will they benefit from this application?
+
+
+
+
+\section{Identification and Documentation of Use-cases} \label{sec:use-cases}
+
+%Identify various \emph{classes of users} (aka \emph{actors}) for the data-intensive application. Note that users can be human as well other systems. In some applications, \emph{time} is a user. For example, end-of-day, end-of-week, end-of-month, end-of-quarter, and end-of-fiscal-year are all time-triggered events. Your application needs to respond to these time-triggered events.
+
+%\emph{Use-cases} describe interactions between the users and the system. Some interactions can be normal (no error conditions), other interactions may entail additional processing (e.g., preferred customers receive additional services), and yet other interactions require error recovery due to various conditions such as erroneous input or device malfunctioning. Each path through a use-case is called a \emph{scenario}. In other words, a use-case is a set of related scenarios.
+
+%Conceptually, a use-case represents a \emph{unit of work} from an end-user perspective. A use-case involves executing a set of tasks in certain sequence.
+
+How may user classes do you have? How many actors (including human, application, and abstract ones like time)? Name use-cases. Document them using the \LaTeX{} template.
+
+
+
+
+\section{Use-case Diagram} \label{sec:use-case-diagram}
+
+%\emph{Use-case diagram} is a pictorial representation of interactions between the application users and use-cases. It also shows relationships between use-cases such as one use-case being embedded in another use-case, or one use-case extending the functionality of another use-case.
+
+Your use-case diagram goes here.
+
+
+
+\section{Identification and Documentation of Data Tasks in the Application} \label{sec:tasks}
+
+% Each use-case scenario requires executing a set of tasks. For each task identify and document inputs needed, and outputs generated. Also, specify possible error conditions that might occur as inputs are transformed into outputs.
+
+Your data task details go here.
+
+
+
+
+\section{Identification and Documentation of Transactions} \label{sec:transactions}
+
+
+% A \emph{transaction} is a unit of work both from a database end-user perspective as well as from the database system perspective. A transaction requires executing all the tasks that comprise a unit of work in entirety — all or nothing proposition. For each transaction specify its frequency of execution.
+
+Document your transactions here.
+
+
+
+
+\section{Identification and Documentation of Database Queries} \label{sec:queries}
+
+%Unlike transactions, database \emph{queries} do not change the data in the database. Queries require only read access to the database. Some queries may take quite a bit of time to complete. Therefore, performance is often an issue for database queries.
+
+%Specify queries in plain English. For each query specify what data is to be retrieved (not how) as well as its frequency of execution.
+
+Describe your database queries (in English, not in SQL) here.
+
+
+
+
+\section{Conceptual Data Model} \label{sec:er}
+
+% Start with Entity-Relationship (ER) and Enhanced Entity-Relationship (EER) diagrams for department-wise transactions and queries. The number of departments you will have (e.g., registrar, library, financial aid, campus housing) depends on the scope of the data-intensive application. In the second step, integrate these department-wise diagrams into one corporate-wide ER/EER diagram. Follow established diagrammatic conventions. Use SQL Power Architect tool for developing ER/EER diagram.
+
+Include your conceptual data model here
+
+
+
+\section{Logical Data Model} \label{sec:logical}
+
+% Identify functional and multivalued dependencies. Transform ER/EER diagrams into a relational schema. Determine functional dependencies and perform normalization. Transform each table into 3NF or BCNF using the functional dependencies and normalization rules. You may use Database Design (DBD) tool for this task. For each table in the final schema, specify primary and foreign keys. Also specify data integrity constraints. 
+
+Describe your functional dependencies, normalization process, and final relational schema here.
+
+
+
+
+\section{Physical Data Model} \label{sec:physical}
+
+% For each database file, specify \emph{initial} storage structures and access paths. Typically, these storage structures and access paths need modifications based on \emph{observed performance} once the database is in operation (aka database tuning).
+
+Describe your physical database design here.
+
+
+
+
+\section{Database Creation and Data Loading} \label{sec:ddl}
+
+% Now that your logical database schema and physical database design is in place, write SQL scripts to create the database using PostgreSQL. Load existing data into the tables using either SQL statements or \emph{bulk loading}. Resolve any data integrity constraint violations.
+
+Include your database creation scripts here.
+
+
+
+
+\section{Implementing Database Transactions and Queries} \label{sec:implementation-1}
+
+
+% Write SQL code for transactions and queries. Verify and validate all transactions and queries. Comment SQL code sensibly.
+
+\begin{verbatim}
+
+Your SQL for transactions and queries goes here.
+
+\end{verbatim}
+
+
+
+
+\section{Developing Database Applications} \label{sec:implementation-2}
+
+% This step involves writing database applications using Java or scripting languages such as JSP, PHP, and ASP.NET. Include rationale for choosing a specific language for developing the database applications. Students should not choose a scripting language unless they are already familiar with it. Simply there is no time to learn a new scripting language. Demonstrate a simple Web application based on the database that you have developed.
+
+Discuss the design and implementation details of the database application here. Please do not include actual code. You may include code in Appendix.
+
+
+\section{Summary of Revisions}
+
+%Briefly describe who critiqued your document (e.g., instructor, peer, friend) and provided suggestions for improvement, and how you have incorporated the suggestions and revised the document.
+
+Include information on: who critiqued your document, what suggestions were made, and how you incorporated the suggestions and revised the document.
+
+
+
+\section{Trunitin.com} \label{sec:turnitin}
+
+Compile the \LaTeX{}\ document and produce a PDF file. Submit the PDF file to turnitin.com. What does the results from turnitin.com say? What percentage of your document is similar to other documents? How do you defend if more than 15\% of your document is similar to other documents?
+
+
+
+\section{Metacognitive Reflection} \label{sec:reflection}
+
+%We learn how to learn through metacognitive reflection by actively planning, monitoring, and evaluating our own thinking and learning.
+
+%Learning how to learn involves going beyond the cognitive and into the realm of the metacognitive. In the context of this assignment, cognitive part is the development of the data-intensive application. Metacognitive part refers to the strategies, techniques, and tools you have used to accomplish these tasks.
+
+%Perform metacognitive reflection on this assignment by answering the following questions:
+
+\begin{enumerate}
+
+   \item Did I solve the right problem? 
+
+       Your answer goes here.
+
+   \item Did I solve the problem right?
+
+       Your answer goes here.
+
+   \item How did I approach solutions to the problems?
+
+       Your answer goes here.
+
+   \item What strategies and techniques did I draw upon? 
+
+       Your answer goes here.
+
+   \item Did I learn a new strategy in completing this assignment? If so, how is it different from and similar to the repertoire of techniques that I have already acquired? 
+
+       Your answer goes here.
+
+   \item Any other information you may wish to add $\cdots$
+
+       Your answer goes here.
+
+\end{enumerate}
+
+
+
+\section{Self-assessment} \label{sec:self}
+
+You need to assign a grade for this assignment yourself. Use the rubric listed below to come up with a score. The instructor will also assign a score. Without this section, assignment will be returned with a score of 0.
+
+The first two traits correspond to writing and the remaining ones relate to domain aspects of the project.
+
+\newgeometry{margin=0.75in}
+
+\begin{landscape}
+\begin{center}
+\begin{tabular}{p{1.0in}p{1.7in}p{1.7in}p{1.7in}p{1.7in}}
+\toprule
+\multicolumn{1}{r}{Perf Level} & \multicolumn{1}{c}{Poor} & \multicolumn{1}{c}{Fair} & \multicolumn{1}{c}{Good} & \multicolumn{1}{c}{Outstanding} \\
+\multicolumn{1}{l}{Trait} & & & & \\
+\midrule
+
+\emph{Diction} & Chooses non-technical vocabulary that inadequately conveys the intended meaning of the communication. & Chooses technical vocabulary that conveys the intended meaning of the communication. & Chooses appropriate, technical, and varied vocabulary that conveys the intended meaning of the communication. & Chooses lively, precise, technical, and compelling vocabulary and skillfully communicates the message. \\ \midrule
+
+\emph{Communication Style} & Has only a few (but noticeable) errors in style, mechanics, or other issues that might distract from the message. & Is virtually free of mechanical, stylistic or other issues. & Uses complex and varied sentence styles, concepts, or visual representations. & Creates a distinctive communication style by combining a variety of materials, ideas, or visual representations. \\ \midrule
+
+\emph{Application Selection} &
+Not a data-intensive application. & 
+Application is somewhat data-intensive &
+Application is data-intensive but limited access to domain expertise. &
+Application is data-intensive with adequate access to domain expertise. \\ \midrule
+
+\emph{Use-cases} &
+Less than 50\% of the use-cases are identified, and documented poorly. &
+Over 75\% of the uses-cases are identified and documented using a standard template. &
+All the use-cases are identified, but detail is missing for some use-cases. &
+All the use-cases are identified, well-documented using a standard template, and verified against application requirements. \\ \midrule
+
+\emph{Data Tasks} &
+Inputs, outputs, and possible error conditions are documented for less than 50\% of data tasks. &
+Inputs, outputs, and possible error conditions are documented for less than 75\% of data tasks.  &
+Inputs, outputs, and possible error conditions are documented for all data tasks. &
+Inputs, outputs, and possible error conditions are documented for all data tasks. Processing logic (or high-level algorithms) for transforming inputs into outputs is also described. \\ \midrule
+
+\emph{Transactions and Queries} &
+Less than 50\% of the transactions and queries are identified and described. &
+Less than 75\% of the transactions and queries are identified and described. &
+All the transactions and queries are identified and described. &
+All the transactions and queries are identified and described including their frequency of execution.  \\ \bottomrule
+
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{p{1.0in}p{1.7in}p{1.7in}p{1.7in}p{1.7in}}
+\toprule
+\multicolumn{1}{r}{Perf Level} & \multicolumn{1}{c}{Poor} & \multicolumn{1}{c}{Fair} & \multicolumn{1}{c}{Good} & \multicolumn{1}{c}{Outstanding} \\
+\multicolumn{1}{l}{Trait} & & & & \\
+\midrule
+
+\emph{Data Models} &
+Only conceptual data model is described in detail. Cursory treat of logical data model. Physical data model design is missing. &
+Conceptual and logical data models are described in detail. Physical data model design is missing.  &
+Conceptual, logical, and physical data models are described completely and precisely. &
+Conceptual, logical, and physical data models are described completely and precisely.  Database normalization based on functional dependencies is discussed in detail. \\ \midrule
+
+\emph{Creation and Loading} &
+SQL scripts are written and executed to create the database and load the data. Data in the database is trivial in size. &
+SQL scripts are written and executed to create the database and load the data. Data in the database is moderate in size.  &
+Conceptual, logical, and physical data models are described completely and precisely. Data in the database is huge in size -- in the order of millions of rows. &
+Conceptual, logical, and physical data models are described completely and precisely. Data in the database is huge in size -- in the order of millions of rows. Detail evidence is provided on how referential integrity constraints are resolved. \\ \midrule
+
+\emph{Implementing Transactions and Queries} &
+Less than 50\% of the transactions and queries are implemented. &
+Less than 75\% of the transactions and queries are implemented. &
+All the transactions and queries are implemented; run and execute correctly. &
+All the transactions and queries are implemented; run and execute correctly. There is also written evidence that transactions and queries are tested. \\ \midrule
+
+
+\emph{Revisions} & 
+Only peer or instructor feedback is solicited, but not incorporated. &
+Both peer and instructor feedback is solicited but not incorporated. &
+Both peer and instructor feedback is solicited and incorporated. &
+Both peer and instructor feedback solicited and incorporated. Evidence is presented to show how the feedback improved the document. \\ \midrule
+
+
+\emph{Turnitin.com} &
+No submission is made to turnitin.com &
+Made to turnitin.com but results are not analyzed. &
+Made to turnitin.com and results are cursorily analyzed. &
+Made to turnitin.com and results are analyzed thoroughly. \\ \midrule
+
+
+\emph{Meta-cognitive Reflection} &
+Not performed. &
+Is shallow and incomplete. &
+Is complete but not thorough. &
+Is complete and thorough.
+\\ \bottomrule
+
+\end{tabular}
+\end{center}
+
+\end{landscape}
+
+\restoregeometry
+
+montgomery50@live.marshall.edu
+
+Use the following table to score your solution. Circle the appropriate number in each row. For example, to circle 4, use the \LaTeX{} markup code \verb+\circled{4}+, which produces \circled{4}.
+
+\begin{center}
+\begin{tabular}{p{2.0in}cccc}
+\toprule
+\multicolumn{1}{r}{\emph{Perf Level}} & \emph{Poor} & \emph{Fair} & \emph{Good} & \emph{Outstanding} \\
+\multicolumn{1}{l}{\emph{Trait}} & & & & \\
+\midrule
+
+\emph{Diction} &
+2 & 3 & 4 & 5 \\ \midrule
+
+\emph{Communication Style} & 
+2 & 3 & 4 & 5 \\ \midrule
+
+\emph{Application Selection} &
+4 & 6 & 8 & 10 \\ \midrule
+
+\emph{Use-cases} &
+4 & 6 & 8 & 10 \\ \midrule
+
+\emph{Data Tasks} &
+4 & 6 & 8 & 10 \\ \midrule
+
+\emph{Transactions and Queries} &
+4 & 6 & 8 & 10 \\ \midrule
+
+\emph{Data Models} &
+4 & 6 & 8 & 10 \\ \midrule
+
+\emph{Creation and Loading} &
+4 & 6 & 8 & 10 \\ \midrule
+
+\emph{Implementing Transactions and Queries} &
+4 & 6 & 8 & 10 \\ \midrule
+
+\emph{Revisions} & 
+4 & 6 & 8 & 10 \\ \midrule
+
+
+\emph{Turnitin.com} &
+2 & 3 & 4 & 5 \\ \midrule
+
+
+\emph{Meta-cognitive Reflection} &
+2 & 3 & 4 & 5 \\ \bottomrule
+
+\end{tabular}
+\end{center}
+
+\vspace*{0.2in}
+
+\noindent Total score: xxx / 100.
+
+\begin{appendices}
+
+\section{Code Listings} 
+
+\section{Test Cases} 
+
+\section{Other} 
+
+
+\end{appendices}
+
+\end{document}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{fig-name}
+  \caption{figure caption goes here} \label{fig:my-fig}
+\end{figure}
