@@ -10,42 +10,49 @@ CREATE DOMAIN PROJECTOR VARCHAR(9)
         'FILM ROLL', 'DIGITAL', 'LASER', 'IMAX'
     ));
 
+CREATE TABLE director (
+    director_id     SERIAL PRIMARY KEY,
+    name            VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE producer (
+    producer_id     SERIAL PRIMARY KEY,
+    name            VARCHAR(255) NOT NULL
+);
+
 CREATE TABLE movie (
-    movie_id    SERIAL PRIMARY KEY,
-    title       VARCHAR(255) NOT NULL,
-    year        INT NOT NULL
+    movie_id        SERIAL PRIMARY KEY,
+    title           VARCHAR(500) NOT NULL,
+    episode_title   VARCHAR(500),
+    year            INT NOT NULL,
+    genre           VARCHAR(255),
+    director_id     INT REFERENCES director(director_id),
+    producer_id     INT REFERENCES producer(producer_id)
 );
 
 CREATE TABLE actor (
     actor_id            SERIAL PRIMARY KEY,
     name                VARCHAR(255) NOT NULL,
-    gender              GENDER,
+    gender              GENDER
+);
+
+CREATE TABLE role (
+    actor_id            INT REFERENCES actor(actor_id),
     movie_id            INT REFERENCES movie(movie_id),
-    character_name      VARCHAR(255)
-);
-
-CREATE TABLE producer (
-    producer_id     SERIAL PRIMARY KEY,
-    name            VARCHAR(255) NOT NULL,
-    movie_id        INT REFERENCES movie(movie_id)
-);
-
-CREATE TABLE director (
-    director_id     SERIAL PRIMARY KEY,
-    name            VARCHAR(255) NOT NULL,
-    movie_id        INT REFERENCES movie(movie_id)
+    character_name      VARCHAR(255),
+    PRIMARY KEY         (actor_id, movie_id, character_name)
 );
 
 CREATE TABLE theatre (
     theatre_id      SERIAL PRIMARY KEY,
-    theatre_name    VARCHAR(255) NOT NULL,
+    name            VARCHAR(500) NOT NULL,
     city            VARCHAR(255),
     state           CHAR(2),
     zipcode         CHAR(5)
 );
 
 CREATE TABLE showroom (
-    showroom_id     SERIAL,
+    showroom_id     SERIAL UNIQUE,
     theatre_id      INT REFERENCES theatre(theatre_id),
     projector_type  PROJECTOR,
     capacity        INT,
@@ -53,8 +60,9 @@ CREATE TABLE showroom (
 );
 
 CREATE TABLE showtime (
-    showtime_id     SERIAL PRIMARY KEY,
+    showtime_id     SERIAL UNIQUE PRIMARY KEY,
     theatre_id      INT REFERENCES theatre(theatre_id),
+    showroom_id     INT REFERENCES showroom(showroom_id),
     movie_id        INT REFERENCES movie(movie_id),
     start_time      TIME,
     end_time        TIME,
@@ -62,10 +70,11 @@ CREATE TABLE showtime (
 );
 
 CREATE TABLE ticket (
-    ticket_number   SERIAL,
     showtime_id     INT REFERENCES showtime(showtime_id),
+    seat_number     SERIAL UNIQUE,
     price           NUMERIC(1000, 2) NOT NULL,
     time_bought     TIME,
     date_bought     DATE,
-    PRIMARY KEY     (ticket_number, showtime)
+    wasUsed         BOOLEAN,
+    PRIMARY KEY     (showtime_id, seat_number)
 );
