@@ -1,12 +1,17 @@
 INSERT INTO director VALUES (DEFAULT, 'Joss Whedon');		-- 1
 INSERT INTO director VALUES (DEFAULT, 'Zack Snyder');		-- 2
+INSERT INTO director VALUES (DEFAULT, 'Colin Trevorrow');	-- 3
+INSERT INTO director VALUES (DEFAULT, 'Steven Spielberg');	-- 4
 
 INSERT INTO producer VALUES (DEFAULT, 'Victoria Alonso');	-- 1
 INSERT INTO producer VALUES (DEFAULT, 'Wesley Coller');		-- 2
-
+INSERT INTO producer VALUES (DEFAULT, 'Steven Spielberg');	-- 3
+INSERT INTO producer VALUES (DEFAULT, 'Kathleen Kennedy');	-- 4
 
 INSERT INTO movie VALUES (DEFAULT, 'Avengers: Age of Ultron', NULL, 2015, 'Action', 1, 1);				-- 1
 INSERT INTO movie VALUES (DEFAULT, 'Batman v Superman: Dawn of Justice', NULL, 2016, 'Action', 2, 2);	-- 2
+INSERT INTO movie VALUES (DEFAULT, 'Jurassic World', NULL, 2015, 'Action', 3, 3);						-- 3
+INSERT INTO movie VALUES (DEFAULT, 'The Lost World: Jurassic Park', NULL, 1997, 'Action', 4, 4);		-- 4
 
 
 INSERT INTO actor VALUES (DEFAULT, 'Robert Downey Jr.', 'M'); 	-- 1
@@ -24,6 +29,11 @@ INSERT INTO actor VALUES (DEFAULT, 'Lois Lane', 'F'); 			-- 11
 INSERT INTO actor VALUES (DEFAULT, 'Ezra Miller', 'M'); 		-- 12
 INSERT INTO actor VALUES (DEFAULT, 'Jesse Eisenburg', 'M'); 	-- 13
 
+INSERT INTO actor VALUES (DEFAULT, 'Vincent DOnofrio', 'M');	-- 14
+
+INSERT INTO actor VALUES (DEFAULT, 'Jeff Goldblum', 'M');		-- 15
+INSERT INTO actor VALUES (DEFAULT, 'Julianne Moore', 'F');		-- 16
+
 
 INSERT INTO role VALUES (1, 1, 'Tony Stark / Iron Man');
 INSERT INTO role VALUES (2, 1, 'Thor');
@@ -40,29 +50,34 @@ INSERT INTO role VALUES (11, 2, 'Lois Lane');
 INSERT INTO role VALUES (12, 2, 'Barry Allen / The Flash');
 INSERT INTO role VALUES (13, 2, 'Lex Luthor');
 
+INSERT INTO role VALUES (14, 3, 'Vic Hoskins');
+
+INSERT INTO role VALUES (15, 4, 'Ian Malcom');
+INSERT INTO role VALUES (16, 4, 'Sarah Harding');
+
 
 INSERT INTO theatre VALUES (DEFAULT, 'Cinemark: Huntington Mall', 'Barboursville', 'WV', '25504');		-- 1
 INSERT INTO theatre VALUES (DEFAULT, 'Cinemark: Cinema 10', 'Ashland', 'KY', '41101');					-- 2
 INSERT INTO theatre VALUES (DEFAULT, 'Marquee Cinemas: Pullman Square', 'Huntington', 'WV', '25701');	-- 3
 
 
-INSERT INTO showroom VALUES (DEFAULT, 1, 'LASER', 75);		-- 1
-INSERT INTO showroom VALUES (DEFAULT, 1, 'LASER', 75);		-- 2
-INSERT INTO showroom VALUES (DEFAULT, 1, 'LASER', 75);		-- 3
-INSERT INTO showroom VALUES (DEFAULT, 1, 'IMAX', 100);		-- 4
-INSERT INTO showroom VALUES (DEFAULT, 1, 'DIGITAL', 50);	-- 5
+INSERT INTO showroom VALUES (1, 1, 'LASER', 75);		-- 1
+INSERT INTO showroom VALUES (2, 1, 'LASER', 75);		-- 2
+INSERT INTO showroom VALUES (3, 1, 'LASER', 75);		-- 3
+INSERT INTO showroom VALUES (4, 1, 'IMAX', 100);		-- 4
+INSERT INTO showroom VALUES (5, 1, 'DIGITAL', 50);	-- 5
 
-INSERT INTO showroom VALUES (DEFAULT, 2, 'IMAX', 125);		-- 6
-INSERT INTO showroom VALUES (DEFAULT, 2, 'DIGITAL', 75);	-- 7
-INSERT INTO showroom VALUES (DEFAULT, 2, 'DIGITAL', 75);	-- 8
-INSERT INTO showroom VALUES (DEFAULT, 2, 'DIGITAL', 75);	-- 9
-INSERT INTO showroom VALUES (DEFAULT, 2, 'DIGITAL', 75);	-- 10
-INSERT INTO showroom VALUES (DEFAULT, 2, 'DIGITAL', 75);	-- 11
+INSERT INTO showroom VALUES (6, 2, 'IMAX', 125);		-- 6
+INSERT INTO showroom VALUES (7, 2, 'DIGITAL', 75);	-- 7
+INSERT INTO showroom VALUES (8, 2, 'DIGITAL', 75);	-- 8
+INSERT INTO showroom VALUES (9, 2, 'DIGITAL', 75);	-- 9
+INSERT INTO showroom VALUES (10, 2, 'DIGITAL', 75);	-- 10
+INSERT INTO showroom VALUES (11, 2, 'DIGITAL', 75);	-- 11
 
-INSERT INTO showroom VALUES (DEFAULT, 3, 'LASER', 50);		-- 12
-INSERT INTO showroom VALUES (DEFAULT, 3, 'LASER', 50);		-- 13
-INSERT INTO showroom VALUES (DEFAULT, 3, 'IMAX', 60);		-- 14
-INSERT INTO showroom VALUES (DEFAULT, 3, 'FILM ROLL', 25);	-- 15
+INSERT INTO showroom VALUES (12, 3, 'LASER', 50);		-- 12
+INSERT INTO showroom VALUES (13, 3, 'LASER', 50);		-- 13
+INSERT INTO showroom VALUES (14, 3, 'IMAX', 60);		-- 14
+INSERT INTO showroom VALUES (15, 3, 'FILM ROLL', 25);	-- 15
 
 
 INSERT INTO showtime VALUES (DEFAULT, 1, 1, 1, '9:40pm', '12:01am', '5/1/2015');	-- 1

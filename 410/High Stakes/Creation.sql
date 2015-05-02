@@ -50,7 +50,7 @@ CREATE TABLE theatre (
 );
 
 CREATE TABLE showroom (
-    showroom_id     SERIAL UNIQUE,
+    showroom_id     INT UNIQUE,
     theatre_id      INT REFERENCES theatre(theatre_id),
     projector_type  PROJECTOR,
     capacity        INT,
