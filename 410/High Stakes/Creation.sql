@@ -10,9 +10,9 @@
         - MOVIE
         - ACTOR
         - ROLE
-        - Theater
+        - THEATER
         - SHOWROOM
-        - show-time
+        - SHOWTIME
         - TICKET
 */
 
@@ -111,14 +111,14 @@ CREATE TABLE role (
 
 /*
     Represents a movie Theater
-        - theatre_id    Unique, incremental identifier for a Theater
+        - theater_id    Unique, incremental identifier for a Theater
         - name          Name of the Theater
         - city          City in which the Theater exists
         - state         State in which the Theater exists
         - zipcode       Zip code in which the Theater exists
 */
 CREATE TABLE Theater (
-    theatre_id      SERIAL PRIMARY KEY,
+    theater_id      SERIAL PRIMARY KEY,
     name            VARCHAR(500) NOT NULL,
     city            VARCHAR(255),
     state           CHAR(2),
@@ -129,32 +129,32 @@ CREATE TABLE Theater (
 /*
     Represents a showroom in a Theater
         - showroom_id       Unique identifier for a showroom
-        - theatre_id        Identifier of the Theater containing the showroom (Foreign Key)
+        - theater_id        Identifier of the Theater containing the showroom (Foreign Key)
         - projector_type    Type of projector that the showroom uses
         - capacity          Number of people the showroom can hold
 */
 CREATE TABLE showroom (
     showroom_id     INT UNIQUE,
-    theatre_id      INT REFERENCES Theater(theatre_id),
+    theater_id      INT REFERENCES Theater(theater_id),
     projector_type  PROJECTOR,
     capacity        INT,
-    PRIMARY KEY     (showroom_id, theatre_id)
+    PRIMARY KEY     (showroom_id, theater_id)
 );
 
 
 /*
-    Represents a show-time for a film
-        - showtime_id   Unique, incremental identifier for a show-time
-        - theatre_id    Identifier of the Theater playing the showing (Foreign Key)
+    Represents a showtime for a film
+        - showtime_id   Unique, incremental identifier for a showtime
+        - theater_id    Identifier of the Theater playing the showing (Foreign Key)
         - showroom_id   Identifier of the showroom hosting the showing (Foreign Key)
         - movie_id      Identifier of the movie being shown (Foreign Key)
         - start_time    Time in which the showing begins
         - end_time      Time in which the showing ends
         - show_date     Date on which the showing plays
 */
-CREATE TABLE show-time (
+CREATE TABLE showtime (
     showtime_id     SERIAL PRIMARY KEY,
-    theatre_id      INT REFERENCES Theater(theatre_id),
+    theater_id      INT REFERENCES Theater(theater_id),
     showroom_id     INT REFERENCES showroom(showroom_id),
     movie_id        INT REFERENCES movie(movie_id),
     start_time      TIME,
@@ -164,8 +164,8 @@ CREATE TABLE show-time (
 
 
 /*
-    Represents a ticket for a show-time
-        - showtime_id   Identifier of the show-time for which the ticket can be used (Foreign Key)
+    Represents a ticket for a showtime
+        - showtime_id   Identifier of the showtime for which the ticket can be used (Foreign Key)
         - seat_number   Seat for the ticket-holder to occupy
         - price         Price of the ticket
         - time_bought   Time in which the ticket was purchased
@@ -173,7 +173,7 @@ CREATE TABLE show-time (
         - wasUsed       True if the ticket was redeemed
 */
 CREATE TABLE ticket (
-    showtime_id     INT REFERENCES show-time(showtime_id),
+    showtime_id     INT REFERENCES showtime(showtime_id),
     seat_number     SERIAL UNIQUE,
     price           NUMERIC(1000, 2) NOT NULL,
     time_bought     TIME,

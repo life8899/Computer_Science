@@ -1,19 +1,42 @@
+/*
+	SQL script to insert sample test data into the Theater database.
+*/
+
+
+/*
+	Insert Directors into DIRECTOR table.
+	(director_id, name)
+*/
 INSERT INTO director VALUES (DEFAULT, 'Joss Whedon');		-- 1
 INSERT INTO director VALUES (DEFAULT, 'Zack Snyder');		-- 2
 INSERT INTO director VALUES (DEFAULT, 'Colin Trevorrow');	-- 3
 INSERT INTO director VALUES (DEFAULT, 'Steven Spielberg');	-- 4
 
+
+/*
+	Insert Producers into PRODUCER table.
+	(producer_id, name)
+*/
 INSERT INTO producer VALUES (DEFAULT, 'Victoria Alonso');	-- 1
 INSERT INTO producer VALUES (DEFAULT, 'Wesley Coller');		-- 2
 INSERT INTO producer VALUES (DEFAULT, 'Steven Spielberg');	-- 3
 INSERT INTO producer VALUES (DEFAULT, 'Kathleen Kennedy');	-- 4
 
+
+/*
+	Insert movies into MOVIE table.
+	(movie_id, title, episode_title, year, genre, director_id, producer_id)
+*/
 INSERT INTO movie VALUES (DEFAULT, 'Avengers: Age of Ultron', NULL, 2015, 'Action', 1, 1);				-- 1
 INSERT INTO movie VALUES (DEFAULT, 'Batman v Superman: Dawn of Justice', NULL, 2016, 'Action', 2, 2);	-- 2
 INSERT INTO movie VALUES (DEFAULT, 'Jurassic World', NULL, 2015, 'Action', 3, 3);						-- 3
 INSERT INTO movie VALUES (DEFAULT, 'The Lost World: Jurassic Park', NULL, 1997, 'Action', 4, 4);		-- 4
 
 
+/*
+	Insert actor into ACTOR table.
+	(actor_id, name, gender)
+*/
 INSERT INTO actor VALUES (DEFAULT, 'Robert Downey Jr.', 'M'); 	-- 1
 INSERT INTO actor VALUES (DEFAULT, 'Chris Hemsworth', 'M'); 	-- 2
 INSERT INTO actor VALUES (DEFAULT, 'Mark Ruffalo', 'M'); 		-- 3
@@ -35,6 +58,10 @@ INSERT INTO actor VALUES (DEFAULT, 'Jeff Goldblum', 'M');		-- 15
 INSERT INTO actor VALUES (DEFAULT, 'Julianne Moore', 'F');		-- 16
 
 
+/*
+	Insert role into ROLE table.
+	(actor_id, movie_id, character_name)
+*/
 INSERT INTO role VALUES (1, 1, 'Tony Stark / Iron Man');
 INSERT INTO role VALUES (2, 1, 'Thor');
 INSERT INTO role VALUES (3, 1, 'Bruce Banner / Hulk');
@@ -56,11 +83,19 @@ INSERT INTO role VALUES (15, 4, 'Ian Malcom');
 INSERT INTO role VALUES (16, 4, 'Sarah Harding');
 
 
+/*
+	Insert theater into THEATER table.
+	(theatre_id, name, city, state, zip-code)
+*/
 INSERT INTO theatre VALUES (DEFAULT, 'Cinemark: Huntington Mall', 'Barboursville', 'WV', '25504');		-- 1
 INSERT INTO theatre VALUES (DEFAULT, 'Cinemark: Cinema 10', 'Ashland', 'KY', '41101');					-- 2
 INSERT INTO theatre VALUES (DEFAULT, 'Marquee Cinemas: Pullman Square', 'Huntington', 'WV', '25701');	-- 3
 
 
+/*
+	Insert showroom into SHOWROOM table.
+	(showroom_id, theater_id, projector_type, capacity)
+*/
 INSERT INTO showroom VALUES (1, 1, 'LASER', 75);			-- 1
 INSERT INTO showroom VALUES (2, 1, 'LASER', 75);			-- 2
 INSERT INTO showroom VALUES (3, 1, 'LASER', 75);			-- 3
@@ -80,6 +115,10 @@ INSERT INTO showroom VALUES (14, 3, 'IMAX', 60);			-- 14
 INSERT INTO showroom VALUES (15, 3, 'FILM ROLL', 25);		-- 15
 
 
+/*
+	Insert show-time into SHOWTIME table.
+	(showtime_id, theater_id, showroom_id, movie_id, start_time, end_time, show_date)
+*/
 INSERT INTO showtime VALUES (DEFAULT, 1, 1, 1, '9:40pm', '12:01am', '5/1/2015');	-- 1
 INSERT INTO showtime VALUES (DEFAULT, 1, 5, 1, '10:00pm', '12:21am', '5/1/2015');	-- 2
 INSERT INTO showtime VALUES (DEFAULT, 1, 4, 1, '8:00pm', '10:21pm', '5/1/2015');	-- 3
@@ -94,6 +133,10 @@ INSERT INTO showtime VALUES (DEFAULT, 2, 6, 2, '8:00pm', '10:00pm', '5/1/2016');
 INSERT INTO showtime VALUES (DEFAULT, 3, 14, 2, '8:00pm', '10:00pm', '5/1/2016');	-- 9
 
 
+/*
+	Insert ticket into TICKET table.
+	(showtime_id, seat_number, price, time_bought, date_bought, wasUsed)
+*/
 INSERT INTO ticket VALUES (1, DEFAULT, 7.50, NULL, NULL, FALSE);					-- 1
 INSERT INTO ticket VALUES (1, DEFAULT, 7.50, NULL, NULL, FALSE);					-- 2
 INSERT INTO ticket VALUES (1, DEFAULT, 7.50, NULL, NULL, FALSE);					-- 3
