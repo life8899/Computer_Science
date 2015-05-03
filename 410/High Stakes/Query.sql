@@ -1,6 +1,8 @@
 -- 1) View all Movies playing with stars and their roles
 SELECT DISTINCT
-    title AS "Movie", name AS "Starring", character_name AS "As"
+    title           AS "Movie",
+    name            AS "Starring",
+    character_name  AS "As"
 FROM
     showtime, movie, actor, role
 WHERE
@@ -14,7 +16,9 @@ ORDER BY
 
 -- 2) View producers and directors of films playing
 SELECT DISTINCT
-    title AS "Movie", director.name AS "Director", producer.name AS "Producer"
+    title           AS "Movie",
+    director.name   AS "Director",
+    producer.name   AS "Producer"
 FROM
     showtime, movie, director, producer
 WHERE
@@ -36,7 +40,8 @@ WHERE
 
 -- 4) View average ticket price for each theatre
 SELECT
-    theatre.name AS "Theatre", round(AVG(price), 2) AS "Average Ticket Price ($)"
+    theatre.name            AS "Theatre",
+    round(AVG(price), 2)    AS "Average Ticket Price ($)"
 FROM
     showtime, ticket, theatre
 WHERE
@@ -47,7 +52,10 @@ GROUP BY
 
 -- 5) View all theatre locations
 SELECT
-    name, city, state, zipcode
+    name,
+    city,
+    state,
+    zipcode
 FROM
     theatre;
 
@@ -55,7 +63,9 @@ FROM
 SELECT DISTINCT
     name
 FROM
-    theatre, showtime, movie
+    theatre,
+    showtime,
+    movie
 WHERE
     movie.title LIKE '%Avengers%'       AND
     movie.movie_id=showtime.movie_id    AND
@@ -63,9 +73,15 @@ WHERE
 
 -- 7) View all showtimes for the Avengers
 SELECT
-    name, start_time, show_date, price
+    name,
+    start_time,
+    show_date,
+    price
 FROM
-    theatre, movie, showtime, ticket
+    theatre,
+    movie,
+    showtime,
+    ticket
 WHERE
     movie.title LIKE '%Avengers%'           AND
     showtime.movie_id=movie.movie_id        AND
@@ -79,24 +95,33 @@ ORDER BY
 
 -- 8) View all showtimes
 SELECT
-    name, title, start_time, show_date, price
+    name,
+    title,
+    start_time,
+    show_date,
+    price
 FROM
-    theatre, movie, showtime, ticket
+    theatre,
+    movie,
+    showtime,
+    ticket
 WHERE
     showtime.movie_id=movie.movie_id        AND
     showtime.theatre_id=theatre.theatre_id  AND
     ticket.showtime_id=showtime.showtime_id
 ORDER BY
     theatre.name,
-    show_date,
-    start_time;
+    showtime.show_date,
+    showtime.start_time;
 
 
 -- 9) View all Steven Spielberg Films
 SELECT DISTINCT
-    title AS "Spielberg Film"
+    title   AS "Spielberg Film"
 FROM
-    movie, director, producer
+    movie,
+    director,
+    producer
 WHERE
     movie.director_id=director.director_id  AND
     director.name='Steven Spielberg'        OR
@@ -106,9 +131,12 @@ WHERE
 
 -- 10) View all theatres and their projector types
 SELECT
-    name AS "Theatre", projector_type AS "Projector", COUNT(projector_type) AS "Count"
+    name                    AS "Theatre",
+    projector_type          AS "Projector",
+    COUNT(projector_type)   AS "Count"
 FROM
-    theatre, showroom
+    theatre,
+    showroom
 WHERE
     showroom.theatre_id=theatre.theatre_id
 GROUP BY
@@ -121,9 +149,15 @@ ORDER BY
 
 -- 11) View all tickets sold per theatre
 SELECT
-    name AS "Theatre", COUNT(ticket) AS "Tickets Sold", SUM(ticket.price) AS "Sales ($)", COUNT(CASE WHEN ticket.wasUsed = 't' THEN 1 ELSE NULL END) AS "Tickets Redeemed"
+    name                        AS "Theatre",
+    COUNT(ticket)               AS "Tickets Sold",
+    SUM(ticket.price)           AS "Sales ($)",
+    COUNT(CASE WHEN ticket.wasUsed='t' THEN 1 ELSE NULL END)
+                                AS "Tickets Redeemed"
 FROM
-    ticket, showtime, theatre
+    ticket,
+    showtime,
+    theatre
 WHERE
     ticket.showtime_id=showtime.showtime_id AND
     showtime.theatre_id=theatre.theatre_id
@@ -133,11 +167,19 @@ GROUP BY
 
 -- 12) View all tickets sold per showtime
 SELECT
-    showtime.showtime_id AS "Showtime", showtime.show_date AS "Date", showtime.start_time AS "Start Time", movie.title AS "Movie", COUNT(ticket) AS "Tickets Sold", showroom.capacity-COUNT(ticket) AS "Tickets Available"
+    showtime.showtime_id                AS "Showtime",
+    showtime.show_date                  AS "Date",
+    showtime.start_time                 AS "Start Time",
+    movie.title                         AS "Movie",
+    COUNT(ticket)                       AS "Tickets Sold",
+    showroom.capacity-COUNT(ticket)     AS "Tickets Available"
 FROM
-    ticket, showtime, showroom, movie
+    ticket,
+    showtime,
+    showroom,
+    movie
 WHERE
-    ticket.showtime_id=showtime.showtime_id AND
+    ticket.showtime_id=showtime.showtime_id     AND
     showtime.showroom_id=showroom.showroom_id   AND
     showtime.movie_id=movie.movie_id
 GROUP BY

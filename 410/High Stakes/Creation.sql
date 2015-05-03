@@ -1,12 +1,16 @@
 CREATE DOMAIN GENDER CHAR(1)
-    CHECK (value IN (
-        'M', 'F'
-    ));
+    CHECK (
+        value IN (
+            'M', 'F'
+        )
+    );
 
 CREATE DOMAIN PROJECTOR VARCHAR(9)
-    CHECK (value IN (
-        'FILM ROLL', 'DIGITAL', 'LASER', 'IMAX'
-    ));
+    CHECK (
+        value IN (
+            'FILM ROLL', 'DIGITAL', 'LASER', 'IMAX'
+        )
+    );
 
 CREATE TABLE director (
     director_id     SERIAL PRIMARY KEY,

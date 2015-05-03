@@ -61,23 +61,23 @@ INSERT INTO theatre VALUES (DEFAULT, 'Cinemark: Cinema 10', 'Ashland', 'KY', '41
 INSERT INTO theatre VALUES (DEFAULT, 'Marquee Cinemas: Pullman Square', 'Huntington', 'WV', '25701');	-- 3
 
 
-INSERT INTO showroom VALUES (1, 1, 'LASER', 75);		-- 1
-INSERT INTO showroom VALUES (2, 1, 'LASER', 75);		-- 2
-INSERT INTO showroom VALUES (3, 1, 'LASER', 75);		-- 3
-INSERT INTO showroom VALUES (4, 1, 'IMAX', 100);		-- 4
-INSERT INTO showroom VALUES (5, 1, 'DIGITAL', 50);	-- 5
+INSERT INTO showroom VALUES (1, 1, 'LASER', 75);			-- 1
+INSERT INTO showroom VALUES (2, 1, 'LASER', 75);			-- 2
+INSERT INTO showroom VALUES (3, 1, 'LASER', 75);			-- 3
+INSERT INTO showroom VALUES (4, 1, 'IMAX', 100);			-- 4
+INSERT INTO showroom VALUES (5, 1, 'DIGITAL', 50);			-- 5
 
-INSERT INTO showroom VALUES (6, 2, 'IMAX', 125);		-- 6
-INSERT INTO showroom VALUES (7, 2, 'DIGITAL', 75);	-- 7
-INSERT INTO showroom VALUES (8, 2, 'DIGITAL', 75);	-- 8
-INSERT INTO showroom VALUES (9, 2, 'DIGITAL', 75);	-- 9
-INSERT INTO showroom VALUES (10, 2, 'DIGITAL', 75);	-- 10
-INSERT INTO showroom VALUES (11, 2, 'DIGITAL', 75);	-- 11
+INSERT INTO showroom VALUES (6, 2, 'IMAX', 125);			-- 6
+INSERT INTO showroom VALUES (7, 2, 'DIGITAL', 75);			-- 7
+INSERT INTO showroom VALUES (8, 2, 'DIGITAL', 75);			-- 8
+INSERT INTO showroom VALUES (9, 2, 'DIGITAL', 75);			-- 9
+INSERT INTO showroom VALUES (10, 2, 'DIGITAL', 75);			-- 10
+INSERT INTO showroom VALUES (11, 2, 'DIGITAL', 75);			-- 11
 
-INSERT INTO showroom VALUES (12, 3, 'LASER', 50);		-- 12
-INSERT INTO showroom VALUES (13, 3, 'LASER', 50);		-- 13
-INSERT INTO showroom VALUES (14, 3, 'IMAX', 60);		-- 14
-INSERT INTO showroom VALUES (15, 3, 'FILM ROLL', 25);	-- 15
+INSERT INTO showroom VALUES (12, 3, 'LASER', 50);			-- 12
+INSERT INTO showroom VALUES (13, 3, 'LASER', 50);			-- 13
+INSERT INTO showroom VALUES (14, 3, 'IMAX', 60);			-- 14
+INSERT INTO showroom VALUES (15, 3, 'FILM ROLL', 25);		-- 15
 
 
 INSERT INTO showtime VALUES (DEFAULT, 1, 1, 1, '9:40pm', '12:01am', '5/1/2015');	-- 1
@@ -94,22 +94,22 @@ INSERT INTO showtime VALUES (DEFAULT, 2, 6, 2, '8:00pm', '10:00pm', '5/1/2016');
 INSERT INTO showtime VALUES (DEFAULT, 3, 14, 2, '8:00pm', '10:00pm', '5/1/2016');	-- 9
 
 
-INSERT INTO ticket VALUES (1, DEFAULT, 7.50, NULL, NULL, FALSE);				-- 1
-INSERT INTO ticket VALUES (1, DEFAULT, 7.50, NULL, NULL, FALSE);				-- 2
-INSERT INTO ticket VALUES (1, DEFAULT, 7.50, NULL, NULL, FALSE);				-- 3
-INSERT INTO ticket VALUES (1, DEFAULT, 7.50, '6:25pm', '4/30/2015', TRUE);		-- 4
+INSERT INTO ticket VALUES (1, DEFAULT, 7.50, NULL, NULL, FALSE);					-- 1
+INSERT INTO ticket VALUES (1, DEFAULT, 7.50, NULL, NULL, FALSE);					-- 2
+INSERT INTO ticket VALUES (1, DEFAULT, 7.50, NULL, NULL, FALSE);					-- 3
+INSERT INTO ticket VALUES (1, DEFAULT, 7.50, '6:25pm', '4/30/2015', TRUE);			-- 4
 
-INSERT INTO ticket VALUES (2, DEFAULT, 7.50, NULL, NULl, FALSE);				-- 5
+INSERT INTO ticket VALUES (2, DEFAULT, 7.50, NULL, NULl, FALSE);					-- 5
 
-INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '6:25pm', '4/30/2015', TRUE);		-- 6
-INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '6:25pm', '4/30/2015', TRUE); 	-- 7
-INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '6:25pm', '4/30/2015', TRUE);		-- 8
-INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '11:20am', '5/1/2015', FALSE);	-- 9
-INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '11:21am', '5/1/2015', FALSE);	-- 10
-INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '12:00pm', '5/1/2015', FALSE);	-- 11
+INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '6:25pm', '4/30/2015', TRUE);			-- 6
+INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '6:25pm', '4/30/2015', TRUE); 		-- 7
+INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '6:25pm', '4/30/2015', TRUE);			-- 8
+INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '11:20am', '5/1/2015', FALSE);		-- 9
+INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '11:21am', '5/1/2015', FALSE);		-- 10
+INSERT INTO ticket VALUES (3, DEFAULT, 10.00, '12:00pm', '5/1/2015', FALSE);		-- 11
 
-INSERT INTO ticket VALUES (4, DEFAULT, 7.50, '6:59pm', '5/1/2015', TRUE);		-- 12
+INSERT INTO ticket VALUES (4, DEFAULT, 7.50, '6:59pm', '5/1/2015', TRUE);			-- 12
 
-INSERT INTO ticket VALUES (7, DEFAULT, 12.50, NULL, NULL, FALSE);				-- 13
-INSERT INTO ticket VALUES (8, DEFAULT, 12.50, NULL, NULL, FALSE);				-- 14
-INSERT INTO ticket VALUES (9, DEFAULT, 12.50, NULL, NULL, FALSE);				-- 15
+INSERT INTO ticket VALUES (7, DEFAULT, 12.50, NULL, NULL, FALSE);					-- 13
+INSERT INTO ticket VALUES (8, DEFAULT, 12.50, NULL, NULL, FALSE);					-- 14
+INSERT INTO ticket VALUES (9, DEFAULT, 12.50, NULL, NULL, FALSE);					-- 15
