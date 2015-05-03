@@ -67,8 +67,8 @@ FROM
     showtime,
     movie
 WHERE
-    movie.title LIKE '%Avengers%'       AND
-    movie.movie_id=showtime.movie_id    AND
+    movie.title LIKE '%Avengers%'           AND
+    movie.movie_id=showtime.movie_id        AND
     showtime.theatre_id=theatre.theatre_id;
 
 -- 7) View all show-times for the Avengers
@@ -83,9 +83,9 @@ FROM
     showtime,
     ticket
 WHERE
-    movie.title LIKE '%Avengers%'           AND
-    showtime.movie_id=movie.movie_id        AND
-    showtime.theatre_id=theatre.theatre_id  AND
+    movie.title LIKE '%Avengers%'               AND
+    showtime.movie_id=movie.movie_id            AND
+    showtime.theatre_id=theatre.theatre_id      AND
     ticket.showtime_id=showtime.showtime_id
 ORDER BY
     theatre.name,
@@ -106,8 +106,8 @@ FROM
     showtime,
     ticket
 WHERE
-    showtime.movie_id=movie.movie_id        AND
-    showtime.theatre_id=theatre.theatre_id  AND
+    showtime.movie_id=movie.movie_id            AND
+    showtime.theatre_id=theatre.theatre_id      AND
     ticket.showtime_id=showtime.showtime_id
 ORDER BY
     theatre.name,
@@ -123,9 +123,9 @@ FROM
     director,
     producer
 WHERE
-    movie.director_id=director.director_id  AND
-    director.name='Steven Spielberg'        OR
-    movie.producer_id=producer.producer_id  AND
+    movie.director_id=director.director_id      AND
+    director.name='Steven Spielberg'            OR
+    movie.producer_id=producer.producer_id      AND
     producer.name='Steven Spielberg';
 
 
@@ -149,11 +149,10 @@ ORDER BY
 
 -- 11) View all tickets sold per theater
 SELECT
-    name                        AS "Theater",
-    COUNT(ticket)               AS "Tickets Sold",
-    SUM(ticket.price)           AS "Sales ($)",
-    COUNT(CASE WHEN ticket.wasUsed='t' THEN 1 ELSE NULL END)
-                                AS "Tickets Redeemed"
+    name                                                        AS "Theater",
+    COUNT(ticket)                                               AS "Tickets Sold",
+    SUM(ticket.price)                                           AS "Sales ($)",
+    COUNT(CASE WHEN ticket.wasUsed='t' THEN 1 ELSE NULL END)    AS "Ticket Redeemed"
 FROM
     ticket,
     showtime,
