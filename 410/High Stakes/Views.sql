@@ -1,5 +1,5 @@
 /*
-    This view automatically stoes the locations of all Cinemark theatres.
+    This view automatically stores the locations of all Cinemark theaters.
 */
 CREATE TEMP VIEW cinemark_location AS
 SELECT name, city, state, zipcode
@@ -8,7 +8,7 @@ WHERE name LIKE '%Cinemark%';
 
 
 /*
-    The view stores all showtimes for Cinemark theatres including the movie title, show date, start time, and ticket price, and is ordered based on movie title.
+    The view stores all show-times for Cinemark theaters including the movie title, show date, start time, and ticket price, and is ordered based on movie title.
 */
 CREATE TEMP VIEW cinemark_showtime_by_movie AS
 SELECT
@@ -28,7 +28,7 @@ ORDER BY
 
 
 /*
-    The view is identical to the previous with the exception that tuples are ordered by theatre name.
+    The view is identical to the previous with the exception that tuples are ordered by theater name.
 */
 CREATE TEMP VIEW cinemark_showtime_by_theatre AS
 SELECT

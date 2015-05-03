@@ -38,9 +38,9 @@ WHERE
     year=2015;
 
 
--- 4) View average ticket price for each theatre
+-- 4) View average ticket price for each theater
 SELECT
-    theatre.name            AS "Theatre",
+    theatre.name            AS "Theater",
     round(AVG(price), 2)    AS "Average Ticket Price ($)"
 FROM
     showtime, ticket, theatre
@@ -50,7 +50,7 @@ WHERE
 GROUP BY
     theatre.name;
 
--- 5) View all theatre locations
+-- 5) View all theater locations
 SELECT
     name,
     city,
@@ -59,7 +59,7 @@ SELECT
 FROM
     theatre;
 
--- 6) View all theatres that are playing the Avengers movie
+-- 6) View all theaters that are playing the Avengers movie
 SELECT DISTINCT
     name
 FROM
@@ -71,7 +71,7 @@ WHERE
     movie.movie_id=showtime.movie_id    AND
     showtime.theatre_id=theatre.theatre_id;
 
--- 7) View all showtimes for the Avengers
+-- 7) View all show-times for the Avengers
 SELECT
     name,
     start_time,
@@ -93,7 +93,7 @@ ORDER BY
     start_time;
 
 
--- 8) View all showtimes
+-- 8) View all show-times
 SELECT
     name,
     title,
@@ -129,9 +129,9 @@ WHERE
     producer.name='Steven Spielberg';
 
 
--- 10) View all theatres and their projector types
+-- 10) View all theaters and their projector types
 SELECT
-    name                    AS "Theatre",
+    name                    AS "Theater",
     projector_type          AS "Projector",
     COUNT(projector_type)   AS "Count"
 FROM
@@ -147,9 +147,9 @@ ORDER BY
     projector_type;
 
 
--- 11) View all tickets sold per theatre
+-- 11) View all tickets sold per theater
 SELECT
-    name                        AS "Theatre",
+    name                        AS "Theater",
     COUNT(ticket)               AS "Tickets Sold",
     SUM(ticket.price)           AS "Sales ($)",
     COUNT(CASE WHEN ticket.wasUsed='t' THEN 1 ELSE NULL END)
@@ -165,7 +165,7 @@ GROUP BY
     name;
 
 
--- 12) View all tickets sold per showtime
+-- 12) View all tickets sold per show-time
 SELECT
     showtime.showtime_id                AS "Showtime",
     showtime.show_date                  AS "Date",
