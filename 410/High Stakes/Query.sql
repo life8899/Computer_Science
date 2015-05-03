@@ -92,7 +92,7 @@ ORDER BY
     start_time;
 
 
--- 8) View all Steven Spielberg Films
+-- 9) View all Steven Spielberg Films
 SELECT DISTINCT
     title AS "Spielberg Film"
 FROM
@@ -104,7 +104,7 @@ WHERE
     producer.name='Steven Spielberg';
 
 
--- 9) View all theatres and their projector types
+-- 10) View all theatres and their projector types
 SELECT
     name AS "Theatre", projector_type AS "Projector", COUNT(projector_type) AS "Count"
 FROM
@@ -119,9 +119,9 @@ ORDER BY
     projector_type;
 
 
--- 10) View all tickets sold per theatre
+-- 11) View all tickets sold per theatre
 SELECT
-    name AS "Theatre", COUNT(ticket) AS "Ticket Count", COUNT(CASE WHEN ticket.wasUsed = 't' THEN 1 ELSE NULL END) AS "Tickets Used"
+    name AS "Theatre", COUNT(ticket) AS "Tickets Sold", SUM(ticket.price) AS "Sales ($)", COUNT(CASE WHEN ticket.wasUsed = 't' THEN 1 ELSE NULL END) AS "Tickets Redeemed"
 FROM
     ticket, showtime, theatre
 WHERE
@@ -129,3 +129,24 @@ WHERE
     showtime.theatre_id=theatre.theatre_id
 GROUP BY
     name;
+
+
+-- 12) View all tickets sold per showtime
+SELECT
+    showtime.showtime_id AS "Showtime", showtime.show_date AS "Date", showtime.start_time AS "Start Time", movie.title AS "Movie", COUNT(ticket) AS "Tickets Sold", showroom.capacity-COUNT(ticket) AS "Tickets Available"
+FROM
+    ticket, showtime, showroom, movie
+WHERE
+    ticket.showtime_id=showtime.showtime_id AND
+    showtime.showroom_id=showroom.showroom_id   AND
+    showtime.movie_id=movie.movie_id
+GROUP BY
+    showtime.showtime_id,
+    showtime.show_date,
+    showtime.start_time,
+    showroom.capacity,
+    movie.title
+ORDER BY
+    showtime.showtime_id,
+    showtime.show_date,
+    showtime.start_time;
