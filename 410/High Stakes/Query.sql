@@ -1,35 +1,42 @@
--- 1) View all Movies playing with stars and their roles
+/*
+    Query to show all movie titles along with the actors/actresses
+    that perform in the movie as well as the character name.
+*/
 SELECT DISTINCT
     title           AS "Movie",
     name            AS "Starring",
     character_name  AS "As"
 FROM
-    showtime, movie, actor, role
+    movie, actor, role
 WHERE
-    showtime.movie_id=movie.movie_id    AND
-    role.movie_id=movie.movie_id        AND
+    role.movie_id=movie.movie_id	AND
     role.actor_id=actor.actor_id
 ORDER BY
     title,
     name;
 
 
--- 2) View producers and directors of films playing
+/*
+    Query to view the directors and producers of all
+    movies.
+*/
 SELECT DISTINCT
     title           AS "Movie",
     director.name   AS "Director",
     producer.name   AS "Producer"
 FROM
-    showtime, movie, director, producer
+    movie, director, producer
 WHERE
-    showtime.movie_id=movie.movie_id        AND
     movie.director_id=director.director_id  AND
     movie.producer_id=producer.producer_id
 ORDER BY
     title;
 
 
--- 3) View all movies released in 2015
+/*
+    Query to view all movie titles that were released before
+    the year 2015
+*/
 SELECT
     title AS "Title"
 FROM
@@ -38,62 +45,80 @@ WHERE
     year=2015;
 
 
--- 4) View average ticket price for each theater
+/*
+    Query to view the average ticket price for each theater
+*/
 SELECT
-    theatre.name            AS "Theater",
+    theater.name            AS "Theater",
     round(AVG(price), 2)    AS "Average Ticket Price ($)"
 FROM
-    showtime, ticket, theatre
+    showtime, ticket, theater
 WHERE
-    showtime.theatre_id=theatre.theatre_id  AND
+    showtime.theater_id=theater.theater_id  AND
     ticket.showtime_id=showtime.showtime_id
 GROUP BY
-    theatre.name;
+    theater.name;
 
--- 5) View all theater locations
+
+/*
+    Query to view all theaters and their city, state, and zipcode
+    location.
+*/
 SELECT
     name,
     city,
     state,
     zipcode
 FROM
-    theatre;
+    theater;
 
--- 6) View all theaters that are playing the Avengers movie
+
+/*
+    Query to view all theaters that are currently playing the
+    Avengers movie.
+*/
 SELECT DISTINCT
     name
 FROM
-    theatre,
+    theater,
     showtime,
     movie
 WHERE
     movie.title LIKE '%Avengers%'           AND
     movie.movie_id=showtime.movie_id        AND
-    showtime.theatre_id=theatre.theatre_id;
+    showtime.theater_id=theater.theater_id;
 
--- 7) View all show-times for the Avengers
+
+/*
+    Query to view the theater name, show start time, show date,
+    and ticket price for all theaters playing the Avengers movie.
+*/
 SELECT
     name,
     start_time,
     show_date,
     price
 FROM
-    theatre,
+    theater,
     movie,
     showtime,
     ticket
 WHERE
     movie.title LIKE '%Avengers%'               AND
     showtime.movie_id=movie.movie_id            AND
-    showtime.theatre_id=theatre.theatre_id      AND
+    showtime.theater_id=theater.theater_id      AND
     ticket.showtime_id=showtime.showtime_id
 ORDER BY
-    theatre.name,
+    theater.name,
     show_date,
     start_time;
 
 
--- 8) View all show-times
+/*
+    Query to view the name of all theaters, movie titles,
+    show start time, show date, and ticket price for all
+    theaters that have any showtimes.
+*/
 SELECT
     name,
     title,
@@ -101,21 +126,24 @@ SELECT
     show_date,
     price
 FROM
-    theatre,
+    theater,
     movie,
     showtime,
     ticket
 WHERE
     showtime.movie_id=movie.movie_id            AND
-    showtime.theatre_id=theatre.theatre_id      AND
+    showtime.theater_id=theater.theater_id      AND
     ticket.showtime_id=showtime.showtime_id
 ORDER BY
-    theatre.name,
+    theater.name,
     showtime.show_date,
     showtime.start_time;
 
 
--- 9) View all Steven Spielberg Films
+/*
+    Query to view the title of all movies that were
+    produced and/or directed by Steven Spielberg
+*/
 SELECT DISTINCT
     title   AS "Spielberg Film"
 FROM
@@ -129,16 +157,20 @@ WHERE
     producer.name='Steven Spielberg';
 
 
--- 10) View all theaters and their projector types
+/*
+    Query to view all theater names, the types of projectors
+    the theater uses, as well as the number of each project
+    the theater uses.
+*/
 SELECT
     name                    AS "Theater",
     projector_type          AS "Projector",
     COUNT(projector_type)   AS "Count"
 FROM
-    theatre,
+    theater,
     showroom
 WHERE
-    showroom.theatre_id=theatre.theatre_id
+    showroom.theater_id=theater.theater_id
 GROUP BY
     name,
     projector_type
@@ -147,7 +179,10 @@ ORDER BY
     projector_type;
 
 
--- 11) View all tickets sold per theater
+/*
+    Query to view the number of tickets sold, ticket sales, and the number
+    of tickets that were redeemed for each theater.
+*/
 SELECT
     name                                                        AS "Theater",
     COUNT(ticket)                                               AS "Tickets Sold",
@@ -156,15 +191,18 @@ SELECT
 FROM
     ticket,
     showtime,
-    theatre
+    theater
 WHERE
     ticket.showtime_id=showtime.showtime_id AND
-    showtime.theatre_id=theatre.theatre_id
+    showtime.theater_id=theater.theater_id
 GROUP BY
     name;
 
 
--- 12) View all tickets sold per show-time
+/*
+    Query to view the number of tickets sold, the number of tickets available,
+    for each showtime.
+*/
 SELECT
     showtime.showtime_id                AS "Showtime",
     showtime.show_date                  AS "Date",

@@ -25,7 +25,7 @@ CREATE DOMAIN GENDER CHAR(1)
         value IN (
             'M', 'F'
         )
-    );b
+    );
 
 
 /*
@@ -117,7 +117,7 @@ CREATE TABLE role (
         - state         State in which the Theater exists
         - zipcode       Zip code in which the Theater exists
 */
-CREATE TABLE Theater (
+CREATE TABLE theater (
     theater_id      SERIAL PRIMARY KEY,
     name            VARCHAR(500) NOT NULL,
     city            VARCHAR(255),
