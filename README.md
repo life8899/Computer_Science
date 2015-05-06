@@ -4,7 +4,7 @@ This repository is used to store and track all work from my time as a Computer S
 
 ##Completed
 |	Course Number		|		Course Name			|	Year		|	Semester	|	Credit Hours	|		Link		|
-|:---------------------:|:-------------------------:|:-------------:|:-------------:|:------------------|-------------------|
+|:---------------------:|:-------------------------:|:-------------:|:-------------:|:-----------------:|:-----------------:|
 |	110					|	Computer Science I		|	Freshman	|	Spring		|		3			|	[110](/110/)	|
 |	120					|	Computer Science II		|	Sophomore	|	Fall		|		3			|	[120](/120/)	|
 |	210					|	Data Structures			|	Sophomore	|	Spring		|		3			|	[210](/210/)	|
@@ -18,7 +18,7 @@ This repository is used to store and track all work from my time as a Computer S
 
 ##In Progress
 |	Course Number		|			Course Name					|	Year	|	Semester	|	Credit Hours	|		Link		|
-|:---------------------:|:-------------------------------------:|:---------:|:-------------:|:------------------|-------------------|
+|:---------------------:|:-------------------------------------:|:---------:|:-------------:|:-----------------:|:-----------------:|
 |	305					|	Software Engineering I				|	Senior	|	Spring		|		3			|	[305](/305/)	|
 |	360					|	Automata and Formal Languages		|	Senior	|	Spring		|		3			|	[360](/360/)	|
 |	435					|	Cyber Risk							|	Senior	|	Spring		|		3			|	[435](/435/)	|
