@@ -55,8 +55,8 @@ int main()
 
 		float updatedSalary = currentSalary + (currentSalary * (percentRaise/100)); // Calculate new salary
 
-		cout << left << setw(colWidth) << firstName << setw(colWidth) << lastName << setw(colWidth) << updatedSalary << endl;
-		outputFile << left << setw(colWidth) << firstName << setw(colWidth) << lastName << setw(colWidth) << updatedSalary << endl;
+		cout << left << setw(colWidth) << firstName << setw(colWidth) << lastName << setw(1) << "$" << setw(colWidth) << updatedSalary << endl;
+		outputFile << left << setw(colWidth) << firstName << setw(colWidth) << lastName << setw(1) << "$" << setw(colWidth) << updatedSalary << endl;
 	}
 
 	dataFile.close();
