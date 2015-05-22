@@ -1,0 +1,38 @@
+Project 2
+
+Suggested Due Date: 6/4/2015
+
+Chapter 3, Page 183, Programming Exercise #5
+Chapter 3, Page 183, Programming Exercise #6
+
+Exercise 5
+
+Write a program that calculates the total ticket sales. There are four types of tickets and they are stored in a file. The file has the following format:
+
+		ticketPrice ticketsSold
+		...
+
+The program should output the number of tickets sold and total sale amount. Format the output with two decimal places.
+
+* Documentation
+* Must get input from a file
+* Use setw, precision, etc. for neatly formatted output
+* No global variables
+
+Exercise 6
+
+Given a file with the following format:
+
+		lastName firstName salary percentRaise
+		...
+Write a program that reads data from the file; calculates the new salary; and writes the output to a file with the following format:
+
+		firstName lastName updatedSalary
+
+The output should be formatted to two decimal places.
+
+* Documentation (from now and always)
+* Must get input from a file
+* May output to a file or the screen
+* Should label and qualify all output (every program)
+* Use manipulators for output, including a $ whenever you output money

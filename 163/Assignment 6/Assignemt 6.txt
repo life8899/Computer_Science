@@ -1,0 +1,44 @@
+Project 6
+
+Suggested Due Date: 7/8/2015
+
+Chapter 7, Pages 517-518, Programming Exercise #7
+Chapter 7, Page 518, Programming Exercise #9
+
+Exercise 7
+
+Write a program that allows the user to perform arithmetic operations on fractions. The program must be menu-driven; allow the user to select the operation +, -, *, or /; and input the numerator and denominator of each fraction.
+
+The program must contain the following functions:
+
+	-- menu - informs the user about the program's purpose, explains how to enter data, and allows the user to select an operation.
+
+	-- addFractions - Accepts 4 integers representing the numerator and denominator of each fraction, adds the fractions, and returns the numerator and denominator of the result. (Notice that this function has a total of six parameters)
+
+	-- subtractFractions
+
+	-- multiplyFractions
+
+	-- divideFractions
+
+* Documentation
+* Input/Output formatting/labeling
+* Basically, it's a fraction calculator
+* Should include a menu (function) so that the user is presented with options and chooses which operation (+, -, /, *) to perform
+* HINT:  A menu function (and you will do this in several exercises) should show the menu options, get the user's choice, and return that choice back to main for processing
+* Input of fraction values should be in main
+* Output of fraction values should be in main
+* Will be paying particular attention to by reference vs. by value parameters and void vs. value returning functions
+* Reducing fractions is not required
+
+Exercise 9
+
+Given a file of students with the following format:
+	lastName, firstName middleName
+
+Note that a student may not have a middle name. Write a program that converts each name to the following form: firstName middleName lastName. The program must read each student's entire name in a variable and must consists of a function that takes as input a string, consists of a student's name, and returns the string consisting of the altered name. Use the string function find to find the index of the comma, the function length to find the length of the string, and the function substr to extract the firstName, middleName, and lastName.
+
+* File input
+* Can output the results to the screen
+* Will be looking at how you set up your main (loop around the input for as many names you have in your file) and your reverseName function (parameter, return value, etc.)
+* reverseNames should have no input or output within the function itself

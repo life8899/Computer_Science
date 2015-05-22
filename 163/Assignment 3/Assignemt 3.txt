@@ -1,0 +1,24 @@
+Project 3
+
+Suggested Due Date: 6/12/2015
+
+Chapter 4, Page 257, Programming Exercise #7
+Chapter 4, Page 260, Programming Exercise #17
+
+Exercise 7
+
+
+The term b^2-4ac in the quadratic equation is known as the discriminant. If the discriminant = 0, the polynomial has a single, repeated root. If the discriminant > 0, the polynomial has two real roots. If the discriminant < 0, the polynomial has two complex roots. Write a program that prompts the users for the values of a, b, and c; calculates the discriminant; determines the types of roots; and calculates the roots.
+
+* Documentation
+* Find the discriminant (hint: use pow or sqrt) and store in a variable to use within your if/else if/... statement to determine the number of roots
+* Efficiency... only calculate 1 root or both roots when needed (based on rules for discriminant)
+* As with previous projects and all future projects, be sure to clearly qualify your inputs and clearly label and format your outputs
+
+Exercise 17
+
+There are three models of house: colonial, split-entry, and single-story. The builder gives a base price and the finished area of the house in square feet of each model. The buyers want to know which model has the least price per square foot. Write a program that prompts the user for the base price and square footage for each model; calculates the price per square foot for each model; and displays the model with the lowest price per square foot.
+
+* Documentation
+* Inputs/outputs clearly labeled
+* Must use an if/else if/else to determine cheapest

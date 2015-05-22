@@ -1,0 +1,25 @@
+Project 9
+
+Suggested Due Date: 8/1/2015
+
+Chapter 10, Pages 730-731, Programming Exercise #4
+
+Write a program that converts a number entered in Roman Numerals to a positive integer. Your program must consists of a class romanType. A romanType object must do the following: store the number as a Roman numeral, converts and store the number as a positive integer; print the number as a Roman numeral or as a positive integer.
+
+The values of Roman Numerals is as follows:
+	M	1000
+	D	500
+	C	100
+	L	50
+	X	10
+	V	5
+	I	1
+
+Test the program with the following numerals MCXIV, CCCLIX, MDCLXVI
+
+This is your first trip into Classes.  Will be looking for:
+
+* Documentation
+* Correctness of approach, ie, where your functions are (main vs. class), where your inputs/outputs are (main vs. class)
+
+As a hint... input and output of data should be in main.  Let your class do the work through parameter passing and functions that return values.

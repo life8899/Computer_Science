@@ -1,0 +1,32 @@
+Project 8
+
+Suggested Due Date: 7/24/2015
+
+Ex 3
+
+Define a struct menuItemType with two components: menuItem of type string and menuPrice of type double.
+
+Ex 4
+
+Write a program to help a local restaurant automate its breakfast billing system. The program should show the customer the different breakfast items offered; allow the customer to select more than one item from the menu; calculate and print the bill. Assume the restaurant has the following menu:
+	Plain Egg	1.45
+	Bacon and Egg	2.45
+	Muffin	0.99
+	French Toast	1.99
+	Fruit Basket	2.49
+	Cereal	0.69
+	Coffee	0.50
+	Tea	0.75
+
+Chapter 9, Page 647, Programming Exercise #5 (will need to read and perhaps complete exercises 3 and 4 first)  HINT:  You may modify the composition of the struct initially mentioned in Exercise 3
+
+Redo Exercise 4 so that the customer can select multiple items of a particular type.
+
+* Documentation
+* Input and Output formatting/labeling
+* Remember the hint from before regarding a menu function
+* At a minimum, use functions to populate your menu (your struct) - getData, show your menu - showMenu, output the order - printCheck
+* Only have to use 1 struct and 1 array of that struct for this (HINT:  Think about how you can modify the struct for quantity)* Will only have the 1 array listed above, no other arrays
+* Should allow for an unlimited # of each item on the menu being ordered
+* Constant for sales tax, $ for outputting, etc.
+* How you select the items to buy is up to you… but to test for correctness and completeness, pick something like 3 different items from the menu before checking out (printing bill).  BUT also, be sure to pick one item more than once (you should be able to handle multiple quantities of the item selected and at multiple times).

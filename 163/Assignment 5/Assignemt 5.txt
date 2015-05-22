@@ -1,0 +1,57 @@
+Project 5
+
+Suggested Due Date: 6/30/2015
+
+All assignments from this point forward *MUST* include user-defined functions
+Chapter 6, Pages 453-454, Programming Exercise #8
+Chapter 6, Pages 455-456, Programming Exercise #14
+
+Exercise 8
+
+Given the center and a point on the circle, the Cartesian distance formula can be used to find the radius of the circle. Write a program that prompts the user for the center point and a point on the circle; and outputs the circle radius, diameter, circumference, and area. The program must contain the following functions:
+	distance - Accepts 4 integers representing the input points and returns the Cartesian distance.
+
+	radius - Accepts 4 integers representing the input points, calls the function distance to find and return the radius.
+
+	circumference - Accepts 1 integer representing the radius of the circle to find and return the circumference (2piR)
+
+	area - Accepts 1 integer representing the radius of the circle to find and return the area (piR^2)
+
+* Documentation
+* Input/output clearly labeled and formatted
+* Have a constant for PI, but nothing else
+* Be sure to include your 4 required functions... watch your parameters
+* As a hint, distance should not be called within main
+* Another hint... distance should do the calculation and radius should only call distance
+
+Exercise 14
+
+Given the following definition of main:
+
+	int main()
+	{
+		int x, y;
+		char z;
+		double rate, hours;
+		double amount;
+		...
+	}
+
+-- Write a function initialize that initializes x and y to 0 and z to the blank character.
+
+-- Write a function getHoursRate that prompts the user for the number of hours worked and the rate per hour to initialize hours and rate.
+
+-- Write a function payCheck that calculates and returns the amount to be paid to an employee based on hours worked and rate. For the first 40 hours, the rate is the given rate. For every hour over 40, the rate is 1.5 the normal rate.
+
+-- Write a function printCheck that prints the hours worked, rate, and salary.
+
+-- Write a function funcOne that prompts the user for a number. The function changes the value of x to 2*x+y-number.
+
+-- Write a function nextChar that sets the value of z to the next character stored in z.
+
+-- Write a function main that tests each function.
+
+* Documentation
+* Input/output labeling/formatting
+* Main is totally up to you on how you format it, but it should be set up to test each of your user defined function by outputting values of parameters before the function call and afterward
+* What I am grading is how well you use value returning vs. void functions and also by value and by reference parameters

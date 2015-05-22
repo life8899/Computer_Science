@@ -1,0 +1,32 @@
+Project 1
+
+Suggested Due Date: 5/28/2015
+
+FOR EACH ASSIGNMENT/PROJECT, you only have to submit any .cpp and/or .h files that you create.  No need to create zip files of the entire project folder.
+
+Chapter 2, Page 121, Programming Exercise #19
+Chapter 2, Page 122, Programming Exercise #25
+
+As help, I will be including this term a list of things in particular that I will be looking for with each assignment submission, which should help give you hints on how to approach each problem.
+
+Below are the criteria for the two projects required within project 1.  In a separate email on Thursday I will be sending each of you a group of projects to grade.  Grade each person’s, typing your comments in Word or notepad document, noting the points off for each item and noting the grades.  What I do is copy the criteria for each person and as you find the items that they have correct, remove them so that at the end, all you have left are the comments and  deductions.  Let me know if you have any questions along the way.  Also attached are two sample programs so that you can become familiar with what is required.
+
+Exercise 19
+
+Write a program that prompts the user to input a number of nickels, dimes, and quarters; calculates the total value of the coins; and the same value in pennies.
+
+
+* Documentation
+* Constants for conversion rates
+* Clear and concise prompts on how to enter data and what is expected
+* Output should include the total number pennies needed (may re-echo qtr, nickels, and dimes too
+ 
+ 
+Exercise 25
+
+A room has one door, two windows, and a bookshelf and needs to be painted. One gallon of paint can cover 120 square feet. Assume that only the walls are being painted. Write a program that prompts the user for the length/width of the door, windows, and bookshelf; prompts the user for the length, width, and height of the room in feet; calculates the total area of the room that must be painted; and outputs the amount of paint needed.
+
+* Documentation
+* Constant for square feet per gallon of paint
+* Must prompt clearly for all inputs (2 windows, door, room size, and bookshelf size
+* Clear output (states a # of gallons)

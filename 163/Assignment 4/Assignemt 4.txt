@@ -1,0 +1,33 @@
+Project 4
+
+Suggested Due Date: 6/20/2015
+
+Chapter 5, Page 340, Programming Exercise #12
+Chapter 5, Page 340, Programming Exercise #13
+
+Exercise 12
+
+The population of town A is less than the population of town B. However, the population of town A is growing faster than the population of town B. Write a program that prompts the user for the population and growth rate of each town; outputs after how many years the population of town A will be greater than or equal to town B and the populations.
+
+* Documentation
+* Inputs/Outputs labeled
+* Loop to calculate the # of years
+* Be sure to include an if statement to ensure your values are valid before starting your loop
+
+Exercise 13
+
+Suppose that the first number of a sequence is an integer x.
+
+	a0 = x;
+	an is even: an+1 = an / 2
+	an is odd:	an+1 = 3 * an + 1
+
+There also exists an integer k such that ak = 1. Write a program that prompts the user for the value of x; outputs the integer k such that ak = 1 and the numbers a0, a1, ..., ak; and test with the following values of x: 75, 111, 678, 732, 873, 2048, 65535.
+
+* Documentation
+* Inputs/Outputs labeled
+* Enters x before the loop begins
+* Then has a while loop to calculate the new value of x each iteration
+* Should use an if/else to determine if x is even or odd (think modulus)
+* Within each iteration of the loop, output x
+* After the loop, output k

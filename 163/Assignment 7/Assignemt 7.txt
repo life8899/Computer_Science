@@ -1,0 +1,63 @@
+Project 7
+
+Suggested Due Date: 7/16/2015
+
+Chapter 8, Page 602, Programming Exercise #4
+Chapter 8, Page 603, Programming Exercise #7
+
+Exercise 4
+
+Write a program that reads a file consisting of student's test scores in the range 0-200. It should then determine the number of students having scores in each of the following ranges:
+	0-24
+	25-49
+	50-74
+	75-99
+	100-124
+	125-149
+	150-174
+	175-200
+Output the score ranges and the number of students. Use the following input:
+	76
+	89
+	150
+	135
+	200
+	76
+	12
+	100
+	150
+	28
+	178
+	189
+	167
+	200
+	175
+	150
+	87
+	99
+	129
+	149
+	176
+	200
+	87
+	35
+	157
+	189
+
+* Documentation
+* Input/output formatting/labeling
+* Must read scores from a file (HINT:  loop until the end of the file)
+* Should only have 1 array -> your "buckets" for your scores
+* Don't forget user defined functions (one to populate the buckets and one to loop through for the output).  Will be looking for by value vs by reference, value returning vs. void etc.)
+
+Exercise 7
+
+Write a program that allows the user to enter the last name of five candidates in a local election and the number ofvotes received by each candidate. The program should then output each candidate's name, the number of votes received, and the percentage of the total votes received by the candidate. Your program should also output the winner of the election.
+
+* Documentation
+* Input/output formatting/labeling
+* Should have parallel arrays for:  names, votes, percentofVotes
+* Need functions for:  populating arrays, finding % of votes, finding a winner, outputting results
+* Will be paying attention to by reference vs by value and void vs value returning
+* HINT:  With arrays, think loops to process each index in the loop
+* Input is from the keyboard
