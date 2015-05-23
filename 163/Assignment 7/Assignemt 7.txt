@@ -54,6 +54,15 @@ Exercise 7
 
 Write a program that allows the user to enter the last name of five candidates in a local election and the number ofvotes received by each candidate. The program should then output each candidate's name, the number of votes received, and the percentage of the total votes received by the candidate. Your program should also output the winner of the election.
 
+Sample Data:
+	Candidate	Votes	% of Votes
+	Johnson		5000		25.91
+	Miller		4000		20.73
+	Duffy		6000		31.09
+	Robinson	2500		12.95
+	Ashtony		1800		9.33
+	Total		19300		100
+
 * Documentation
 * Input/output formatting/labeling
 * Should have parallel arrays for:  names, votes, percentofVotes
