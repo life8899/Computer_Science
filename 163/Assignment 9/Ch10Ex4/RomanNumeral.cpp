@@ -1,24 +1,54 @@
+/*
+	Chapter 10. Exercise 4.
+	RomanNumeral.cpp
+	Convert numbers between RomanNumeral and Decimal form
+
+	@author Nick Alexander
+	@version 5/20/2015
+*/
+
 #include "RomanNumeral.h"
 
+/*
+	Default Constructor. Sets the numeral to empty string
+	and the decimal to 0.
+*/
 RomanNumeral::RomanNumeral()
 {
 	this->numeral = "";
 	this->decimal = 0;
 }
 
-
+/*
+	Creates a RomanNumeral from a string of numerals.
+*/
 RomanNumeral::RomanNumeral(std::string numeralString)
 {
 	this->numeral = numeralString;
 	this->decimal = 0;
 }
 
+/*
+	Creates a RomanNumeral from a decimal value.
+*/
 RomanNumeral::RomanNumeral(int decimalValue)
 {
 	this->decimal = decimalValue;
 	this->numeral = "";
 }
 
+/*
+	Given a single numeral, returns the decimal value.
+
+	For example, valueOf('V') returns 5.
+
+	@param numeral
+	Single numeral to convert to a decimal value.
+	Note: Only M, D, C, L, X, V, and I are valid values.
+
+	@return Decimal representation of the singular numeral if valid;
+	-1 if invalid value is supplied.
+*/
 int RomanNumeral::valueOf(char numeral)
 {
 	if (numeral == 'M') {
@@ -40,28 +70,45 @@ int RomanNumeral::valueOf(char numeral)
 	}
 }
 
-char RomanNumeral::valueOf(int value)
+/*
+	Given a decimal value, returns the numeral representation.
+
+	For example, valueOf(5) returns 'V".
+
+	@param decimalValue
+	Decimal to convert to a singular numeral.
+	Note: Only 1000, 500, 100, 50, 10, 5, and 1 are valid values.
+
+	@return Numeral representation of the decimal value if valid;
+	' ' if invalid value is supplied.
+*/
+char RomanNumeral::valueOf(int decimalValue)
 {
-	if (value == 1000) {
+	if (decimalValue == 1000) {
 		return 'M';
-	} else if (value == 500) {
+	} else if (decimalValue == 500) {
 		return 'D';
-	} else if (value == 100) {
+	} else if (decimalValue == 100) {
 		return 'C';
-	} else if (value == 50) {
+	} else if (decimalValue == 50) {
 		return 'L';
-	} else if (value == 10) {
+	} else if (decimalValue == 10) {
 		return 'X';
-	} else if (value == 5) {
+	} else if (decimalValue == 5) {
 		return 'V';
-	} else if (value == 1) {
+	} else if (decimalValue == 1) {
 		return 'I';
-	} else
-	{
+	} else {
 		return ' '; // ERROR
 	}
 }
 
+/*
+	Converts the decimal value to a string of numerals
+	and reutrns it.
+
+	@return String of numerals representing the decimal value.
+*/
 std::string RomanNumeral::convertToNumeral()
 {
 	int decimalValue = this->decimal; // Shadow the value so we don't alter the member value
@@ -141,6 +188,11 @@ std::string RomanNumeral::convertToNumeral()
 	return numeralString; // return the value
 }
 
+/*
+	Converts the string of numerals to a decimale value and returns it.
+
+	@return Decimal value representing the string of numerals.
+*/
 int RomanNumeral::convertToDecimal()
 {
 	int decimalValue = 0;
@@ -158,6 +210,11 @@ int RomanNumeral::convertToDecimal()
 	return decimalValue;
 }
 
+/*
+	Returns the RomanNumeral as a decimal value.
+
+	@return Decimal representation
+*/
 int RomanNumeral::asDecimal()
 {
 	if (this->decimal == 0) {
@@ -166,6 +223,11 @@ int RomanNumeral::asDecimal()
 	return this->decimal;
 }
 
+/*
+	Returns the RomanNumeral as a string of numerals.
+
+	@return Roman Numeral representation
+*/
 std::string RomanNumeral::asNumeral()
 {
 	if (this->numeral == "") {
