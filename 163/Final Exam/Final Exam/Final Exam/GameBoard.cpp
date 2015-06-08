@@ -1,5 +1,4 @@
-#include <iostream>
-
+#include <sstream>
 #include "GameBoard.h"
 
 using namespace std;
@@ -42,7 +41,7 @@ bool GameBoard::validateBoardIndex(int row, int col)
 	return false;
 }
 
-bool GameBoard::place(char token, int row, int col, bool adjust)
+MoveState GameBoard::place(char token, int row, int col, bool adjust)
 {
 	if (adjust) {
 		row--;
@@ -51,10 +50,14 @@ bool GameBoard::place(char token, int row, int col, bool adjust)
 	if (validateBoardIndex(row, col)) {
 		if (token != '\0' && this->board[row][col] == '\0') {
 			this->board[row][col] = token;
-			return true;
+			if (checkForWin()) {
+				return MoveState::WINNING_MOVE;
+			} else {
+				return MoveState::VALID_MOVE;
+			}
 		}
 	}
-	return false;
+	return MoveState::INVALID_MOVE;
 }
 
 
@@ -106,7 +109,7 @@ char GameBoard::verticalCheck()
 	return '\0';
 }
 
-char GameBoard::standardDiagonalCheck()
+char GameBoard::rightDiagonalCheck()
 {
 	char lastToken = '\0';
 	for (int row = 0; row < this->ROW_SIZE; row++) {
@@ -121,14 +124,14 @@ char GameBoard::standardDiagonalCheck()
 				break;
 			}
 		}
-		if (lastToken != '\0') {
-			return lastToken;
-		}
+	}
+	if (lastToken != '\0') {
+		return lastToken;
 	}
 	return '\0';
 }
 
-char GameBoard::reverseDiagonalCheck()
+char GameBoard::leftDiagonalCheck()
 {
 	char lastToken = '\0';
 	for (int row = 0; row < this->ROW_SIZE; row++) {
@@ -151,60 +154,92 @@ char GameBoard::reverseDiagonalCheck()
 }
 
 
-char GameBoard::checkForWin()
+bool GameBoard::checkForWin()
 {
 	char hCheck = horizontalCheck();
-	cout << "hCheck: " << hCheck << endl;
 	char vCheck = verticalCheck();
-	cout << "vCheck: " << vCheck << endl;
-	char sCheck = standardDiagonalCheck();
-	cout << "sCheck: " << sCheck << endl;
-	char rCheck = reverseDiagonalCheck();
-	cout << "rCheck: " << rCheck << endl;
-	if (hCheck != '\0') {
-		return hCheck;
-	} else if (vCheck != '\0') {
-		return vCheck;
-	} else if (sCheck != '\0') {
-		return sCheck;
-	} else if (rCheck != '\0') {
-		return rCheck;
-	}  else {
-		return '\0';
+	char rCheck = rightDiagonalCheck();
+	char lCheck = leftDiagonalCheck();
+	if (hCheck != '\0' || vCheck != '\0' || rCheck != '\0' || lCheck != '\0') {
+		return true;
 	}
+	return false;
 }
 
-string GameBoard::horizontalSeparator()
+string GameBoard::horizontalSeparator(int pad)
 {
 	int numDash = this->COLUMN_SIZE;
 	int numPlus = numDash - 1;
 
-	string s = "";
+	string asString = "";
 
-	for (int i = 0; i < numDash; i++) {
-		s += '-';
-		if (i < numPlus) {
-			s += '+';
-		}
+	for (int i = 0; i < pad; i++) {
+		asString += " ";
 	}
 
-	return s += '\n';
+	for (int i = 0; i < numDash; i++) {
+		asString += '-';
+		if (i < numPlus) {
+			asString += '+';
+		}
+	}
+	return asString += '\n';
+}
+
+bool GameBoard::getWinState()
+{
+	return this->winState;
 }
 
 string GameBoard::toString()
 {
+	ostringstream rowIntToStringConverter("");
+	ostringstream colIntToStringConverter("");
 	string asString = "";
-	for (int row = 0; row < this->ROW_SIZE; row++) {
+	for (int row = -1; row < this->ROW_SIZE; row++) {
+		rowIntToStringConverter << (row + 1) << " ";
+
+		if (row + 1 < 10 && this->ROW_SIZE >= 10) {
+			rowIntToStringConverter.str(" " + rowIntToStringConverter.str());
+		}
+
+		if (row >= 0) {
+			asString += rowIntToStringConverter.str();
+		}
+
 		for (int col = 0; col < this->COLUMN_SIZE; col++) {
-			asString += this->board[row][col];
-			if (col != this->COLUMN_SIZE-1) {
-				asString += "|";
+			if (row >= 0) {
+				asString += this->board[row][col];
+
+				if (col != this->COLUMN_SIZE - 1) {
+					asString += "|";
+				}
+			} else {
+				if (col == 0) {
+					for (int i = 0; i < rowIntToStringConverter.str().size(); i++) {
+						asString += " ";
+					}
+				}
+				colIntToStringConverter << (col + 1) << " ";
+				asString += colIntToStringConverter.str();
+				colIntToStringConverter.str("");
+				colIntToStringConverter.clear();
 			}
 		}
-		if (row != this->ROW_SIZE-1) {
+
+		if (row < 0) {
 			asString += "\n";
-			asString += horizontalSeparator();
+			asString += "\n";
 		}
+
+		if (row >= 0 && row != this->ROW_SIZE-1) {
+			asString += "\n";
+			asString += horizontalSeparator(rowIntToStringConverter.str().size());
+		}
+
+		rowIntToStringConverter.str("");
+		rowIntToStringConverter.clear();
 	}
+
 	return asString;
 }

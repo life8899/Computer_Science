@@ -1,0 +1,3 @@
+enum MoveState {
+	INVALID_MOVE, VALID_MOVE, WINNING_MOVE
+};

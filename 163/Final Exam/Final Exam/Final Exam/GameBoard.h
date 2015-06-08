@@ -7,6 +7,9 @@
 */
 
 #include <vector>
+#include "MoveState.h"
+
+enum MoveState;
 
 class GameBoard
 {
@@ -15,17 +18,18 @@ private:
 	int COLUMN_SIZE;
 	std::vector<std::vector<char>> board;
 	bool winState;
-	std::string horizontalSeparator();
+	std::string horizontalSeparator(int);
+	bool checkForWin();
 	char horizontalCheck();
 	char verticalCheck();
-	char standardDiagonalCheck();
-	char reverseDiagonalCheck();
+	char rightDiagonalCheck();
+	char leftDiagonalCheck();
 	bool validateBoardIndex(int, int);
 
 public:
 	GameBoard();
 	GameBoard(int);
 	std::string toString();
-	char checkForWin();
-	bool place(char, int, int, bool=false);
+	MoveState place(char, int, int, bool=false);
+	bool getWinState();
 };
