@@ -1,9 +1,36 @@
+/*
+	Chapter 7. Exercise 9.
+	main.cpp
+
+	Reads a series of names from a file with the format
+		lastName, firstName middleName
+	The reads the file and reverses the order of the names to the new formet:
+		firstName middleName lastName
+
+
+	NOTE: CHANGE FILE PATH CONSTANT TO PROPER FILE PATH
+
+	@author Nick Alexander
+	@version 6/20/2015
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
 
 using namespace std;
 
+const string FILE_PATH = "C:\\Users\\Nick\\Developer\\Computer_Science\\163\\Assignment 6\\Ch7Ex9V2\\names.txt";
+
+/*
+	Given a line from the source file reverses the names into the target format
+
+	@param
+	Source string
+
+	@return
+	String in the target format
+*/
 string reverseName(string fullName)
 {
 	string firstName = "", middleName = "", lastName = "";
@@ -28,10 +55,13 @@ string reverseName(string fullName)
 	return reversedName;
 }
 
+/*
+	Main Insertion Point
+*/
 int main()
 {
 	ifstream namesFile;
-	namesFile.open("C:\\Users\\Nick\\Developer\\Computer_Science\\163\\Assignment 6\\Ch7Ex9V2\\names.txt");
+	namesFile.open(FILE_PATH);
 
 	while (namesFile.good()) {
 		string fullName;

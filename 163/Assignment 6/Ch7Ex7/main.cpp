@@ -1,7 +1,24 @@
+/*
+	Chapter 7. Exercise 7.
+	main.cpp
+
+	Presents a rudimentary interface for performing arithemetic operations on fractions
+
+	@author Nick Alexander
+	@version 6/20/2015
+*/
+
 #include <iostream>
 
 using namespace std;
 
+
+/*
+	Displays the User Menu and returns the user selection
+
+	@return
+	User Selection	
+*/
 int menu()
 {
 	cout << "0 - Exit" << endl;
@@ -15,6 +32,16 @@ int menu()
 	return choice;
 }
 
+/*
+	Prompts the user to enter the numerator and denominator for a fraction
+	and stores those values in reference parameters
+
+	@param numerator
+	Refernece to fraction numerator
+
+	@param denominator
+	Reference to fraction denominator
+*/
 void getFraction(int& numerator, int& denominator)
 {
 	cout << "Numerator: ";
@@ -23,6 +50,28 @@ void getFraction(int& numerator, int& denominator)
 	cin >> denominator;
 }
 
+/*
+	Adds two fractions denoted by the numberator and denominator parameters and stores the resulting fraction components in reference parameters
+
+	@param numerator1
+	Numerator of the first fraction
+
+	@param denominator1
+	Denominator of the first fraction
+
+	@param numerator2
+	Numerator of the second fraction
+
+	@param denominator2
+	Denominator of the second fraction
+
+	@param resultNumerator
+	Numerator of the resulting fraction
+
+	@param resultDenominator
+	Denominator of the resulting fraction
+
+*/
 void addFractions(int numerator1, int denominator1, int numerator2, int denominator2, int& resultNumerator, int& resultDenominator)
 {
 	int commonDenominator = denominator1 * denominator2;
@@ -32,6 +81,28 @@ void addFractions(int numerator1, int denominator1, int numerator2, int denomina
 	resultDenominator = commonDenominator;
 }
 
+/*
+	Subtracts two fractions denoted by the numberator and denominator parameters and stores the resulting fraction components in reference parameters
+
+	@param numerator1
+	Numerator of the first fraction
+
+	@param denominator1
+	Denominator of the first fraction
+
+	@param numerator2
+	Numerator of the second fraction
+
+	@param denominator2
+	Denominator of the second fraction
+
+	@param resultNumerator
+	Numerator of the resulting fraction
+
+	@param resultDenominator
+	Denominator of the resulting fraction
+
+*/
 void subtractFractions(int numerator1, int denominator1, int numerator2, int denominator2, int& resultNumerator, int& resultDenominator)
 {
 	int commonDenominator = denominator1 * denominator2;
@@ -41,17 +112,85 @@ void subtractFractions(int numerator1, int denominator1, int numerator2, int den
 	resultDenominator = commonDenominator;
 }
 
+/*
+	Multiplies two fractions denoted by the numberator and denominator parameters and stores the resulting fraction components in reference parameters
+
+	@param numerator1
+	Numerator of the first fraction
+
+	@param denominator1
+	Denominator of the first fraction
+
+	@param numerator2
+	Numerator of the second fraction
+
+	@param denominator2
+	Denominator of the second fraction
+
+	@param resultNumerator
+	Numerator of the resulting fraction
+
+	@param resultDenominator
+	Denominator of the resulting fraction
+
+*/
 void multiplyFractions(int numerator1, int denominator1, int numerator2, int denominator2, int& resultNumerator, int& resultDenominator)
 {
 	resultNumerator = numerator1 * numerator2;
 	resultDenominator = denominator1 * denominator2;
 }
 
+/*
+	Divides two fractions denoted by the numberator and denominator parameters and stores the resulting fraction components in reference parameters
+
+	@param numerator1
+	Numerator of the first fraction
+
+	@param denominator1
+	Denominator of the first fraction
+
+	@param numerator2
+	Numerator of the second fraction
+
+	@param denominator2
+	Denominator of the second fraction
+
+	@param resultNumerator
+	Numerator of the resulting fraction
+
+	@param resultDenominator
+	Denominator of the resulting fraction
+
+*/
 void divideFractions(int numerator1, int denominator1, int numerator2, int denominator2, int& resultNumerator, int& resultDenominator)
 {
 	multiplyFractions(numerator1, denominator1, denominator2, numerator2, resultNumerator, resultDenominator);
 }
 
+/*
+	Displays the fraction equation in the form: operand operator operand = result
+
+	@param numerator1
+	Numerator of the first fraction
+
+	@param denominator1
+	Denominator of the first fraction
+
+	@param numerator2
+	Numerator of the second fraction
+
+	@param denominator2
+	Denominator of the second fraction
+
+	@param resultNumerator
+	Numerator of the resulting fraction
+
+	@param resultDenominator
+	Denominator of the resulting fraction
+
+	@param fractionOperator
+	Character representation of the operator
+*/
 void printEquation(int numerator1, int denominator1, int numerator2, int denominator2, int& resultNumerator, int& resultDenominator, char fractionOperator)
 {
 	cout << numerator1 << "/" << denominator1;
@@ -62,6 +201,12 @@ void printEquation(int numerator1, int denominator1, int numerator2, int denomin
 	cout << endl;
 }
 
+/*
+	Main Insertion Point
+
+	@return
+	Exit Code
+*/
 int main()
 {
 	cout << "Fraction Calculator" << endl;
