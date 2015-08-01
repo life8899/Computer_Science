@@ -7,7 +7,6 @@ import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.filechooser.*;
 import java.util.ArrayList;
-import javax.vecmath.Point3d;
 
 /**
  * Module 3
@@ -111,7 +110,7 @@ public class MazeApp extends JFrame {
 
     private MazeReader reader;
     private MazeSolver solver;
-    private ArrayList<Point3d> path;
+    private ArrayList<Point3D> path;
     private boolean solving;
     private MazeTimer timer = new MazeTimer(0, new ActionListener(){
         @Override
@@ -251,14 +250,14 @@ public class MazeApp extends JFrame {
     }
 
     /**
-     * Converts Point3d Into String
+     * Converts Point3D Into String
      * Appropriated for Array Index
      *
-     * @return Appropriated Point3d String
+     * @return Appropriated Point3D String
      */
     private String solutionPointToString()
     {
-        Point3d p = solver.getSolutionPoint();
+        Point3D p = solver.getSolutionPoint();
         return "(" + ((int)p.x + 1) + ", " + ((int)p.y + 1) + ", " + ((int)p.z + 1) + ")";
     }
 
@@ -437,7 +436,7 @@ public class MazeApp extends JFrame {
                 solver.solveMaze();
                 if (!solved)
                 {
-                    Point3d p = solver.getSolutionPoint();
+                    Point3D p = solver.getSolutionPoint();
                     this.path = solver.getPath();
                     this.solutionPointLabel.setText("(" + String.valueOf((int)p.x + 1) + ", " + String.valueOf((int)p.y + 1) + ", " + String.valueOf((int)p.z + 1) + ")");
                     this.stepsToSolutionLabel.setText(String.valueOf(solver.getStepsToSolution()));

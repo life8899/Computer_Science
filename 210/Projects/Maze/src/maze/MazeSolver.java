@@ -1,7 +1,6 @@
 package maze;
 
 import java.util.ArrayList;
-import javax.vecmath.Point3d;
 
 /**
  * Module 3
@@ -17,9 +16,9 @@ import javax.vecmath.Point3d;
 public class MazeSolver
 {
     private MazeReader maze;
-    private MazeStack<Point3d> stack;
-    private ArrayList<Point3d> path;
-    private Point3d solution;
+    private MazeStack<Point3D> stack;
+    private ArrayList<Point3D> path;
+    private Point3D solution;
     private boolean solvable;
     private int stepsTaken;
     private int stepsToSolution;
@@ -50,7 +49,7 @@ public class MazeSolver
     public void solveMaze() throws NoSolutionException, MazeFormatException
     {
         int[] coords = maze.getStartingPoint();
-        Point3d start = new Point3d(coords[0], coords[1], coords[2]);
+        Point3D start = new Point3D(coords[0], coords[1], coords[2]);
         this.stack.push(start);
         this.solvable = this.findPath(start);
         this.stepsToSolution += this.stepsTaken;
@@ -67,7 +66,7 @@ public class MazeSolver
      * @throws NoSolutionException if Maze has No Solution
      * @throws MazeFormatException
      */
-    public boolean findPath(Point3d currentLocation) throws NoSolutionException, MazeFormatException
+    public boolean findPath(Point3D currentLocation) throws NoSolutionException, MazeFormatException
     {
         int x = (int) currentLocation.x;
         int y = (int) currentLocation.y;
@@ -95,39 +94,39 @@ public class MazeSolver
      * @throws NoSolutionException if No Open Spaces Exist Before Finish
      * @throws MazeFormatException if Elevators are Unpaired or is Unaligned
      */
-    private Point3d move(Point3d currentLocation) throws NoSolutionException, MazeFormatException
+    private Point3D move(Point3D currentLocation) throws NoSolutionException, MazeFormatException
     {
         int x = (int) currentLocation.x;
         int y = (int) currentLocation.y;
         int z = (int) currentLocation.z;
-        Point3d newLocation = currentLocation;
+        Point3D newLocation = currentLocation;
 
         if (this.maze.check(x, y, z) == MazeConstruct.FINISH)
             return newLocation;
         else if (this.maze.check(x+1, y, z) != MazeConstruct.WALL && this.maze.check(x+1, y, z) != MazeConstruct.TRAVERSED
                     && this.maze.check(x+1, y, z) != MazeConstruct.ELEVATOR)
         {
-            newLocation = new Point3d(x+1, y, z);
+            newLocation = new Point3D(x+1, y, z);
         }
         else if (this.maze.check(x, y+1, z) != MazeConstruct.WALL && this.maze.check(x, y+1, z) != MazeConstruct.TRAVERSED
                     && this.maze.check(x, y+1, z) != MazeConstruct.ELEVATOR)
         {
-            newLocation = new Point3d(x, y+1, z);
+            newLocation = new Point3D(x, y+1, z);
         }
 
         else if (this.maze.check(x, y-1, z) != MazeConstruct.WALL && this.maze.check(x, y-1, z) != MazeConstruct.TRAVERSED
                     && this.maze.check(x, y-1, z) != MazeConstruct.ELEVATOR)
         {
-            newLocation = new Point3d(x, y-1, z);
+            newLocation = new Point3D(x, y-1, z);
         }
         else if (this.maze.check(x-1, y, z) != MazeConstruct.WALL && this.maze.check(x-1, y, z) != MazeConstruct.TRAVERSED
                     && this.maze.check(x-1, y, z) != MazeConstruct.ELEVATOR)
         {
-            newLocation = new Point3d(x-1, y, z);
+            newLocation = new Point3D(x-1, y, z);
         }
         else if (this.maze.check(x+1, y, z) == MazeConstruct.ELEVATOR)
         {
-            Point3d tmp = this.useElevator(x+1, y, z);
+            Point3D tmp = this.useElevator(x+1, y, z);
             if (this.canExitElevator(tmp))
                 newLocation = tmp;
             else
@@ -135,7 +134,7 @@ public class MazeSolver
         }
         else if (this.maze.check(x, y+1, z) == MazeConstruct.ELEVATOR)
         {
-            Point3d tmp = this.useElevator(x, y+1, z);
+            Point3D tmp = this.useElevator(x, y+1, z);
             if (this.canExitElevator(tmp))
                 newLocation = tmp;
             else
@@ -143,7 +142,7 @@ public class MazeSolver
         }
         else if (this.maze.check(x-1, y, z) == MazeConstruct.ELEVATOR)
         {
-            Point3d tmp = this.useElevator(x-1, y, z);
+            Point3D tmp = this.useElevator(x-1, y, z);
             if (this.canExitElevator(tmp))
                 newLocation = tmp;
             else
@@ -151,7 +150,7 @@ public class MazeSolver
         }
         else if (this.maze.check(x, y-1, z) == MazeConstruct.ELEVATOR)
         {
-            Point3d tmp = this.useElevator(x, y-1, z);
+            Point3D tmp = this.useElevator(x, y-1, z);
             if (this.canExitElevator(tmp))
                 newLocation = tmp;
             else
@@ -176,7 +175,7 @@ public class MazeSolver
      *
      * @return True if Elevator has Not Been Used
      */
-    private boolean canExitElevator(Point3d elevator)
+    private boolean canExitElevator(Point3D elevator)
     {
         int x = (int) elevator.x;
         int y = (int) elevator.y;
@@ -203,13 +202,13 @@ public class MazeSolver
      *
      * @throws MazeFormatException if Elevators are Unpaired
      */
-    private Point3d useElevator(int x, int y, int z) throws MazeFormatException
+    private Point3D useElevator(int x, int y, int z) throws MazeFormatException
     {
         for (int newFloor = 0; newFloor < this.maze.getFloors(); newFloor++)
         {
             if (newFloor != z && this.maze.check(x, y, newFloor) == MazeConstruct.ELEVATOR)
             {
-                return new Point3d(x, y, newFloor);
+                return new Point3D(x, y, newFloor);
             }
         }
         throw new MazeFormatException("Format Error: Unmatched Elevators!");
@@ -223,9 +222,9 @@ public class MazeSolver
      * @throws NoSolutionException if No Paths are Found
      * @throws MazeFormatException if Maze is Unaligned
      */
-    private Point3d backTrack() throws NoSolutionException, MazeFormatException
+    private Point3D backTrack() throws NoSolutionException, MazeFormatException
     {
-        Point3d popped = this.stack.pop();
+        Point3D popped = this.stack.pop();
         this.maze.setTraversed((int)popped.x, (int)popped.y, (int)popped.z);
         if (this.stack.peek() == null)
             throw new NoSolutionException();
@@ -240,7 +239,7 @@ public class MazeSolver
     {
         while (!this.stack.empty())
         {
-            Point3d tmp = this.stack.pop();
+            Point3D tmp = this.stack.pop();
             int x = (int) tmp.x;
             int y = (int) tmp.y;
             int z = (int) tmp.z;
@@ -254,7 +253,7 @@ public class MazeSolver
      * Returns Solution Point
      * @return Solution Point
      */
-    public Point3d getSolutionPoint()
+    public Point3D getSolutionPoint()
     {
         return this.solution;
     }
@@ -283,7 +282,7 @@ public class MazeSolver
      *
      * @return Path Through the Maze
      */
-    public ArrayList<Point3d> getPath()
+    public ArrayList<Point3D> getPath()
     {
         return this.path;
     }
@@ -299,7 +298,7 @@ public class MazeSolver
      */
     public boolean isInSolutionPath(int row, int col, int floor)
     {
-        return this.path.contains(new Point3d(row, col, floor));
+        return this.path.contains(new Point3D(row, col, floor));
     }
 
     /**
