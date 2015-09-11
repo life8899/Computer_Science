@@ -4,5 +4,4 @@
 
 ---
 
-Introduction to cyber security concepts including symmetric and asymmetric encryption, public key and private key
-encryption, and software exploitation. 
+Introduction to cyber security concepts including symmetric and asymmetric encryption, public key and private key encryption, and software exploitation. 
