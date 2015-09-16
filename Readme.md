@@ -22,9 +22,9 @@ This repository is used to store and track all work from my time as a Computer S
 ###In Progress
 |	Course Number		|			Course Name					|	Year	|	Semester	|	Credit Hours	|		Link		|
 |:---------------------:|:-------------------------------------:|:---------:|:-------------:|:-----------------:|:-----------------:|
-|	305					|	Software Engineering I				|	Senior	|	Spring		|		3			|		NONE		|
-|	360					|	Automata and Formal Languages		|	Senior	|	Spring		|		3			|		NONE		|
-|	435					|	Cyber Risk							|	Senior	|	Spring		|		3			|		NONE		|
+|	305					|	Software Engineering I				|	Senior	|	Spring		|		3			|	[305](/305/)	|
+|	360					|	Automata and Formal Languages		|	Senior	|	Spring		|		3			|	[360](/360/)|	|
+|	435					|	Cyber Risk							|	Senior	|	Spring		|		3			|	[435](/435/)	|
 
 
 ##Research
