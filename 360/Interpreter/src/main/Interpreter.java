@@ -72,15 +72,19 @@ public class Interpreter
 	            }
             }
             if (IdentifierParser.isIdentifierExpressionAssignment(input)) {
-	            String[] assignmentComponents = IdentifierParser.parseIdentifierExpressionAssignment(input);
-	            String firstIdentifierName = assignmentComponents[0];
-	            String arithmeticExpression = assignmentComponents[1];
-	            Identifier<InterpreterNumber> identifier = new Identifier<>(firstIdentifierName, InterpreterCalculator.calculate(ExpressionParser.parseArithmeticExpression(arithmeticExpression)));
-	            if (numbers.contains(firstIdentifierName)) {
-		            numbers.update(identifier);
-	            } else {
-		            numbers.insert(identifier);
-	            }
+				try {
+					String[] assignmentComponents = IdentifierParser.parseIdentifierExpressionAssignment(input);
+					String firstIdentifierName = assignmentComponents[0];
+					String arithmeticExpression = assignmentComponents[1];
+					Identifier<InterpreterNumber> identifier = new Identifier<>(firstIdentifierName, InterpreterCalculator.calculate(ExpressionParser.parseArithmeticExpression(arithmeticExpression)));
+					if (numbers.contains(firstIdentifierName)) {
+						numbers.update(identifier);
+					} else {
+						numbers.insert(identifier);
+					}
+				} catch (NullPointerException e) {
+					System.out.println(e.getMessage());
+				}
             }
             if (StringParser.isPrintConstant(input)) {
 	            System.out.println(StringParser.parsePrintConstant(input));

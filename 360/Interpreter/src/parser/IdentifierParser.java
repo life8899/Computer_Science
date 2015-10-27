@@ -2,6 +2,7 @@ package parser;
 
 import identifier.Identifier;
 import main.Interpreter;
+import sun.security.krb5.internal.crypto.NullEType;
 import util.InterpreterNumber;
 
 import java.util.regex.Pattern;
@@ -77,15 +78,20 @@ public class IdentifierParser
 		return IDENTIFIER_EXPRESSION_ASSIGNMENT.matcher(input).matches();
 	}
 
-	public static String[] parseIdentifierExpressionAssignment(String input)
+	public static String[] parseIdentifierExpressionAssignment(String input) throws NullPointerException
 	{
 		String[] assignmentComponents = input.split("=");
 		String firstIdentifierName = assignmentComponents[0].trim();
 		String[] expressionComponents = assignmentComponents[1].split(ExpressionParser.getOperatorPattern());
 		String secondIdentifierName = expressionComponents[0].trim();
 		String thirdIdentifierName = expressionComponents[1].trim();
-		String arithmeticExpression = assignmentComponents[1].replace(secondIdentifierName, Interpreter.numbers.lookup(secondIdentifierName).toString());
-		arithmeticExpression = arithmeticExpression.replace(thirdIdentifierName, Interpreter.numbers.lookup(thirdIdentifierName).toString());
-		return new String[]{firstIdentifierName, arithmeticExpression};
+		try {
+			String arithmeticExpression = assignmentComponents[1].replace(secondIdentifierName, Interpreter.numbers.lookup(secondIdentifierName).toString());
+			arithmeticExpression = arithmeticExpression.replace(thirdIdentifierName, Interpreter.numbers.lookup(thirdIdentifierName).toString());
+			return new String[]{firstIdentifierName, arithmeticExpression};
+		} catch (NullPointerException e) {
+			String culpritIdentifier = (secondIdentifierName == null) ? secondIdentifierName : thirdIdentifierName;
+			throw new NullPointerException("Undefined identifier " + culpritIdentifier);
+		}
 	}
 }
